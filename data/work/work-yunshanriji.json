@@ -1,0 +1,71 @@
+{
+  "id": "work-yunshanriji",
+  "repo_slug": "yunshanriji",
+  "title_original": "雲山日記",
+  "title_ko": "운산일기",
+  "title_romanized": "Yunshan riji",
+  "description": "고전 일기 사료의 계층형 연구 데이터셋 구축을 위한 저장소",
+  "author": {
+    "name_original": "郭畀",
+    "name_romanized": "Guo Bi",
+    "style_name": "天錫",
+    "dates": "1280–1335",
+    "cbdb_id": 33477,
+    "notes": "鎭江(京口) 출신. 郭天錫(字 祐之, 大同 출신)과는 별개 인물임. 至順鎭江志·秋澗集 교차 검증으로 확인."
+  },
+  "source_text": {
+    "text_path": "texts/plain/yunshanriji_fulltext.txt",
+    "encoding": "utf-8",
+    "segment_strategy": "blank-line blocks with month headings",
+    "base_edition": {
+      "title": "雲山日記",
+      "edition": "清宣統三年(1911) 橫山草堂刻本",
+      "notes": "繆荃孫 序文, 趙輯寧·鮑廷博·陳慶年 題跋 포함"
+    },
+    "punctuation_reference": {
+      "source": "羅亞琳, 《郭畀和他的「雲山日記」》, 中央美術學院博士學位論文, 2015",
+      "scope": "부록 수록 표점을 참고하여 원문 입력"
+    },
+    "autograph_manuscripts": [
+      {
+        "location": "上海圖書館",
+        "coverage": "至大元年 8月 27日 ~ 至大二年 10月 30日 (일부 결락)",
+        "notes": "翁方綱, 周爾墉, 崇恩 跋文 포함"
+      },
+      {
+        "location": "首都博物館",
+        "coverage": "至大元年 10月 24日 ~ 11月 7日; 閏11月 10日 ~ 25日",
+        "notes": "14페이지 잔편"
+      }
+    ],
+    "transmission_study": "서윤아(2025), 「대원제국의 강남 경영」, 동양사학연구 160, pp.179–210, §Ⅳ.1 참조"
+  },
+  "ai_tools": {
+    "extraction_scripts": {
+      "tool": "Codex (OpenAI)",
+      "role": "PowerShell/Python 추출·검증·파생 스크립트 생성"
+    },
+    "translation": {
+      "tool": "Claude Opus 4.6 (Anthropic)",
+      "role": "초벌 번역 생성. 재검토 보조 도구로 사용, 최종 해석 근거 아님",
+      "output_path": "data/ai/entry_translations.jsonl"
+    },
+    "exploratory": {
+      "tool": "ChatGPT (OpenAI)",
+      "role": "탐색적 질의, 교차 확인. canonical data에 직접 기록되지 않음"
+    }
+  },
+  "prior_studies": [
+    {
+      "citation": "서윤아(2025), 「대원제국의 강남 경영 — 운산일기를 통해서 본 원대 사대부의 일상과 기억」, 동양사학연구 160, pp.179–210",
+      "doi": "http://dx.doi.org/10.17751/DHR.160.179",
+      "role": "사료 기초 연구: 판본 전승 계보, 인물 비정(郭畀 ≠ 郭天錫), 금주령·사대부 정체성·도시 네트워크 분석. 본 저장소의 학술적 기반."
+    }
+  ],
+  "languages": ["lzh", "ko"],
+  "provenance": {
+    "entered_by": "seo_yuna",
+    "created_at": "",
+    "updated_at": ""
+  }
+}

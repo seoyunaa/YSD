@@ -1,0 +1,24 @@
+{
+  "id": "place-0016",
+  "entity_type": "place",
+  "label_original": "杭州城外",
+  "label_normalized": "杭州城外",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "place_info": {
+    "place_type": "other",
+    "admin_level": null,
+    "parent_place_id": null,
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

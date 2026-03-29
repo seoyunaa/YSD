@@ -1,0 +1,79 @@
+[
+  {
+    "query_id": "demo-q01",
+    "question_ko": "곽비가 항주에 도착한 과정은?",
+    "expected_chunks": [
+      "chunk-entry-0025"
+    ],
+    "expected_chunk_types": [
+      "entry"
+    ],
+    "design_principle_demonstrated": "route 구조화, reviewed chunk의 translation_basis 추적",
+    "sample_answer_ko": "22일, 사경(四更)에 항주 성 밖에 도착하니 서리 낀 달빛이 하늘에 가득하고 찬 기운이 사람을 엄습하였다. 북관문 접대사(接待寺)에서 기다리다가 종이 울리자 배를 갈아타고 성 안으로 들어갔다. 새벽 무렵 반백기(潘伯起)가 나를 시수방교(施水坊橋)에 있는 심대조(沈待詔)의 누에 머물게 하였는데, 금단(金壇) 출신 윤자원(",
+    "answer_evidence_raw": "二十二日，四更到杭州城外，霜月滿天，寒氣逼人。",
+    "answer_certainty": "uncertain",
+    "answer_review_status": "reviewed"
+  },
+  {
+    "query_id": "demo-q02",
+    "question_ko": "龔子敬은 누구인가?",
+    "expected_chunks": [
+      "chunk-dossier-person-0016"
+    ],
+    "expected_chunk_types": [
+      "entity_dossier"
+    ],
+    "design_principle_demonstrated": "entity dossier, person/office 분리",
+    "sample_answer_ko": "龔子敬는 항주 gold-set에서 3개 entry에 등장한다. 첫 등장은 entry-0022이며, 관련 entry는 entry-0022, entry-0023, entry-0025이다. 확인된 직함 기록은 山長이다.",
+    "answer_evidence_raw": "十九日，午後抵平江，見龔子敬山長，父子留宿，具晚飯。",
+    "answer_certainty": "confirmed",
+    "answer_review_status": "reviewed"
+  },
+  {
+    "query_id": "demo-q03",
+    "question_ko": "곽비가 방문했으나 만나지 못한 사람은?",
+    "expected_chunks": [
+      "chunk-entry-0020",
+      "chunk-entry-0027"
+    ],
+    "expected_chunk_types": [
+      "entry",
+      "entry"
+    ],
+    "design_principle_demonstrated": "ambiguity 보존, not_met assertion 처리",
+    "sample_answer_ko": "곽비는 白湛淵과 趙子昂을 찾아갔으나 만나지 못했다.",
+    "answer_evidence_raw": "二十四日，晴，客杭。",
+    "answer_certainty": "uncertain",
+    "answer_review_status": "reviewed"
+  },
+  {
+    "query_id": "demo-q04",
+    "question_ko": "항주 성내에서 방문한 장소들은?",
+    "expected_chunks": [
+      "chunk-entry-0026"
+    ],
+    "expected_chunk_types": [
+      "entry"
+    ],
+    "design_principle_demonstrated": "spatial hierarchy, reviewed entry chunk의 places 배열",
+    "sample_answer_ko": "23일, 항주에 머물렀고 날씨는 맑았다. 이른 아침 정정교(井亭橋)를 지나 이윽고 장운심(張雲心) 주판(州判)을 만나고, 이어 탕북촌(湯北村) 동지(同知)와 장경방(張景芳) 학정(學正)을 만났다. 현동관(玄同觀)에 가서 오약유(吳若遺)를 만났는데, 약유는 다른 일이 있어 그의 사손(師孫) 나강백(羅康伯)에게 나를 맞아 접",
+    "answer_evidence_raw": "二十三日，客杭，晴。",
+    "answer_certainty": "confirmed",
+    "answer_review_status": "reviewed"
+  },
+  {
+    "query_id": "demo-q05",
+    "question_ko": "조맹부(趙子昂)와의 만남은?",
+    "expected_chunks": [
+      "chunk-entry-0027"
+    ],
+    "expected_chunk_types": [
+      "entry"
+    ],
+    "design_principle_demonstrated": "rewrite_needed entry의 reviewed annotation과 not_met assertion 연결",
+    "sample_answer_ko": "24일, 맑았고 항주에 머물렀다. 이른 아침 성중 조마소(省中照磨所)에 가서 이숙의(李叔義)를 만나 원문(元文)을 고쳐 지웠다. 이어 유학제거사(儒學提舉司)에 가서 이형(李兄)의 편지를 지니고 왕일초(王一初) 도목(都目)을 만나 정자(呈子)를 제출하고, 왕수지(王夀之)·왕자방(王子芳)·임백화(任伯和)를 만났다. 이날 담당",
+    "answer_evidence_raw": "二十四日，晴，客杭。",
+    "answer_certainty": "uncertain",
+    "answer_review_status": "reviewed"
+  }
+]

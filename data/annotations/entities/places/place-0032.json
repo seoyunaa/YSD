@@ -1,0 +1,24 @@
+{
+  "id": "place-0032",
+  "entity_type": "place",
+  "label_original": "客杭",
+  "label_normalized": "客杭",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": "항주에 머묾",
+  "status": "active",
+  "place_info": {
+    "place_type": "other",
+    "admin_level": null,
+    "parent_place_id": null,
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

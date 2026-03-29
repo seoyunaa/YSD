@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "graph-edge.schema.json",
+  "description": "Layer 6 (graph): 지식 그래프 엣지. assertion에서 파생. 자동 생성, 수동 편집 금지.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["edge_id", "source_node", "target_node", "edge_type", "source_assertion_ids", "certainty", "provenance"],
+  "properties": {
+    "edge_id": {
+      "type": "string",
+      "description": "엣지 식별자."
+    },
+    "source_node": { "type": "string", "description": "출발 노드 node_id" },
+    "target_node": { "type": "string", "description": "도착 노드 node_id" },
+
+    "edge_type": {
+      "type": "string",
+      "description": "관계 유형. assertion의 predicate에서 파생.",
+      "enum": [
+        "visited", "visited_not_met", "drank_with", "dined_with", "saw_off", "welcomed",
+        "gifted", "received", "lent", "borrowed", "bought", "sold",
+        "created_for", "appraised", "inscribed",
+        "traveled_to", "traveled_from", "traveled_via",
+        "held_office", "affiliated_with",
+        "resided_in", "originated_from", "sojourned_in",
+        "father_of", "son_of", "brother_of", "teacher_of", "student_of", "colleague_of", "friend_of",
+        "located_in", "parent_admin_of", "part_of",
+        "participated_in", "mentioned_in"
+      ]
+    },
+
+    "weight": {
+      "type": ["number", "null"],
+      "description": "가중치. 반복 횟수 기반. 예: 곽비→張德輝 방문이 15회이면 weight: 15."
+    },
+    "temporal_range": {
+      "type": ["object", "null"],
+      "properties": {
+        "from_display": { "type": "string" },
+        "to_display": { "type": "string" }
+      },
+      "description": "이 관계가 확인되는 시간 범위."
+    },
+
+    "source_assertion_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "이 edge의 근거가 되는 assertion ID 목록. 그래프에서 원문까지 역추적 가능."
+    },
+    "source_entry_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "이 edge가 확인되는 entry ID 목록. assertion → entry 역추적의 단축 경로."
+    },
+
+    "certainty": {
+      "type": "string",
+      "enum": ["confirmed", "probable", "uncertain", "mixed"],
+      "description": "이 edge의 확실성. source assertion 중 가장 낮은 확실성을 계승."
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["reviewed", "unreviewed", "partial"],
+      "description": "근거 annotation의 검토 상태."
+    },
+
+    "provenance": {
+      "type": "object",
+      "required": ["generated_by", "generated_at"],
+      "properties": {
+        "generated_by": { "type": "string" },
+        "generated_at": { "type": "string" }
+      }
+    }
+  }
+}

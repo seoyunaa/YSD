@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "graph-node.schema.json",
+  "description": "Layer 6 (graph): 지식 그래프 노드. assertion에서 파생. 자동 생성, 수동 편집 금지.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["node_id", "node_type", "label", "source_entity_id", "provenance"],
+  "properties": {
+    "node_id": {
+      "type": "string",
+      "description": "그래프 내 노드 식별자. entity_id와 동일하거나 파생."
+    },
+    "node_type": {
+      "type": "string",
+      "enum": ["person", "place", "office", "institution", "document", "work", "consumable", "event", "sequence"],
+      "description": "노드 유형. entity 유형 + event/sequence 확장."
+    },
+    "label": { "type": "string", "description": "표시용 이름" },
+    "label_lzh": { "type": ["string", "null"], "description": "한문 표기" },
+    "label_ko": { "type": ["string", "null"], "description": "한국어 표기" },
+
+    "source_entity_id": {
+      "type": ["string", "null"],
+      "description": "원본 entity authority의 ID. event/sequence 노드이면 null."
+    },
+    "source_event_id": {
+      "type": ["string", "null"],
+      "description": "event 노드인 경우 Layer 5 event ID."
+    },
+    "source_sequence_id": {
+      "type": ["string", "null"],
+      "description": "sequence 노드인 경우 Layer 4.5 sequence ID."
+    },
+
+    "attributes": {
+      "type": "object",
+      "description": "노드 속성. entity_type에 따라 다름.",
+      "properties": {
+        "entity_type": { "type": ["string", "null"] },
+        "place_type": { "type": ["string", "null"] },
+        "admin_level": { "type": ["string", "null"] },
+        "institution_type": { "type": ["string", "null"] },
+        "first_seen_entry": { "type": ["string", "null"] },
+        "entry_count": { "type": ["integer", "null"], "description": "이 개체가 등장하는 entry 수" },
+        "certainty_summary": { "type": ["string", "null"], "description": "전반적 확실성. 모든 mention이 confirmed이면 confirmed, 하나라도 uncertain이면 mixed" }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "required": ["generated_by", "generated_at"],
+      "properties": {
+        "generated_by": { "type": "string" },
+        "generated_at": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "vocabulary_id": "exchange-types",
+  "version": "1.0.0",
+  "last_updated": "2026-03-28",
+  "_changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-28",
+      "change": "initial vocabulary",
+      "reason": "운산일기 전체 텍스트에서 귀납적으로 추출한 초기 어휘",
+      "affected_entries": null
+    }
+  ],
+  "description": "exchanges 필드에 사용하는 통제어휘. 물품 수수의 방향과 성격.",
+  "direction": {
+    "give":    { "hanzi": ["送", "贈", "遺"], "label_ko": "주다" },
+    "receive": { "hanzi": ["得", "受", "蒙惠"], "label_ko": "받다" },
+    "lend":    { "hanzi": ["借與", "假"], "label_ko": "빌려주다" },
+    "borrow":  { "hanzi": ["借", "假"], "label_ko": "빌리다" },
+    "return":  { "hanzi": ["還", "歸"], "label_ko": "돌려주다" },
+    "buy":     { "hanzi": ["買", "購"], "label_ko": "사다" },
+    "sell":    { "hanzi": ["賣", "售"], "label_ko": "팔다" }
+  },
+  "exchange_type": {
+    "gift":       { "hanzi": ["惠", "送", "贈"], "label_ko": "선물", "description": "대가 없는 증여" },
+    "loan":       { "hanzi": ["借"], "label_ko": "대여", "description": "반환 전제 대여" },
+    "commission": { "hanzi": ["求", "索", "囑"], "label_ko": "의뢰", "description": "서화·문서 제작 의뢰" },
+    "purchase":   { "hanzi": ["買"], "label_ko": "구매", "description": "화폐 교환" },
+    "return":     { "hanzi": ["還"], "label_ko": "반환", "description": "빌린 물건 반환" },
+    "tribute":    { "hanzi": ["上", "進"], "label_ko": "상납", "description": "상급자에 대한 헌상" }
+  },
+  "object_type": {
+    "artwork":    { "label_ko": "서화", "examples": ["蘭竹一幅", "墨竹", "書蘭亭序"] },
+    "book":       { "label_ko": "서적", "examples": ["文集", "詩卷"] },
+    "food":       { "label_ko": "음식", "examples": ["酒", "魚", "蟹", "餅", "茶"] },
+    "medicine":   { "label_ko": "약재", "examples": ["藥"] },
+    "money":      { "label_ko": "금전", "examples": ["錢", "銀", "鈔"] },
+    "stationery": { "label_ko": "문방구", "examples": ["紙", "墨", "筆", "硯"] },
+    "textile":    { "label_ko": "직물", "examples": ["布", "絹", "衣"] },
+    "other":      { "label_ko": "기타", "examples": [] }
+  }
+}

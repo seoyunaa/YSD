@@ -1,0 +1,17 @@
+{
+  "id": "office-0001",
+  "entity_type": "office",
+  "label_original": "提舉",
+  "label_normalized": "提舉",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "vocabulary_id": "artwork-activities",
+  "version": "1.0.0",
+  "last_updated": "2026-03-28",
+  "_changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-28",
+      "change": "initial vocabulary",
+      "reason": "운산일기 전체 텍스트에서 귀납적으로 추출한 초기 어휘",
+      "affected_entries": null
+    }
+  ],
+  "description": "artworks 필드에 사용하는 통제어휘. 서화 활동 유형과 매체.",
+  "activity": {
+    "create":   { "hanzi": ["作", "書", "畫", "寫"], "label_ko": "창작", "description": "직접 서화 제작" },
+    "view":     { "hanzi": ["觀", "看", "閱"], "label_ko": "감상", "description": "타인 작품 감상" },
+    "appraise": { "hanzi": ["品", "評", "鑒"], "label_ko": "품평", "description": "작품 평가·감정" },
+    "mount":    { "hanzi": ["裝", "裱"], "label_ko": "장황", "description": "표구·장황 작업" },
+    "request":  { "hanzi": ["求書", "求畫", "索"], "label_ko": "의뢰", "description": "타인에게 서화 요청" },
+    "copy":     { "hanzi": ["臨", "摹"], "label_ko": "임모", "description": "고전 작품 임서·임모" },
+    "inscribe": { "hanzi": ["題", "跋"], "label_ko": "제발", "description": "작품 위에 제영·발문 기록" }
+  },
+  "medium": {
+    "calligraphy": { "hanzi": ["書"], "label_ko": "서예" },
+    "painting":    { "hanzi": ["畫"], "label_ko": "회화" },
+    "seal":        { "hanzi": ["印", "篆"], "label_ko": "전각" },
+    "mixed":       { "label_ko": "혼합", "description": "서화 병용 또는 분류 불가" }
+  },
+  "common_subjects": {
+    "description": "일기에 자주 등장하는 서화 제재",
+    "calligraphy_subjects": ["蘭亭序", "千字文", "尺牘", "碑帖"],
+    "painting_subjects": ["墨竹", "蘭", "山水", "梅", "人物"]
+  }
+}

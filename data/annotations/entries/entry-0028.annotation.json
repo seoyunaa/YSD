@@ -1,0 +1,330 @@
+{
+  "entry_id": "entry-0028",
+  "summary_ko": "항주 체류 중 성중과 제거사를 오가며 서류와 해유 문제를 처리하고, 장덕휘·범성지·구중산 등과 교유하며 밤에는 비를 예감한 entry",
+  "text_corrections": [],
+  "translation_revised": "25일, 흐렸다. 항주에 머물렀다. 아침 일찍 성중(省中)에 가서 이숙의(李叔義)를 만났다. 이어서 예방(禮房)에 들어가 외랑(外郞) 장덕휘(張德輝)를 만나 일에 대해 이야기하였다. 제거사(提舉司)에 가서 금군옥(金君玉)의 서권(書卷)을 재촉하였으나, 왕일초(王一初)가 허락하지 않았다. 다시 성중에 가서 이숙의를 만나고, 왕공(王公)을 만나 줄 것을 부탁하였다. 범성지(范成之) 주부(主簿)가 찾아왔다. 저녁에 장덕휘가 이야기하자고 청하여, 구중산(丘中山) 교수(教授)를 만났다. 덕휘가 해유(解由)를 찾아보았으나 보이지 않아, 대신 알아봐 달라고 부탁하였다. 범성지를 만났다. 윤자원(尹子源)이 작은 술자리를 하자고 약속하였다. 이 밤, 객루(客樓)가 매우 후덥지근하니, 반드시 비가 올 것이다.",
+  "translation_notes": [
+    {
+      "type": "editorial",
+      "text": "name_office_corrections: 李叔義\n張德輝+外郞(혹은 德輝)\n金君玉\n尹子源\n王一初=王公\n范成之+主簿\n丘中山+教授"
+    },
+    {
+      "type": "editorial",
+      "text": "place_movement_corrections: 항주 체류 전체\n- 客杭: 항주에 머묾\n\n항주 관청 공간\n- 省中\n  - 禮房\n- 提舉司"
+    },
+    {
+      "type": "editorial",
+      "text": "food_hospitality: 小飮"
+    }
+  ],
+  "persons": [
+    {
+      "entity_id": "person-0026",
+      "surface": "李叔義",
+      "normalized": "李叔義",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0019",
+      "surface": "張德輝+外郞(혹은 德輝)",
+      "normalized": "張德輝",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "certainty_reason": "혹은 德輝",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "張德輝",
+          "entity_id": "person-0019"
+        },
+        {
+          "kind": "office",
+          "surface": "外郞",
+          "entity_id": "office-0004"
+        }
+      ],
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "person-0055",
+      "surface": "金君玉",
+      "normalized": "金君玉",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0067",
+      "surface": "尹子源",
+      "normalized": "尹子源",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0068",
+      "surface": "王一初",
+      "normalized": "王公",
+      "role": "mentioned_person",
+      "mention_type": "alias"
+    },
+    {
+      "entity_id": "person-0069",
+      "surface": "范成之+主簿",
+      "normalized": "范成之",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "范成之",
+          "entity_id": "person-0069"
+        },
+        {
+          "kind": "office",
+          "surface": "主簿",
+          "entity_id": "office-0012"
+        }
+      ],
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "person-0070",
+      "surface": "丘中山+教授",
+      "normalized": "丘中山",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "丘中山",
+          "entity_id": "person-0070"
+        },
+        {
+          "kind": "office",
+          "surface": "教授",
+          "entity_id": "office-0002"
+        }
+      ],
+      "register_context": "administrative"
+    }
+  ],
+  "places": [
+    {
+      "entity_id": "place-0032",
+      "surface": "客杭",
+      "normalized": "客杭",
+      "role": "location",
+      "certainty_reason": "항주에 머묾",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0045",
+      "surface": "省中",
+      "normalized": "省中",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0055",
+      "surface": "禮房",
+      "normalized": "禮房",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0056",
+      "surface": "提舉司",
+      "normalized": "提舉司",
+      "role": "location",
+      "register_context": "administrative"
+    }
+  ],
+  "offices": [
+    {
+      "entity_id": "office-0004",
+      "surface": "外郞",
+      "normalized": "外郞",
+      "role": "title",
+      "mention_type": "office",
+      "certainty_reason": "혹은 德輝",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0012",
+      "surface": "主簿",
+      "normalized": "主簿",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0002",
+      "surface": "教授",
+      "normalized": "教授",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    }
+  ],
+  "institutions": [
+    {
+      "entity_id": "institution-0012",
+      "surface": "提舉司",
+      "normalized": "提舉司",
+      "role": "mentioned_institution",
+      "register_context": "administrative"
+    }
+  ],
+  "documents": [
+    {
+      "entity_id": "document-0009",
+      "surface": "書卷",
+      "normalized": "書卷",
+      "role": "mentioned_item"
+    },
+    {
+      "entity_id": "document-0010",
+      "surface": "解由",
+      "normalized": "解由",
+      "role": "mentioned_item"
+    }
+  ],
+  "works": [],
+  "consumables": [
+    {
+      "entity_id": "consumable-0011",
+      "surface": "小飮",
+      "normalized": "小飮",
+      "role": "hospitality_item"
+    }
+  ],
+  "interactions": [
+    {
+      "seq": 1,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0026",
+      "companions": [],
+      "result": "met",
+      "location": "place-0032",
+      "notes": null
+    },
+    {
+      "seq": 2,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0019",
+      "companions": [],
+      "result": "met",
+      "location": "place-0032",
+      "notes": "혹은 德輝"
+    },
+    {
+      "seq": 3,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0055",
+      "companions": [],
+      "result": "met",
+      "location": "place-0032",
+      "notes": null
+    },
+    {
+      "seq": 4,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0067",
+      "companions": [],
+      "result": "met",
+      "location": "place-0032",
+      "notes": null
+    },
+    {
+      "seq": 5,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0068",
+      "companions": [],
+      "result": "met",
+      "location": "place-0032",
+      "notes": null
+    },
+    {
+      "seq": 6,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0069",
+      "companions": [],
+      "result": "met",
+      "location": "place-0032",
+      "notes": null
+    },
+    {
+      "seq": 7,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0070",
+      "companions": [],
+      "result": "met",
+      "location": "place-0032",
+      "notes": null
+    },
+    {
+      "seq": 8,
+      "action": "dined_with",
+      "agent": "person-0001",
+      "target": "person-0026",
+      "companions": [],
+      "result": "met",
+      "location": "place-0032",
+      "notes": "小飮"
+    }
+  ],
+  "exchanges": [],
+  "artworks": [],
+  "journey": {
+    "from": "place-0045",
+    "to": "place-0056",
+    "via": [
+      "place-0055"
+    ],
+    "mode": null,
+    "distance_raw": "省中 → 禮房 → 提舉司 → 省中"
+  },
+  "time_markers": [],
+  "emotional_markers": [],
+  "costs": [],
+  "topics": [
+    "문예",
+    "관청"
+  ],
+  "notes": [
+    {
+      "type": "editorial",
+      "text": "weather: 陰\n(客樓暄甚，必雨作也。날씨에 대한 예감)"
+    },
+    {
+      "type": "editorial",
+      "text": "王一初가 허락하지 않음(未允)"
+    },
+    {
+      "type": "editorial",
+      "text": "是夜，客樓暄甚 (밤생활)"
+    },
+    {
+      "type": "uncertainty",
+      "text": "review ambiguity noted"
+    }
+  ],
+  "status": {
+    "summary": "done",
+    "entities": "done",
+    "review": "reviewed"
+  },
+  "provenance": {
+    "annotated_by": "codex",
+    "updated_at": "2026-03-29T00:57:28",
+    "reviewed_by": "seo_yuna",
+    "review_method": "translation_assisted"
+  }
+}

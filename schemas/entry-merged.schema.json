@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "entry-merged.schema.json",
+  "description": "Layer 4: base + annotation 병합 결과. 수동 편집 금지 — merge_annotations.ps1로 재생성.",
+  "type": "object",
+  "required": ["id", "work_id", "sequence", "kind", "text"],
+  "properties": {
+    "id": { "type": "string" },
+    "work_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "kind": { "type": "string" },
+    "head": { "type": "string" },
+    "month_context": { "type": "object" },
+    "date": { "type": "object" },
+    "weather": { "type": "object" },
+    "mobility": { "type": "object" },
+    "text_pointer": { "type": "object" },
+    "text": { "type": "string" },
+    "summary_ko": { "type": "string" },
+    "persons": { "type": "array" },
+    "places": { "type": "array" },
+    "offices": { "type": "array" },
+    "institutions": { "type": "array" },
+    "documents": { "type": "array" },
+    "works": { "type": "array" },
+    "consumables": { "type": "array" },
+    "topics": { "type": "array" },
+    "notes": { "type": "array" },
+    "status": { "type": "object" },
+    "provenance": { "type": "object" }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "institution-0001",
+  "entity_type": "institution",
+  "label_original": "太平寺",
+  "label_normalized": "太平寺",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [],
+  "notes": "常州성 내의 사찰",
+  "status": "active",
+  "institution_info": {
+    "institution_type": "temple",
+    "place_id": "place-0006",
+    "parent_institution_id": null
+  },
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

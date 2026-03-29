@@ -1,0 +1,25 @@
+{
+  "vocabulary_id": "time-positions",
+  "version": "1.0.0",
+  "last_updated": "2026-03-28",
+  "_changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-28",
+      "change": "initial vocabulary",
+      "reason": "운산일기 전체 텍스트에서 귀납적으로 추출한 초기 어휘",
+      "affected_entries": null
+    }
+  ],
+  "description": "time_markers.position 필드에 사용하는 통제어휘. 하루 내 시간대.",
+  "positions": {
+    "dawn":       { "hanzi": ["曉", "五更", "雞鳴"], "label_ko": "새벽", "approx_hour": "04-06" },
+    "morning":    { "hanzi": ["早", "朝", "辰"], "label_ko": "아침", "approx_hour": "06-09" },
+    "noon":       { "hanzi": ["午", "日中", "正午"], "label_ko": "정오", "approx_hour": "11-13" },
+    "afternoon":  { "hanzi": ["午後", "晡", "申"], "label_ko": "오후", "approx_hour": "13-17" },
+    "evening":    { "hanzi": ["暮", "傍晚", "日暮", "昏"], "label_ko": "저녁", "approx_hour": "17-19" },
+    "night":      { "hanzi": ["夜", "初更", "見燈"], "label_ko": "밤", "approx_hour": "19-23" },
+    "late_night": { "hanzi": ["更深", "夜半", "三更", "四更"], "label_ko": "심야", "approx_hour": "23-04" }
+  },
+  "notes": "元代는 更點制를 사용. 夜禁(야간통행금지)과 관련된 시간 표현도 포함."
+}

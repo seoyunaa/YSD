@@ -1,0 +1,27 @@
+{
+  "id": "person-0009",
+  "entity_type": "person",
+  "label_original": "白无咎",
+  "label_normalized": "白无咎",
+  "first_seen_entry_id": "entry-0021",
+  "aliases": [
+    {
+      "surface": "白无咎(无咎)",
+      "alias_type": "alias",
+      "ambiguous": false,
+      "notes": "无咎"
+    }
+  ],
+  "notes": "无咎",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

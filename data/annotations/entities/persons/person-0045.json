@@ -1,0 +1,42 @@
+{
+  "id": "person-0045",
+  "entity_type": "person",
+  "label_original": "趙子昂",
+  "label_normalized": "趙子昂",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [
+    {
+      "surface": "趙子昂+學士",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": "만나지 못함(조맹부)"
+    }
+  ],
+  "notes": "만나지 못함",
+  "status": "active",
+  "relations": [],
+  "appointments": [
+    {
+      "office_id": "office-0011",
+      "institution_id": "institution-0009",
+      "place_id": "place-0032",
+      "period_raw": "entry-0027",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0027"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": "만나지 못함(조맹부)"
+    }
+  ],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

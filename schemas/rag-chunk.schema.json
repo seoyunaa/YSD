@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rag-chunk.schema.json",
+  "description": "Layer 7 (RAG): 검색 가능한 근거 단위. 자동 생성, 수동 편집 금지. thin corpus 단계와 reviewed gold set 단계를 모두 수용한다.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "chunk_id",
+    "chunk_type",
+    "source_entry_ids",
+    "text_ko",
+    "evidence_raw",
+    "certainty",
+    "review_status",
+    "provenance"
+  ],
+  "properties": {
+    "chunk_id": {
+      "type": "string",
+      "pattern": "^chunk-(entry|seq|dossier|assertion)-[0-9a-z_-]+$",
+      "description": "chunk 식별자. 예: chunk-entry-0019, chunk-seq-auto-0001, chunk-dossier-person-0042"
+    },
+    "chunk_type": {
+      "type": "string",
+      "enum": ["entry", "sequence", "entity_dossier", "assertion_bundle"],
+      "description": "entry: 단일 entry / sequence: 수동 discourse 또는 auto fallback 연쇄 / entity_dossier: 개체 누적 카드 / assertion_bundle: 관련 assertion 묶음"
+    },
+    "source_entry_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "이 chunk의 근거가 되는 entry ID 목록."
+    },
+    "source_sequence_id": {
+      "type": ["string", "null"],
+      "description": "manual discourse 기반 sequence chunk일 때 sequence ID."
+    },
+    "source_entity_id": {
+      "type": ["string", "null"],
+      "description": "entity dossier chunk일 때 entity authority ID."
+    },
+    "sequence_type": {
+      "type": ["string", "null"],
+      "enum": [
+        "career_pursuit",
+        "travel_arc",
+        "social_ritual",
+        "illness",
+        "literary_project",
+        "administrative",
+        "seasonal_pattern",
+        "other",
+        null
+      ],
+      "description": "sequence chunk의 유형. discourse 기반이면 discourse schema의 유형을 계승하고, auto fallback이면 travel_arc 또는 other를 사용."
+    },
+    "source_text_pointer": {
+      "type": ["object", "null"],
+      "description": "원문 포인터. thin 단계에서는 file + entry_id만 채우고, gold set 단계에서 line 정보를 채운다.",
+      "properties": {
+        "file": { "type": "string", "description": "원문 파일 경로. 예: texts/plain/yunsanriji_fulltext.txt" },
+        "start_line": { "type": ["integer", "null"], "description": "원문 시작 행" },
+        "end_line": { "type": ["integer", "null"], "description": "원문 끝 행" }
+      }
+    },
+    "text_ko": {
+      "type": "string",
+      "description": "검색 대상 한국어 텍스트. thin 단계에서는 AI 번역, gold set 단계에서는 교정 번역 또는 연구자 요약."
+    },
+    "text_lzh": {
+      "type": ["string", "null"],
+      "description": "원문 한문. entry chunk에서는 원문 전체, 다른 유형에서는 핵심 인용 또는 null."
+    },
+    "translation_basis": {
+      "type": ["string", "null"],
+      "enum": [
+        "human_revised_translation",
+        "ai_translation_annotated",
+        "ai_translation_raw",
+        "researcher_summary",
+        "compiled_ai_translation",
+        null
+      ],
+      "description": "text_ko의 출처. RAG 답변에서 신뢰도 표시에 사용. entity_dossier/assertion_bundle에서 여러 출처가 섞일 경우 null 허용."
+    },
+    "sequence_source": {
+      "type": ["string", "null"],
+      "enum": ["researcher_authored", "auto_fallback", null],
+      "description": "sequence chunk의 생성 출처. researcher_authored: 연구자가 discourse layer에 직접 작성한 sequence / auto_fallback: 규칙 기반 자동 생성. entry/dossier/assertion_bundle chunk이면 null."
+    },
+    "evidence_raw": {
+      "type": "string",
+      "description": "검색 결과에서 직접 보여줄 핵심 원문 인용."
+    },
+    "certainty": {
+      "type": "string",
+      "enum": ["confirmed", "probable", "uncertain", "mixed"],
+      "description": "chunk 수준의 전반적 확실성."
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["reviewed", "unreviewed", "partial"],
+      "description": "원본 annotation/discourse/authority의 검토 상태를 계승."
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entity_id", "entity_type", "label"],
+        "properties": {
+          "entity_id": { "type": "string" },
+          "entity_type": { "type": "string" },
+          "label": { "type": "string" }
+        }
+      },
+      "description": "이 chunk에 등장하는 개체 목록. thin 단계에서는 빈 배열 허용."
+    },
+    "topics": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "주제 태그. thin 단계에서는 빈 배열 허용."
+    },
+    "places": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "place entity_id 목록. thin 단계에서는 빈 배열 허용."
+    },
+    "temporal_range": {
+      "type": ["object", "null"],
+      "description": "이 chunk가 다루는 시간 범위.",
+      "properties": {
+        "from_display": { "type": "string" },
+        "to_display": { "type": "string" }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "token_count_approx": {
+          "type": ["integer", "null"],
+          "description": "text_ko의 대략적 토큰 수"
+        },
+        "embedding_model": {
+          "type": ["string", "null"],
+          "description": "임베딩 생성에 사용된 모델 (해당 시)"
+        },
+        "fallback_place_label": {
+          "type": ["string", "null"],
+          "description": "auto fallback sequence에서 감지된 체류지 라벨"
+        },
+        "fallback_movement_cues": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "auto fallback sequence를 끊거나 travel_arc로 분류할 때 감지된 cue 목록"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["generated_by", "generated_at", "data_commit"],
+      "properties": {
+        "generated_by": { "type": "string", "description": "생성 스크립트" },
+        "generated_at": { "type": "string" },
+        "data_commit": { "type": ["string", "null"], "description": "생성 시점의 git commit hash" }
+      }
+    }
+  }
+}

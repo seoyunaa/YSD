@@ -1,0 +1,27 @@
+{
+  "id": "person-0008",
+  "entity_type": "person",
+  "label_original": "蔡德甫",
+  "label_normalized": "蔡德甫",
+  "first_seen_entry_id": "entry-0021",
+  "aliases": [
+    {
+      "surface": "蔡德甫(蔡+兄)",
+      "alias_type": "alias",
+      "ambiguous": false,
+      "notes": "蔡+兄"
+    }
+  ],
+  "notes": "蔡+兄",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "vocabulary_id": "action-types",
+  "version": "1.0.0",
+  "last_updated": "2026-03-28",
+  "_changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-28",
+      "change": "initial vocabulary",
+      "reason": "운산일기 전체 텍스트에서 귀납적으로 추출한 초기 어휘",
+      "affected_entries": null
+    }
+  ],
+  "description": "interactions.action 필드에 사용하는 통제어휘. 원문 용례에서 귀납적으로 구축.",
+  "categories": {
+    "movement": {
+      "label_ko": "이동",
+      "terms": {
+        "depart":       { "hanzi": ["發", "行"], "label_ko": "출발" },
+        "arrive":       { "hanzi": ["至", "到", "抵"], "label_ko": "도착" },
+        "pass_through": { "hanzi": ["過", "經"], "label_ko": "경유" },
+        "lodge":        { "hanzi": ["宿", "泊"], "label_ko": "투숙" },
+        "return":       { "hanzi": ["歸", "囘"], "label_ko": "귀환" },
+        "board_boat":   { "hanzi": ["登舟", "解纜"], "label_ko": "승선" },
+        "disembark":    { "hanzi": ["登岸", "泊岸"], "label_ko": "하선" }
+      }
+    },
+    "social_visit": {
+      "label_ko": "방문",
+      "terms": {
+        "visit":         { "hanzi": ["訪", "過"], "label_ko": "방문" },
+        "return_visit":  { "hanzi": ["囘謁", "答拜"], "label_ko": "답방" },
+        "receive_visit": { "hanzi": ["來訪", "來"], "label_ko": "내방 받음" },
+        "meet":          { "hanzi": ["見", "遇", "晤"], "label_ko": "만남" },
+        "see_off":       { "hanzi": ["送", "餞"], "label_ko": "전송" },
+        "welcome":       { "hanzi": ["迎", "接"], "label_ko": "영접" }
+      }
+    },
+    "dining": {
+      "label_ko": "음식",
+      "terms": {
+        "drink":  { "hanzi": ["飲", "酌"], "label_ko": "음주" },
+        "feast":  { "hanzi": ["宴", "席"], "label_ko": "연회" },
+        "eat":    { "hanzi": ["食", "飯"], "label_ko": "식사" },
+        "tea":    { "hanzi": ["茶", "點茶"], "label_ko": "다과" }
+      }
+    },
+    "ritual": {
+      "label_ko": "의례",
+      "terms": {
+        "condolence":    { "hanzi": ["弔", "吊"], "label_ko": "조문" },
+        "congratulate":  { "hanzi": ["賀"], "label_ko": "축하" },
+        "sacrifice":     { "hanzi": ["祭", "拜"], "label_ko": "제사" },
+        "farewell_rite": { "hanzi": ["祖餞", "祖道"], "label_ko": "전별의례" }
+      }
+    },
+    "official": {
+      "label_ko": "관무",
+      "terms": {
+        "attend_office":    { "hanzi": ["赴公", "入公"], "label_ko": "출근" },
+        "submit_document":  { "hanzi": ["呈", "上"], "label_ko": "문서제출" },
+        "attend_audience":  { "hanzi": ["朝參", "參"], "label_ko": "조참" },
+        "hear_case":        { "hanzi": ["聽訟"], "label_ko": "심리" },
+        "inspect":          { "hanzi": ["巡", "視"], "label_ko": "순시" }
+      }
+    },
+    "literary": {
+      "label_ko": "문예",
+      "terms": {
+        "compose":  { "hanzi": ["賦", "作", "詠"], "label_ko": "창작" },
+        "inscribe": { "hanzi": ["題"], "label_ko": "제영" },
+        "read":     { "hanzi": ["讀", "閱"], "label_ko": "독서" },
+        "discuss":  { "hanzi": ["論", "談"], "label_ko": "담론" }
+      }
+    },
+    "leisure": {
+      "label_ko": "여가",
+      "terms": {
+        "stroll":     { "hanzi": ["步", "散步"], "label_ko": "산책" },
+        "play_chess": { "hanzi": ["棊", "碁"], "label_ko": "바둑/장기" },
+        "converse":   { "hanzi": ["語", "話"], "label_ko": "담화" },
+        "rest":       { "hanzi": ["憩", "歇"], "label_ko": "휴식" },
+        "sightsee":   { "hanzi": ["遊", "覽"], "label_ko": "유람" }
+      }
+    },
+    "health": {
+      "label_ko": "건강",
+      "terms": {
+        "fall_ill":     { "hanzi": ["病", "不佳"], "label_ko": "발병" },
+        "take_medicine":{ "hanzi": ["服藥", "進藥"], "label_ko": "복약" },
+        "recover":      { "hanzi": ["愈", "差"], "label_ko": "회복" }
+      }
+    }
+  }
+}

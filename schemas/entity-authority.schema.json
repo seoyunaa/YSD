@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "entity-authority.schema.json",
+  "description": "인물/장소/직함/기관 authority 파일 공통 구조",
+  "type": "object",
+  "required": ["id", "entity_type", "label_original", "status"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^(person|place|office|institution|document|work|consumable)-[0-9]{4}$" },
+    "entity_type": { "type": "string", "enum": ["person", "place", "office", "institution", "document", "work", "consumable"] },
+    "label_original": { "type": "string", "description": "대표 원문 표기" },
+    "label_normalized": { "type": ["string", "null"], "description": "정규화된 표기. 불확실하면 null" },
+    "first_seen_entry_id": { "type": "string" },
+    "notes": { "type": ["string", "null"] },
+    "status": { "type": "string", "enum": ["active", "redirect", "deprecated"] },
+
+    "aliases": {
+      "type": "array",
+      "description": "동일 개체의 다른 표기들",
+      "items": {
+        "type": "object",
+        "required": ["surface"],
+        "properties": {
+          "surface": { "type": "string" },
+          "alias_type": { "type": "string", "enum": ["ming", "zi", "hao", "office", "kinship", "alias"] },
+          "ambiguous": { "type": "boolean" },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "redirect_to": {
+      "type": ["string", "null"],
+      "description": "이 파일이 변형/약칭이면 canonical id를 가리킨다"
+    },
+
+    "relations": {
+      "type": "array",
+      "description": "이 인물과 다른 인물의 관계 (person entity에만 해당).",
+      "items": {
+        "type": "object",
+        "required": ["target_id", "relation_type"],
+        "properties": {
+          "target_id": { "type": "string", "description": "관계 대상 person entity_id" },
+          "relation_type": {
+            "type": "string",
+            "enum": [
+              "father", "son", "brother", "uncle", "nephew",
+              "father_in_law", "son_in_law",
+              "teacher", "student",
+              "colleague", "superior", "subordinate",
+              "fellow_townsman", "friend",
+              "other"
+            ],
+            "description": "이 인물 → 대상 인물 방향의 관계 유형."
+          },
+          "source_entry_id": { "type": ["string", "null"], "description": "관계가 확인되는 entry" },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+
+    "appointments": {
+      "type": "array",
+      "description": "이 인물의 관직·직함 이력 (person entity에만 해당). 개체 유형을 넘나드는 관계를 시간축과 함께 기록.",
+      "items": {
+        "type": "object",
+        "required": ["office_id"],
+        "properties": {
+          "office_id": { "type": "string", "description": "관직/직함 office entity_id" },
+          "institution_id": { "type": ["string", "null"], "description": "소속 기관 institution entity_id" },
+          "place_id": { "type": ["string", "null"], "description": "부임지/소재지 place entity_id" },
+          "period_raw": { "type": ["string", "null"], "description": "원문의 시기 표현. 예: 至大年間, 至元二十三年三月十一日" },
+          "period_start": { "type": ["string", "null"], "description": "시작 시점 (ISO date 또는 연호 표기)" },
+          "period_end": { "type": ["string", "null"], "description": "종료 시점" },
+          "source_entry_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "이 임명이 확인되는 entry ID 목록"
+          },
+          "source_external": { "type": ["string", "null"], "description": "외부 사료 근거. 예: 至順鎭江志 卷十九" },
+          "grade": {
+            "type": "string",
+            "enum": ["confirmed", "probable", "hold", "unresolved"],
+            "description": "이 임명 정보의 확실성 등급"
+          },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+
+    "residences": {
+      "type": "array",
+      "description": "이 인물의 거주/출신지 (person entity에만 해당).",
+      "items": {
+        "type": "object",
+        "required": ["place_id", "residence_type"],
+        "properties": {
+          "place_id": { "type": "string", "description": "place entity_id" },
+          "residence_type": {
+            "type": "string",
+            "enum": ["origin", "residence", "sojourn"],
+            "description": "origin: 출신지/본관 / residence: 거주지 / sojourn: 임시 체류지"
+          },
+          "period_raw": { "type": ["string", "null"] },
+          "source_entry_ids": { "type": "array", "items": { "type": "string" } },
+          "grade": { "type": "string", "enum": ["confirmed", "probable", "hold", "unresolved"] },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+
+    "place_info": {
+      "type": "object",
+      "description": "공간 구조 정보 (place entity에만 해당).",
+      "properties": {
+        "place_type": {
+          "type": "string",
+          "enum": ["city", "town", "village", "river_port", "lock_gate", "temple", "academy", "office_building", "residence", "market", "mountain", "lake", "river", "canal", "other"],
+          "description": "city: 路/州/縣 급 도시 / town: 鎭 / village: 촌락 / river_port: 渡口/碼頭 / lock_gate: 壩/閘 / temple: 사찰/도관 / academy: 서원 / office_building: 관아 / residence: 개인 주거 / market: 시장/주점 / mountain/lake/river/canal: 자연 지형"
+        },
+        "admin_level": {
+          "type": ["string", "null"],
+          "enum": ["lu", "zhou", "xian", "zhen", "other", null],
+          "description": "원대 행정 등급. lu: 路 / zhou: 州 / xian: 縣 / zhen: 鎭"
+        },
+        "parent_place_id": {
+          "type": ["string", "null"],
+          "description": "상위 행정 단위의 place entity_id. 예: 長安鎭의 parent는 嘉興."
+        },
+        "coordinates": {
+          "type": ["object", "null"],
+          "properties": {
+            "lat": { "type": "number" },
+            "lng": { "type": "number" },
+            "precision": { "type": "string", "enum": ["exact", "approximate", "region"] }
+          },
+          "description": "좌표. CHGIS 또는 연구자 추정. precision으로 정밀도 표시."
+        },
+        "period_names": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "period": { "type": "string", "description": "예: 元代, 南宋, 現代" }
+            }
+          },
+          "description": "시대별 지명 변화. 예: 鎭江(元代) = 京口(통칭)."
+        }
+      }
+    },
+
+    "institution_info": {
+      "type": "object",
+      "description": "기관 구조 정보 (institution entity에만 해당).",
+      "properties": {
+        "institution_type": {
+          "type": "string",
+          "enum": ["academy", "temple", "government", "military", "commercial", "other"],
+          "description": "academy: 서원 / temple: 사찰/도관 / government: 관아 / military: 군영 / commercial: 상업 시설"
+        },
+        "place_id": { "type": ["string", "null"], "description": "소재지 place entity_id" },
+        "parent_institution_id": { "type": ["string", "null"], "description": "상위 기관 entity_id" }
+      }
+    },
+
+    "external_ids": {
+      "type": "object",
+      "description": "외부 authority 연결. 확정 가능한 것만 입력.",
+      "properties": {
+        "cbdb": {
+          "type": "object",
+          "properties": {
+            "id": { "type": ["integer", "null"] },
+            "grade": {
+              "type": "string",
+              "enum": ["confirmed", "probable", "hold", "rejected", "unresolved"],
+              "description": "confirmed: 2개 이상 일치 / probable: 강+약 1개씩 / hold: 후보 있으나 근거 부족 / rejected: 불일치 / unresolved: 후보 없음"
+            },
+            "notes": { "type": ["string", "null"] }
+          }
+        },
+        "chgis": {
+          "type": "object",
+          "properties": {
+            "id": { "type": ["integer", "null"] },
+            "grade": { "type": "string", "enum": ["confirmed", "probable", "hold", "rejected", "unresolved"] },
+            "notes": { "type": ["string", "null"] }
+          }
+        },
+        "inindex": {
+          "type": "object",
+          "properties": {
+            "url": { "type": ["string", "null"], "description": "Inindex 안정 URL" },
+            "grade": { "type": "string", "enum": ["confirmed", "probable", "hold", "rejected", "unresolved"] },
+            "notes": { "type": ["string", "null"] }
+          }
+        }
+      }
+    }
+  }
+}

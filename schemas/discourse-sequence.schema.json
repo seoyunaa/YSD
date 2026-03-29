@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "discourse-sequence.schema.json",
+  "description": "Layer 4.5: 며칠짜리 연쇄(multi-day sequence). 연구자가 직접 작성. 자동 생성하지 않는다.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sequence_id", "label", "entry_ids", "sequence_type", "narrative_summary_ko", "provenance"],
+  "properties": {
+    "sequence_id": {
+      "type": "string",
+      "pattern": "^seq-[0-9]{4}$",
+      "description": "연쇄 식별자. 예: seq-0001"
+    },
+    "label": {
+      "type": "string",
+      "description": "연쇄의 짧은 이름. 예: 항주 체류 구직 활동"
+    },
+    "entry_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 2,
+      "description": "이 연쇄에 포함되는 entry ID 목록. 시간순 정렬."
+    },
+    "sequence_type": {
+      "type": "string",
+      "enum": [
+        "career_pursuit",
+        "travel_arc",
+        "social_ritual",
+        "illness",
+        "literary_project",
+        "administrative",
+        "seasonal_pattern",
+        "other"
+      ],
+      "description": "career_pursuit: 구직·관직 활동 / travel_arc: 여행 연쇄 / social_ritual: 혼례·상례 등 의례 과정 / illness: 질병 경과 / literary_project: 서화·저술 프로젝트 / administrative: 관무 처리 / seasonal_pattern: 계절 반복 패턴 / other"
+    },
+    "temporal_span": {
+      "type": "object",
+      "required": ["from_entry", "to_entry"],
+      "properties": {
+        "from_entry": { "type": "string", "description": "시작 entry ID" },
+        "to_entry": { "type": "string", "description": "종료 entry ID" },
+        "duration_days": { "type": ["integer", "null"], "description": "총 일수 (계산 가능한 경우)" }
+      }
+    },
+    "key_persons": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "이 연쇄에서 핵심적으로 등장하는 person entity_id 목록"
+    },
+    "key_places": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "이 연쇄의 주요 공간 place entity_id 목록"
+    },
+    "narrative_summary_ko": {
+      "type": "string",
+      "description": "한국어 서사 요약. 연쇄의 흐름과 인과 관계를 산문으로 기술."
+    },
+    "research_significance": {
+      "type": ["string", "null"],
+      "description": "이 연쇄가 논문에서 갖는 의미. 예: 금주령 전후 음주 빈도 변화의 핵심 근거."
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "text"],
+        "properties": {
+          "type": { "type": "string", "enum": ["uncertainty", "editorial", "cross_reference"] },
+          "text": { "type": "string" },
+          "source": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["authored_by", "authored_at"],
+      "properties": {
+        "authored_by": { "type": "string", "description": "작성자 식별자. 이 레이어는 연구자가 직접 작성." },
+        "authored_at": { "type": "string", "description": "작성 일자 (ISO date)" }
+      }
+    }
+  }
+}

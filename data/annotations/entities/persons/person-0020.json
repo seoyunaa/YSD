@@ -1,0 +1,27 @@
+{
+  "id": "person-0020",
+  "entity_type": "person",
+  "label_original": "潘伯起",
+  "label_normalized": "潘伯起",
+  "first_seen_entry_id": "entry-0023",
+  "aliases": [
+    {
+      "surface": "杭人+潘伯起",
+      "alias_type": "descriptor",
+      "ambiguous": false,
+      "notes": "杭人은 항주 사람이라는 뜻. 대도에서 만났던 사이."
+    }
+  ],
+  "notes": "杭人은 항주 사람이라는 뜻. 대도에서 만났던 사이.",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

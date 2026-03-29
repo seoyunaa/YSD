@@ -1,0 +1,690 @@
+{
+  "entry_id": "entry-0025",
+  "summary_ko": "항주 성 밖에서 새벽에 입성한 뒤 숙소를 정하고, 항주 성내 여러 인물과 관청을 차례로 방문하며 공자경의 서신을 전달하고 교유를 이어간 entry",
+  "text_corrections": [],
+  "translation_revised": "22일, 사경(四更)에 항주 성 밖에 도착하니 서리 낀 달빛이 하늘에 가득하고 찬 기운이 사람을 엄습하였다. 북관문 접대사(接待寺)에서 기다리다가 종이 울리자 배를 갈아타고 성 안으로 들어갔다. 새벽 무렵 반백기(潘伯起)가 나를 시수방교(施水坊橋)에 있는 심대조(沈待詔)의 누에 머물게 하였는데, 금단(金壇) 출신 윤자원(尹子源)도 그곳에 함께 묵고 있었다. 다리 동쪽에서 조백가(趙伯可)와 저숙의(儲叔儀)를 찾아보고, 타저항(打猪巷)에서 이백옥(李伯玉)을 만나 차를 마시며 이야기를 나누었다. 이어 강절행성(江浙省)의 조마소(照磨所)에 가서 이숙의(李叔義)를 만났고, 성 서쪽에서는 장국존(張菊存)을 만나 공자경(龔子敬)의 편지를 전하였다. 또 장송간(張松㵎) 부판(府判)을 만났다. 오방(五房)에 이른 뒤에는 무림청(武臨淸) 제거(提舉)를 만나고, 왕일초(王一初)·주유도(周有道) 두 도목(都目), 이교수(李敎授), 그리고 무공령과 似□□教授를 함께 만났다. 숙소로 돌아와 오무지(吳茂之)를 만났는데, 집주인이 술상을 차려 가볍게 마셨고 나도 술을 더 보탰다. 오무지와 함께 장생노인교(長生老人橋)로 가서 당중문(唐仲文)을 찾았으나, 그가 새로 염리(廉吏)에 보임되었음에도 만나지 못하고 돌아왔다. 기사교(紀家橋)를 지나 해고문(解庫門) 앞에서 오약유(吴若遺) 제점(提點)을 만났다.",
+  "translation_notes": [
+    {
+      "type": "editorial",
+      "text": "name_office_corrections: 潘伯起: 동행 및 숙소 안내\n沈待詔: 인물\n金壇尹子源: 금단 출신 윤자원\n趙伯可\n儲叔儀\n李伯玉\n李叔義\n張菊存: 공자경의 서신을 전함\n龔子敬: 언급만 됨\n張松㵎+府判\n武臨淸+提舉\n王一初+都目\n周有道+都目\n李敎授\n武公令\n□□教授: 이름 미상\n吳茂之\n唐仲文: 새로 廉吏에 보임, 만나지 못함\n吴若遺+提點"
+    },
+    {
+      "type": "editorial",
+      "text": "place_movement_corrections: 杭州城外\n北關門接待寺\n施水坊橋\n沈待詔之樓\n橋東\n打猪巷\n江浙省中照磨所\n省西\n五房\n寓所\n長生老人橋\n紀家橋\n解庫門"
+    },
+    {
+      "type": "editorial",
+      "text": "food_hospitality: 茶\n具酒小飲，余亦續酒"
+    }
+  ],
+  "persons": [
+    {
+      "entity_id": "person-0020",
+      "surface": "潘伯起",
+      "normalized": "潘伯起",
+      "role": "mentioned_person",
+      "certainty_reason": "동행 및 숙소 안내"
+    },
+    {
+      "entity_id": "person-0021",
+      "surface": "沈待詔",
+      "normalized": "沈待詔",
+      "role": "mentioned_person",
+      "certainty_reason": "인물"
+    },
+    {
+      "entity_id": "person-0022",
+      "surface": "金壇尹子源",
+      "normalized": "金壇尹子源",
+      "role": "mentioned_person",
+      "certainty_reason": "금단 출신 윤자원"
+    },
+    {
+      "entity_id": "person-0023",
+      "surface": "趙伯可",
+      "normalized": "趙伯可",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0024",
+      "surface": "儲叔儀",
+      "normalized": "儲叔儀",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0025",
+      "surface": "李伯玉",
+      "normalized": "李伯玉",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0026",
+      "surface": "李叔義",
+      "normalized": "李叔義",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0027",
+      "surface": "張菊存",
+      "normalized": "張菊存",
+      "role": "mentioned_person",
+      "certainty_reason": "공자경의 서신을 전함"
+    },
+    {
+      "entity_id": "person-0016",
+      "surface": "龔子敬",
+      "normalized": "龔子敬",
+      "role": "mentioned_person",
+      "certainty_reason": "언급만 됨"
+    },
+    {
+      "entity_id": "person-0028",
+      "surface": "張松㵎+府判",
+      "normalized": "張松㵎",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "張松㵎",
+          "entity_id": "person-0028"
+        },
+        {
+          "kind": "office",
+          "surface": "府判",
+          "entity_id": "office-0005"
+        }
+      ],
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "person-0018",
+      "surface": "武臨淸+提舉",
+      "normalized": "武臨淸",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "武臨淸",
+          "entity_id": "person-0018"
+        },
+        {
+          "kind": "office",
+          "surface": "提舉",
+          "entity_id": "office-0001"
+        }
+      ],
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "person-0029",
+      "surface": "王一初+都目",
+      "normalized": "王一初",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "王一初",
+          "entity_id": "person-0029"
+        },
+        {
+          "kind": "office",
+          "surface": "都目",
+          "entity_id": "office-0006"
+        }
+      ],
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "person-0030",
+      "surface": "周有道+都目",
+      "normalized": "周有道",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "周有道",
+          "entity_id": "person-0030"
+        },
+        {
+          "kind": "office",
+          "surface": "都目",
+          "entity_id": "office-0006"
+        }
+      ],
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "person-0031",
+      "surface": "李敎授",
+      "normalized": "李敎授",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0032",
+      "surface": "武公令",
+      "normalized": "武公令",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0033",
+      "surface": "□□教授",
+      "normalized": "□□教授",
+      "role": "mentioned_person",
+      "certainty_reason": "이름 미상"
+    },
+    {
+      "entity_id": "person-0034",
+      "surface": "吳茂之",
+      "normalized": "吳茂之",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0035",
+      "surface": "唐仲文",
+      "normalized": "唐仲文",
+      "role": "mentioned_person",
+      "certainty_reason": "새로 廉吏에 보임, 만나지 못함"
+    },
+    {
+      "entity_id": "person-0036",
+      "surface": "吴若遺+提點",
+      "normalized": "吴若遺",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "吴若遺",
+          "entity_id": "person-0036"
+        },
+        {
+          "kind": "office",
+          "surface": "提點",
+          "entity_id": "office-0007"
+        }
+      ],
+      "register_context": "administrative"
+    }
+  ],
+  "places": [
+    {
+      "entity_id": "place-0016",
+      "surface": "杭州城外",
+      "normalized": "杭州城外",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0017",
+      "surface": "北關門接待寺",
+      "normalized": "北關門接待寺",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0018",
+      "surface": "施水坊橋",
+      "normalized": "施水坊橋",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0019",
+      "surface": "沈待詔之樓",
+      "normalized": "沈待詔之樓",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0020",
+      "surface": "橋東",
+      "normalized": "橋東",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0021",
+      "surface": "打猪巷",
+      "normalized": "打猪巷",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0022",
+      "surface": "江浙省中照磨所",
+      "normalized": "江浙省中照磨所",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0023",
+      "surface": "省西",
+      "normalized": "省西",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0024",
+      "surface": "五房",
+      "normalized": "五房",
+      "role": "location",
+      "certainty": "uncertain",
+      "certainty_reason": "정확한 공간 성격 미상",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0025",
+      "surface": "寓所",
+      "normalized": "寓所",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0026",
+      "surface": "長生老人橋",
+      "normalized": "長生老人橋",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0027",
+      "surface": "紀家橋",
+      "normalized": "紀家橋",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0028",
+      "surface": "解庫門",
+      "normalized": "解庫門",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0029",
+      "surface": "換舟入城",
+      "normalized": "換舟入城",
+      "role": "location",
+      "register_context": "journey"
+    },
+    {
+      "entity_id": "place-0030",
+      "surface": "施水坊橋寓所",
+      "normalized": "施水坊橋寓所",
+      "role": "location",
+      "register_context": "journey"
+    }
+  ],
+  "offices": [
+    {
+      "entity_id": "office-0005",
+      "surface": "府判",
+      "normalized": "府判",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0001",
+      "surface": "提舉",
+      "normalized": "提舉",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0006",
+      "surface": "都目",
+      "normalized": "都目",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0006",
+      "surface": "都目",
+      "normalized": "都目",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0007",
+      "surface": "提點",
+      "normalized": "提點",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    }
+  ],
+  "institutions": [
+    {
+      "entity_id": "institution-0003",
+      "surface": "北關門接待寺",
+      "normalized": "北關門接待寺",
+      "role": "mentioned_institution",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "institution-0004",
+      "surface": "江浙省中照磨所",
+      "normalized": "江浙省中照磨所",
+      "role": "mentioned_institution",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "institution-0005",
+      "surface": "寓所",
+      "normalized": "寓所",
+      "role": "mentioned_institution",
+      "register_context": "administrative"
+    }
+  ],
+  "documents": [],
+  "works": [],
+  "consumables": [
+    {
+      "entity_id": "consumable-0001",
+      "surface": "茶",
+      "normalized": "茶",
+      "role": "hospitality_item"
+    },
+    {
+      "entity_id": "consumable-0008",
+      "surface": "具酒小飲，余亦續酒",
+      "normalized": "具酒小飲，余亦續酒",
+      "role": "hospitality_item"
+    }
+  ],
+  "interactions": [
+    {
+      "seq": 1,
+      "action": "travel_with",
+      "agent": "person-0001",
+      "target": "person-0020",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": "동행 및 숙소 안내"
+    },
+    {
+      "seq": 2,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0021",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": "인물"
+    },
+    {
+      "seq": 3,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0022",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": "금단 출신 윤자원"
+    },
+    {
+      "seq": 4,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0023",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 5,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0024",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 6,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0025",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 7,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0026",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 8,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0027",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": "공자경의 서신을 전함"
+    },
+    {
+      "seq": 9,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0016",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": "언급만 됨"
+    },
+    {
+      "seq": 10,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0028",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 11,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0018",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 12,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0029",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 13,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0030",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 14,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0031",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 15,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0032",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 16,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0033",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": "이름 미상"
+    },
+    {
+      "seq": 17,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0034",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 18,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0035",
+      "companions": [],
+      "result": "not_met",
+      "location": "place-0016",
+      "notes": "새로 廉吏에 보임, 만나지 못함"
+    },
+    {
+      "seq": 19,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0036",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": null
+    },
+    {
+      "seq": 20,
+      "action": "dined_with",
+      "agent": "person-0001",
+      "target": "person-0020",
+      "companions": [],
+      "result": "met",
+      "location": "place-0016",
+      "notes": "茶\n具酒小飲，余亦續酒"
+    }
+  ],
+  "exchanges": [],
+  "artworks": [],
+  "journey": {
+    "from": "place-0016",
+    "to": "place-0028",
+    "via": [
+      "place-0017",
+      "place-0029",
+      "place-0030",
+      "place-0020",
+      "place-0021",
+      "place-0022",
+      "place-0023",
+      "place-0024",
+      "place-0025",
+      "place-0026",
+      "place-0027"
+    ],
+    "mode": "boat",
+    "distance_raw": "杭州城外 → 北關門接待寺 → 換舟入城 → 施水坊橋寓所 → 橋東 → 打猪巷 → 江浙省中照磨所 → 省西 → 五房 → 寓所 → 長生老人橋 → 紀家橋 → 解庫門"
+  },
+  "time_markers": [
+    {
+      "position": "late_night",
+      "raw": "四更"
+    },
+    {
+      "position": "dawn",
+      "raw": "拂明"
+    }
+  ],
+  "emotional_markers": [],
+  "costs": [],
+  "topics": [
+    "불교",
+    "이동",
+    "관청",
+    "교유"
+  ],
+  "notes": [
+    {
+      "type": "editorial",
+      "text": "weather: 霜月滿天，寒氣逼人"
+    },
+    {
+      "type": "editorial",
+      "text": "四更: 항주 성 밖 도착 시각"
+    },
+    {
+      "type": "editorial",
+      "text": "鐘動: 종이 울려 환승·입성 시각이 됨"
+    },
+    {
+      "type": "editorial",
+      "text": "拂明: 새벽 무렵"
+    },
+    {
+      "type": "uncertainty",
+      "text": "沈待詔를 수식하는 표현으로 보이나 기능 확정 보류"
+    },
+    {
+      "type": "uncertainty",
+      "text": "정확한 공간 성격 미상"
+    },
+    {
+      "type": "uncertainty",
+      "text": "정확한 이름/직함 추가 확인 필요"
+    }
+  ],
+  "status": {
+    "summary": "done",
+    "entities": "done",
+    "review": "reviewed"
+  },
+  "provenance": {
+    "annotated_by": "codex",
+    "updated_at": "2026-03-29T00:17:03",
+    "reviewed_by": "seo_yuna",
+    "review_method": "translation_assisted"
+  }
+}

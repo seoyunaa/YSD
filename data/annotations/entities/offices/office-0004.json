@@ -1,0 +1,17 @@
+{
+  "id": "office-0004",
+  "entity_type": "office",
+  "label_original": "外郞",
+  "label_normalized": "外郞",
+  "first_seen_entry_id": "entry-0023",
+  "aliases": [],
+  "notes": "항주의 인물, 공자경이 張德輝에게 보내는 서신을 곽비에게 맡김.",
+  "status": "active",
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

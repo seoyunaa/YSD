@@ -1,0 +1,20 @@
+{
+  "id": "person-0002",
+  "entity_type": "person",
+  "label_original": "甘露長老",
+  "label_normalized": "甘露長老",
+  "first_seen_entry_id": "entry-0019",
+  "aliases": [],
+  "notes": "감로 장로",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

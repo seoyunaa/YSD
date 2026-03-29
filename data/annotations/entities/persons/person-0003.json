@@ -1,0 +1,42 @@
+{
+  "id": "person-0003",
+  "entity_type": "person",
+  "label_original": "白湛淵",
+  "label_normalized": "白湛淵",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [
+    {
+      "surface": "白湛淵+提舉",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": null
+    }
+  ],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [
+    {
+      "office_id": "office-0001",
+      "institution_id": "institution-0001",
+      "place_id": "place-0003",
+      "period_raw": "entry-0020",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0020"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": null
+    }
+  ],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "place-0034",
+  "entity_type": "place",
+  "label_original": "玄同觀",
+  "label_normalized": "玄同觀",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "place_info": {
+    "place_type": "temple",
+    "admin_level": null,
+    "parent_place_id": "place-0031",
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

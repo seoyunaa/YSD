@@ -1,0 +1,17 @@
+{
+  "id": "office-0003",
+  "entity_type": "office",
+  "label_original": "山長",
+  "label_normalized": "山長",
+  "first_seen_entry_id": "entry-0021",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

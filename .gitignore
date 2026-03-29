@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Node (if scripts use npm)
+node_modules/
+
+# Secrets
+.env
+.env.local
+credentials*.json
+
+# Large generated bundles (service layer is separate repo)
+site/
+api/
+
+# Temporary
+*.tmp
+*.bak

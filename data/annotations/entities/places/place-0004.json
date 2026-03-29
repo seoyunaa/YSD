@@ -1,0 +1,24 @@
+{
+  "id": "place-0004",
+  "entity_type": "place",
+  "label_original": "常州",
+  "label_normalized": "常州",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "place_info": {
+    "place_type": "city",
+    "admin_level": "zhou",
+    "parent_place_id": null,
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

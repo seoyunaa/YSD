@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "semantic-assertion.schema.json",
+  "description": "Layer 7 (semantic): 사료에서 추출한 진술 단위. 자동 생성, 수동 편집 금지. 지식 그래프의 원료이자, RAG 답변의 근거 단위.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assertion_id", "assertion_type", "subject", "predicate", "object", "source_entry_ids", "evidence_raw", "certainty", "provenance"],
+  "properties": {
+
+    "assertion_id": {
+      "type": "string",
+      "pattern": "^assert-[0-9]{5}$",
+      "description": "assertion 식별자. 예: assert-00001"
+    },
+
+    "assertion_type": {
+      "type": "string",
+      "enum": [
+        "person_action",
+        "person_relation",
+        "person_appointment",
+        "person_residence",
+        "person_attribute",
+        "place_relation",
+        "object_exchange",
+        "artwork_activity",
+        "temporal_statement",
+        "institutional_fact"
+      ],
+      "description": "진술의 유형. person_action: 곽비가 X를 방문했다 / person_relation: A는 B의 아버지다 / person_appointment: A가 X 직함을 역임했다 / person_residence: A가 X에 거주했다 / person_attribute: A의 字는 X다 / place_relation: X는 Y의 하위 행정구역이다 / object_exchange: A가 B에게 X를 주었다 / artwork_activity: A가 X를 창작했다 / temporal_statement: X 사건은 Y 이후에 일어났다 / institutional_fact: X 기관은 Y에 소재한다"
+    },
+
+    "subject": {
+      "type": "object",
+      "required": ["entity_id", "label"],
+      "properties": {
+        "entity_id": { "type": "string", "description": "주어 entity_id. 곽비이면 'person-0001' 또는 'self'" },
+        "label": { "type": "string", "description": "표시용 이름" }
+      }
+    },
+    "predicate": {
+      "type": "string",
+      "description": "술어. 가능한 한 통제어휘 사용. 예: visited, gifted, held_office, resided_in, is_father_of, created, appraised"
+    },
+    "object": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "entity_id": { "type": ["string", "null"], "description": "목적어가 개체이면 entity_id" },
+        "value": { "type": "string", "description": "목적어 표시값. 개체이면 label, 값이면 원문 표현" },
+        "value_type": {
+          "type": "string",
+          "enum": ["entity", "literal", "date", "quantity"],
+          "description": "entity: 다른 개체 / literal: 자유 텍스트 / date: 날짜 / quantity: 수량·금액"
+        }
+      }
+    },
+
+    "qualifiers": {
+      "type": "object",
+      "description": "진술에 붙는 한정자. 시간, 장소, 결과, 방식 등.",
+      "properties": {
+        "time_display": { "type": ["string", "null"], "description": "시간. 예: 지대원년 10월 18일" },
+        "time_position": { "type": ["string", "null"], "description": "하루 내 시간대. dawn/morning/noon 등" },
+        "location_id": { "type": ["string", "null"], "description": "장소 place entity_id" },
+        "result": { "type": ["string", "null"], "description": "결과. met, not_met, declined 등" },
+        "manner": { "type": ["string", "null"], "description": "방식. 예: by_boat, with_companions" },
+        "direction": { "type": ["string", "null"], "description": "교환 방향. give, receive 등" }
+      }
+    },
+
+    "source_entry_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "이 assertion의 근거가 되는 entry ID 목록."
+    },
+    "source_action": {
+      "type": ["object", "null"],
+      "properties": {
+        "layer": { "type": "string", "enum": ["interactions", "exchanges", "artworks", "journey", "relations", "appointments", "residences"] },
+        "seq": { "type": ["integer", "null"] }
+      },
+      "description": "annotation에서 이 assertion이 파생된 구체적 action 위치."
+    },
+
+    "evidence_raw": {
+      "type": "string",
+      "description": "원문에서의 근거 인용."
+    },
+    "evidence_translation_ko": {
+      "type": ["string", "null"],
+      "description": "근거의 한국어 번역."
+    },
+
+    "certainty": {
+      "type": "string",
+      "enum": ["confirmed", "probable", "uncertain"],
+      "description": "이 진술의 확실성. 원본 annotation의 certainty를 계승."
+    },
+    "certainty_reason": {
+      "type": ["string", "null"],
+      "description": "불확실한 경우 이유."
+    },
+
+    "negated": {
+      "type": "boolean",
+      "description": "부정 진술인 경우 true. 예: 곽비가 X를 방문했으나 만나지 못했다 → visited + result: not_met, negated: false. 곽비가 X직을 받았으나 부임하지 못했다 → negated 활용 가능."
+    },
+
+    "provenance": {
+      "type": "object",
+      "required": ["generated_by", "generated_at"],
+      "properties": {
+        "generated_by": { "type": "string" },
+        "generated_at": { "type": "string" },
+        "source_annotation_review": { "type": "string", "enum": ["reviewed", "unreviewed", "partial"], "description": "원본 annotation의 검토 상태" }
+      }
+    }
+  }
+}

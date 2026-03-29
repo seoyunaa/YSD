@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "discourse-link.schema.json",
+  "description": "Layer 4.5: entry 간 시간적·인과적 연결. 연구자가 직접 작성.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["link_id", "from_entry", "to_entry", "link_type", "evidence_raw", "provenance"],
+  "properties": {
+    "link_id": {
+      "type": "string",
+      "pattern": "^link-[0-9]{4}$",
+      "description": "연결 식별자. 예: link-0001"
+    },
+    "from_entry": {
+      "type": "string",
+      "description": "선행 entry ID"
+    },
+    "to_entry": {
+      "type": "string",
+      "description": "후행 entry ID"
+    },
+    "link_type": {
+      "type": "string",
+      "enum": [
+        "causal",
+        "continuation",
+        "contrast",
+        "callback",
+        "resolution",
+        "escalation",
+        "interruption"
+      ],
+      "description": "causal: 선행 → 후행 인과 / continuation: 동일 사안 지속 / contrast: 대비·반전 / callback: 과거 사건 재언급 / resolution: 미결 사안 해결 / escalation: 사안 심화 / interruption: 연쇄 중단"
+    },
+    "direction": {
+      "type": "string",
+      "enum": ["forward", "backward"],
+      "description": "forward: from→to 순방향 / backward: to→from 회고적 언급"
+    },
+    "sequence_id": {
+      "type": ["string", "null"],
+      "description": "이 연결이 속하는 상위 sequence ID (해당 시)"
+    },
+    "evidence_raw": {
+      "type": "string",
+      "description": "원문에서의 근거 인용. 시간·인과 관계를 보여주는 표현."
+    },
+    "summary_ko": {
+      "type": "string",
+      "description": "이 연결의 한국어 설명."
+    },
+    "certainty": {
+      "type": "string",
+      "enum": ["confirmed", "probable", "uncertain"],
+      "description": "confirmed: 원문에 명시적 인과 표현 / probable: 맥락상 추론 / uncertain: 추측적 연결"
+    },
+    "notes": { "type": ["string", "null"] },
+    "provenance": {
+      "type": "object",
+      "required": ["authored_by", "authored_at"],
+      "properties": {
+        "authored_by": { "type": "string" },
+        "authored_at": { "type": "string" }
+      }
+    }
+  }
+}

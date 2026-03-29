@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "entry-annotation.schema.json",
+  "description": "Layer 3: 인간 교정층. AI 초벌 생성 후 사람이 검토·확정한다.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["entry_id", "summary_ko", "persons", "places", "offices", "institutions", "documents", "works", "consumables", "topics", "notes", "status", "provenance"],
+  "properties": {
+    "entry_id": { "type": "string" },
+    "summary_ko": { "type": "string", "description": "한국어 요약. 짧은 산문, placeholder 금지." },
+
+    "text_corrections": {
+      "type": "array",
+      "description": "원문 표점·글자에 대한 교정. 원본 파일(IMMUTABLE)은 수정하지 않고 여기에 기록.",
+      "items": { "$ref": "#/$defs/textCorrection" }
+    },
+    "translation_revised": {
+      "type": ["string", "null"],
+      "description": "AI 번역을 연구자가 교정한 최종 번역. null이면 AI 번역 그대로 사용 중."
+    },
+    "translation_notes": {
+      "type": "array",
+      "description": "번역 교정 시 근거·판단 메모.",
+      "items": { "$ref": "#/$defs/note" }
+    },
+
+    "persons": { "type": "array", "items": { "$ref": "#/$defs/entityMention" } },
+    "places": { "type": "array", "items": { "$ref": "#/$defs/entityMention" } },
+    "offices": { "type": "array", "items": { "$ref": "#/$defs/entityMention" } },
+    "institutions": { "type": "array", "items": { "$ref": "#/$defs/entityMention" } },
+    "documents": { "type": "array", "items": { "$ref": "#/$defs/entityMention" } },
+    "works": { "type": "array", "items": { "$ref": "#/$defs/entityMention" } },
+    "consumables": { "type": "array", "items": { "$ref": "#/$defs/entityMention" } },
+
+    "interactions": {
+      "type": "array",
+      "description": "방향성 있는 사회적 행위. 방문·음주·송별 등 일기의 핵심 서사 단위.",
+      "items": { "$ref": "#/$defs/interaction" }
+    },
+    "exchanges": {
+      "type": "array",
+      "description": "물품·작품의 수수. 빌리다/돌려주다/선물하다/사다 등 방향 포함.",
+      "items": { "$ref": "#/$defs/exchange" }
+    },
+    "artworks": {
+      "type": "array",
+      "description": "서화 활동. 창작·감상·품평·장황 등. works(문헌)와 구분.",
+      "items": { "$ref": "#/$defs/artwork" }
+    },
+    "journey": {
+      "oneOf": [
+        { "$ref": "#/$defs/journeySegment" },
+        { "type": "null" }
+      ],
+      "description": "이동이 있는 entry의 여정 구간. 출발지·도착지·경유지·이동수단."
+    },
+    "time_markers": {
+      "type": "array",
+      "description": "하루 내 시간 표현. 早·午·夜 등 행위의 시간대.",
+      "items": { "$ref": "#/$defs/timeMarker" }
+    },
+    "emotional_markers": {
+      "type": "array",
+      "description": "감정·평가 표현. 悵怏·可愛·燋煩 등.",
+      "items": { "$ref": "#/$defs/emotionalMarker" }
+    },
+    "costs": {
+      "type": "array",
+      "description": "비용·가격 기록. 錢·貫 등 화폐 단위 포함.",
+      "items": { "$ref": "#/$defs/cost" }
+    },
+
+    "topics": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "$ref": "#/$defs/note" } },
+    "status": { "$ref": "#/$defs/status" },
+    "provenance": { "$ref": "#/$defs/provenance" }
+  },
+  "$defs": {
+    "textCorrection": {
+      "type": "object",
+      "required": ["correction_type", "original", "corrected", "reason"],
+      "properties": {
+        "correction_type": {
+          "type": "string",
+          "enum": ["punctuation", "character", "sentence_break"],
+          "description": "punctuation: 표점 수정 / character: 글자 교정(誤字·異體字) / sentence_break: 문장 단위 재분할"
+        },
+        "position": {
+          "type": ["string", "null"],
+          "description": "원문 내 위치 참조. 앞뒤 맥락 포함한 짧은 인용."
+        },
+        "original": { "type": "string", "description": "원본 상태 (표점 포함)" },
+        "corrected": { "type": "string", "description": "교정 후 상태" },
+        "reason": { "type": "string", "description": "교정 근거. 판본 대조, 문맥 판단 등." },
+        "reference": {
+          "type": ["string", "null"],
+          "description": "참고한 판본이나 선행연구. 예: 古學彙刊本, 知不足齋叢書本"
+        }
+      }
+    },
+    "entityMention": {
+      "type": "object",
+      "required": ["entity_id", "surface", "normalized", "role"],
+      "properties": {
+        "entity_id": { "type": "string", "description": "예: person-0042, place-0006" },
+        "surface": { "type": "string", "description": "원문에 나타난 그대로의 표현" },
+        "normalized": { "type": ["string", "null"], "description": "확정된 독법. 불확실하면 null" },
+        "role": { "type": "string" },
+        "mention_type": {
+          "type": "string",
+          "enum": ["ming", "zi", "hao", "office", "kinship", "alias", "context_phrase"],
+          "description": "호칭 유형. context_phrase는 不遇·坐客 등 개체가 아닌 맥락 표현"
+        },
+        "certainty": {
+          "type": "string",
+          "enum": ["confirmed", "probable", "uncertain", "unknown"],
+          "description": "confirmed: 확정 (기본값, 생략 시 확정으로 간주) / probable: 개연성 있으나 확정 불가 / uncertain: 불확실, 대안적 해석 존재 / unknown: 판단 유보"
+        },
+        "certainty_reason": {
+          "type": ["string", "null"],
+          "description": "certainty가 confirmed가 아닌 경우, 왜 불확실한지 근거. 예: 동명이인 가능성, 字와 名의 불일치 등."
+        },
+        "ambiguous": {
+          "type": "boolean",
+          "description": "하위호환용. certainty 필드 사용 권장. true이면 certainty: uncertain과 동치."
+        },
+        "compound_surface": {
+          "type": "boolean",
+          "description": "趙心甫山長처럼 인물+직함 결합 표기인 경우 true"
+        },
+        "compound_components": {
+          "type": "array",
+          "description": "결합 표기의 분리 결과",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": { "type": "string", "enum": ["person", "office", "institution", "kinship"] },
+              "surface": { "type": "string" },
+              "entity_id": { "type": "string" }
+            }
+          }
+        },
+        "register_context": {
+          "type": "string",
+          "enum": ["administrative", "social", "ritual", "family", "literary"],
+          "description": "호칭이 사용된 사회적 맥락"
+        }
+      }
+    },
+    "interaction": {
+      "type": "object",
+      "required": ["seq", "action", "agent"],
+      "properties": {
+        "seq": { "type": "integer", "description": "entry 내 행위 순서 (1부터). 次·囘 등으로 추론." },
+        "action": { "type": "string", "description": "행위 유형. schemas/vocabularies/action-types.json 참조." },
+        "agent": { "type": "string", "description": "행위 주체. 'self'(郭畀) 또는 person entity_id." },
+        "target": { "type": ["string", "null"], "description": "행위 대상. person entity_id 또는 null." },
+        "companions": { "type": "array", "items": { "type": "string" }, "description": "동반자 person entity_id 목록." },
+        "result": { "type": ["string", "null"], "description": "결과. not_met(不遇), met, declined(辭) 등." },
+        "location": { "type": ["string", "null"], "description": "행위 장소 place entity_id." },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "exchange": {
+      "type": "object",
+      "required": ["seq", "direction", "counterpart"],
+      "properties": {
+        "seq": { "type": "integer", "description": "entry 내 행위 순서. interaction과 공유." },
+        "direction": {
+          "type": "string",
+          "enum": ["give", "receive", "lend", "borrow", "return", "buy", "sell"],
+          "description": "郭畀 기준 방향."
+        },
+        "counterpart": { "type": "string", "description": "상대방 person entity_id." },
+        "object_type": {
+          "type": "string",
+          "enum": ["artwork", "book", "food", "medicine", "money", "stationery", "textile", "other"],
+          "description": "교환 물품 유형."
+        },
+        "object_desc": { "type": "string", "description": "원문의 물품 묘사. 예: 蘭竹一幅, 酒一壺." },
+        "object_entity_id": { "type": ["string", "null"], "description": "works/consumables의 entity_id (해당 시)." },
+        "exchange_type": {
+          "type": "string",
+          "enum": ["gift", "loan", "commission", "purchase", "return", "tribute"],
+          "description": "교환 성격."
+        },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "artwork": {
+      "type": "object",
+      "required": ["seq", "activity", "medium"],
+      "properties": {
+        "seq": { "type": "integer" },
+        "activity": {
+          "type": "string",
+          "enum": ["create", "view", "appraise", "mount", "request", "copy", "inscribe"],
+          "description": "create(作/書/畫), view(觀), appraise(品/評), mount(裝), request(求書/求畫), copy(臨), inscribe(題)."
+        },
+        "medium": {
+          "type": "string",
+          "enum": ["calligraphy", "painting", "seal", "mixed"],
+          "description": "서화 매체."
+        },
+        "subject": { "type": ["string", "null"], "description": "제재나 화제. 예: 蘭亭序, 墨竹." },
+        "material": { "type": ["string", "null"], "description": "재료. 紙·絹·扇 등." },
+        "for_whom": { "type": ["string", "null"], "description": "의뢰인/수혜자 person entity_id." },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "journeySegment": {
+      "type": "object",
+      "required": ["from", "to"],
+      "properties": {
+        "from": { "type": "string", "description": "출발지 place entity_id." },
+        "to": { "type": "string", "description": "도착지 place entity_id." },
+        "via": { "type": "array", "items": { "type": "string" }, "description": "경유지 place entity_id 목록." },
+        "mode": {
+          "type": ["string", "null"],
+          "enum": ["boat", "walk", "horse", "sedan", "cart", null],
+          "description": "이동 수단."
+        },
+        "distance_raw": { "type": ["string", "null"], "description": "원문 거리 표현. 예: 三十里." }
+      }
+    },
+    "timeMarker": {
+      "type": "object",
+      "required": ["position", "raw"],
+      "properties": {
+        "position": {
+          "type": "string",
+          "enum": ["dawn", "morning", "noon", "afternoon", "evening", "night", "late_night"],
+          "description": "dawn(曉/早), morning(朝), noon(午), afternoon(午後/晡), evening(暮), night(夜), late_night(更深/夜半)."
+        },
+        "raw": { "type": "string", "description": "원문 표현 그대로." }
+      }
+    },
+    "emotionalMarker": {
+      "type": "object",
+      "required": ["expression", "valence"],
+      "properties": {
+        "expression": { "type": "string", "description": "원문 감정 표현. 예: 悵怏, 可愛, 燋煩." },
+        "valence": {
+          "type": "string",
+          "enum": ["positive", "negative", "neutral", "mixed"]
+        },
+        "context": { "type": ["string", "null"], "description": "감정의 맥락 설명." }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "required": ["item", "amount_raw"],
+      "properties": {
+        "item": { "type": "string", "description": "구매/지출 대상." },
+        "amount_raw": { "type": "string", "description": "원문 금액 표현. 예: 錢二百, 銀一兩." },
+        "context": { "type": ["string", "null"], "description": "purchase, tax, fee 등." }
+      }
+    },
+    "note": {
+      "type": "object",
+      "required": ["type", "text"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["uncertainty", "editorial", "cross_reference"],
+          "description": "uncertainty: 판독·식별 불확실 / editorial: 편집 판단 / cross_reference: 보조 사료 대조"
+        },
+        "text": { "type": "string", "description": "메모 본문." },
+        "source": {
+          "type": ["string", "null"],
+          "description": "cross_reference 시 사료명. 예: 元史, 至順鎭江志, 宋史, 鎭江府志"
+        },
+        "location": {
+          "type": ["string", "null"],
+          "description": "cross_reference 시 출처 위치. 예: 卷十六, 列傳七十三"
+        },
+        "confirms": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "cross_reference가 뒷받침하는 entity_id 목록. 예: [\"person-0042\", \"office-0003\"]"
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "required": ["summary", "entities", "review"],
+      "properties": {
+        "summary": { "type": "string", "enum": ["todo", "partial", "done"] },
+        "entities": { "type": "string", "enum": ["todo", "partial", "done"] },
+        "review": { "type": "string", "enum": ["unreviewed", "reviewed"] }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["annotated_by", "updated_at"],
+      "properties": {
+        "annotated_by": {
+          "type": "string",
+          "description": "초벌 생성자. AI면 'codex' 등, 사람이면 'seo_yuna' 등"
+        },
+        "updated_at": { "type": "string" },
+        "reviewed_by": {
+          "type": "string",
+          "description": "사람 검토자 식별자. AI 초벌을 검토 완료한 사람."
+        },
+        "reviewed_at": {
+          "type": "string",
+          "description": "검토 완료 일자 (ISO date)"
+        },
+        "review_method": {
+          "type": "string",
+          "enum": ["direct_read", "translation_assisted", "batch_correction"],
+          "description": "direct_read: 원문 직접 검토 / translation_assisted: AI 번역 참조 / batch_correction: 리포트 기반 배치 수정"
+        }
+      }
+    }
+  }
+}

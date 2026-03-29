@@ -1,0 +1,73 @@
+{
+  "entry_id": "entry-0024",
+  "summary_ko": "21일, 포시(晡時, 3시~5시)에 장안(長安)에 올라가 밥을 사 먹었다",
+  "text_corrections": [],
+  "translation_revised": "21일, 포시(晡時, 3시~5시)에 장안(長安)에 올라가 밥을 사 먹었다.",
+  "translation_notes": [
+    {
+      "type": "editorial",
+      "text": "place_movement_corrections: 長安"
+    },
+    {
+      "type": "editorial",
+      "text": "food_hospitality: 買飯: 밥을 사먹다 (식당의 존재)"
+    }
+  ],
+  "persons": [],
+  "places": [
+    {
+      "entity_id": "place-0015",
+      "surface": "長安",
+      "normalized": "長安",
+      "role": "location",
+      "register_context": "administrative"
+    }
+  ],
+  "offices": [],
+  "institutions": [],
+  "documents": [],
+  "works": [],
+  "consumables": [
+    {
+      "entity_id": "consumable-0007",
+      "surface": "買飯",
+      "normalized": "買飯",
+      "role": "hospitality_item",
+      "certainty_reason": "밥을 사먹다 (식당의 존재)"
+    }
+  ],
+  "interactions": [],
+  "exchanges": [],
+  "artworks": [],
+  "journey": null,
+  "time_markers": [
+    {
+      "position": "afternoon",
+      "raw": "晡時"
+    }
+  ],
+  "emotional_markers": [],
+  "costs": [],
+  "topics": [],
+  "notes": [
+    {
+      "type": "editorial",
+      "text": "포시(晡時, 3시~5시)"
+    },
+    {
+      "type": "uncertainty",
+      "text": "review ambiguity noted"
+    }
+  ],
+  "status": {
+    "summary": "partial",
+    "entities": "done",
+    "review": "reviewed"
+  },
+  "provenance": {
+    "annotated_by": "codex",
+    "updated_at": "2026-03-28T23:14:33",
+    "reviewed_by": "seo_yuna",
+    "review_method": "translation_assisted"
+  }
+}

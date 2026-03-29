@@ -1,0 +1,98 @@
+{
+  "entry_id": "entry-0019",
+  "summary_ko": "불교 경전을 돌려보낸 뒤 전당으로 떠나는 짧은 이동 entry",
+  "text_corrections": [],
+  "translation_revised": "16일, 맑음. 필사한 《유교경(遺教經)》을 감로 장로에게 돌려보냈다. 저녁에 여성(呂城)에서 야간 배편을 타고 전당(錢塘)으로 향했다.",
+  "translation_notes": [
+    {
+      "type": "editorial",
+      "text": "name_office_corrections: 甘露長老 → 감로 장로"
+    },
+    {
+      "type": "editorial",
+      "text": "place_movement_corrections: 呂城 → 여성, 錢塘 → 전당, 夜航 → 야간 배편"
+    }
+  ],
+  "persons": [
+    {
+      "entity_id": "person-0002",
+      "surface": "甘露長老",
+      "normalized": "甘露長老",
+      "role": "mentioned_person",
+      "certainty_reason": "감로 장로"
+    }
+  ],
+  "places": [
+    {
+      "entity_id": "place-0001",
+      "surface": "呂城",
+      "normalized": "呂城",
+      "role": "location",
+      "register_context": "journey"
+    },
+    {
+      "entity_id": "place-0002",
+      "surface": "錢塘",
+      "normalized": "錢塘",
+      "role": "location",
+      "register_context": "journey"
+    }
+  ],
+  "offices": [],
+  "institutions": [],
+  "documents": [
+    {
+      "entity_id": "document-0001",
+      "surface": "遺教經 (불교 경전)",
+      "normalized": "遺教經 (불교 경전)",
+      "role": "mentioned_item"
+    }
+  ],
+  "works": [],
+  "consumables": [],
+  "interactions": [
+    {
+      "seq": 1,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0002",
+      "companions": [],
+      "result": "met",
+      "location": "place-0001",
+      "notes": "감로 장로"
+    }
+  ],
+  "exchanges": [],
+  "artworks": [],
+  "journey": {
+    "from": "place-0001",
+    "to": "place-0002",
+    "via": [],
+    "mode": "boat",
+    "distance_raw": "呂城-錢塘"
+  },
+  "time_markers": [],
+  "emotional_markers": [],
+  "costs": [],
+  "topics": [
+    "불교",
+    "이동"
+  ],
+  "notes": [
+    {
+      "type": "editorial",
+      "text": "weather: 晴"
+    }
+  ],
+  "status": {
+    "summary": "done",
+    "entities": "done",
+    "review": "reviewed"
+  },
+  "provenance": {
+    "annotated_by": "codex",
+    "updated_at": "2026-03-28T22:45:57",
+    "reviewed_by": "seo_yuna",
+    "review_method": "translation_assisted"
+  }
+}

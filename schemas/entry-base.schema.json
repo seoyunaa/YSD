@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "entry-base.schema.json",
+  "description": "Layer 2: 기계 추출 결과. 수동 편집 금지 — 추출 스크립트 수정 후 재생성.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "work_id", "sequence", "kind", "head", "month_context", "date", "weather", "mobility", "source", "text", "provenance"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^entry-[0-9]{4}$" },
+    "work_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "kind": { "type": "string", "enum": ["entry", "paratext"] },
+    "head": { "type": "string" },
+    "month_context": {
+      "type": "object",
+      "properties": {
+        "regnal_label": { "type": "string" },
+        "regnal_year": { "type": "integer" },
+        "month": { "type": "integer" },
+        "intercalary": { "type": "boolean" }
+      }
+    },
+    "date": {
+      "type": "object",
+      "properties": {
+        "day": { "type": ["integer", "null"] },
+        "display": { "type": "string" }
+      }
+    },
+    "weather": {
+      "type": "object",
+      "properties": {
+        "raw": { "type": ["string", "null"] },
+        "conditions": { "type": "array", "items": { "type": "string" } },
+        "certainty": { "type": "string", "enum": ["high", "medium", "low", "none"] }
+      }
+    },
+    "mobility": {
+      "type": "object",
+      "properties": {
+        "raw": { "type": ["string", "null"] },
+        "events": { "type": "array", "items": { "type": "string" } },
+        "certainty": { "type": "string", "enum": ["high", "medium", "low", "none"] }
+      }
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "file": { "type": "string" },
+        "start_line": { "type": "integer" },
+        "end_line": { "type": "integer" }
+      }
+    },
+    "text": { "type": "string" },
+    "provenance": {
+      "type": "object",
+      "required": ["extracted_by", "extracted_at"],
+      "properties": {
+        "extracted_by": { "type": "string", "description": "추출 스크립트 이름" },
+        "extracted_at": { "type": "string" }
+      }
+    }
+  }
+}

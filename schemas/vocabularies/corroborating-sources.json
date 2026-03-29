@@ -1,0 +1,74 @@
+{
+  "vocabulary_id": "corroborating-sources",
+  "version": "1.0.0",
+  "last_updated": "2026-03-28",
+  "_changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-03-28",
+      "change": "initial vocabulary",
+      "reason": "운산일기 전체 텍스트에서 귀납적으로 추출한 초기 어휘",
+      "affected_entries": null
+    }
+  ],
+  "description": "notes.source 필드에 사용하는 보조 사료 목록. 연구 진행에 따라 확장.",
+  "sources": {
+    "元史": {
+      "label_ko": "원사",
+      "type": "dynastic_history",
+      "edition_note": null,
+      "relevance": "인물 열전·관직 제도·지리지 대조"
+    },
+    "至順鎭江志": {
+      "label_ko": "지순진강지",
+      "type": "local_gazetteer",
+      "edition_note": "至順年間(1330-1332) 편찬",
+      "relevance": "鎭江 지역 인물·관부·지명 대조. 郭畀 활동지역."
+    },
+    "嘉禾志": {
+      "label_ko": "가화지",
+      "type": "local_gazetteer",
+      "edition_note": null,
+      "relevance": "嘉興 지역 지명·인물 대조"
+    },
+    "吳郡志": {
+      "label_ko": "오군지",
+      "type": "local_gazetteer",
+      "edition_note": null,
+      "relevance": "平江(蘇州) 지역 대조"
+    },
+    "宋史": {
+      "label_ko": "송사",
+      "type": "dynastic_history",
+      "edition_note": null,
+      "relevance": "宋末 인물 가계 추적"
+    },
+    "新元史": {
+      "label_ko": "신원사",
+      "type": "dynastic_history",
+      "edition_note": "柯劭忞 편찬",
+      "relevance": "元史 보완. 추가 열전 포함."
+    },
+    "元典章": {
+      "label_ko": "원전장",
+      "type": "legal_code",
+      "edition_note": null,
+      "relevance": "관직 제도·행정 체계 대조"
+    },
+    "CBDB": {
+      "label_ko": "중국역대인물전기자료 데이터베이스",
+      "type": "database",
+      "edition_note": null,
+      "relevance": "인물 동정. external_ids.cbdb로 연결."
+    }
+  },
+  "source_types": {
+    "dynastic_history": "정사",
+    "local_gazetteer": "지방지",
+    "legal_code": "법전",
+    "literary_collection": "문집",
+    "database": "데이터베이스",
+    "inscription": "금석문",
+    "other": "기타"
+  }
+}

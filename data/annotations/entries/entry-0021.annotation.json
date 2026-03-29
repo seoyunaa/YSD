@@ -1,0 +1,335 @@
+{
+  "entry_id": "entry-0021",
+  "summary_ko": "18일, 맑음",
+  "text_corrections": [],
+  "translation_revised": "18일, 맑음. 이른 아침에 채덕보(蔡德甫)를 찾아가 이야기를 나누었다. 백무구(白无咎)가 아침밥을 대접하였는데, 채형(蔡兄)도 함께하였다. 무구(无咎)가 말을 빌려 함께 나가 군학(郡學)에서 마습재(馬習齋) 교수를 방문하였고, 구산(龜山) 왕산장(王山長), 유련강(劉練江), 마교(馬教)를 만났으며, 이어서 점심 모임을 약속하였다. 무구(无咎)와 함께 돌아오니, 채덕보(蔡德甫)가 예를 갖추어 머물게 하며 작은 술자리를 베풀었는데, 게(蟹)를 삶고 토란(芋)을 쪄서 내놓았다. 다음으로 이중겸(李仲謙)을 방문하였다. 문을 나서니 우연히 포고강(包古江) 산장(山長)을 만났다. 마습재(馬習齋)의 약속에 응하여 갔는데, 자리에 함께한 손님은 나한신(羅漢臣), 나, 그리고 백무구(白无咎)였다. 五品酒를 마시고 흩어지며 작별하였다. 다음으로 무구(无咎) 형제에게 작별 인사를 하고, 밤배를 타고 고소(姑蘇)로 향하였다. 북쪽에서 온 나그네가 시끄럽게 떠들어, 이경이 되어서야 잠들었다.",
+  "translation_notes": [
+    {
+      "type": "editorial",
+      "text": "name_office_corrections: 蔡德甫(蔡+兄)\n白无咎(无咎)\n馬習齋+教授(馬教)\n龜山王+山長\n劉練江\n李仲謙\n包古江+山長\n羅漢臣"
+    },
+    {
+      "type": "editorial",
+      "text": "place_movement_corrections: 郡學"
+    },
+    {
+      "type": "editorial",
+      "text": "food_hospitality: 禮留小酌, 煮蟹蒸芋\n五品酒"
+    }
+  ],
+  "persons": [
+    {
+      "entity_id": "person-0008",
+      "surface": "蔡德甫(蔡+兄)",
+      "normalized": "蔡德甫",
+      "role": "mentioned_person",
+      "certainty_reason": "蔡+兄"
+    },
+    {
+      "entity_id": "person-0009",
+      "surface": "白无咎(无咎)",
+      "normalized": "白无咎",
+      "role": "mentioned_person",
+      "certainty_reason": "无咎"
+    },
+    {
+      "entity_id": "person-0010",
+      "surface": "馬習齋+教授(馬教)",
+      "normalized": "馬習齋",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "certainty_reason": "馬教",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "馬習齋",
+          "entity_id": "person-0010"
+        },
+        {
+          "kind": "office",
+          "surface": "教授",
+          "entity_id": "office-0002"
+        }
+      ],
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "person-0011",
+      "surface": "龜山王+山長",
+      "normalized": "龜山王",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "龜山王",
+          "entity_id": "person-0011"
+        },
+        {
+          "kind": "office",
+          "surface": "山長",
+          "entity_id": "office-0003"
+        }
+      ],
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "person-0012",
+      "surface": "劉練江",
+      "normalized": "劉練江",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0013",
+      "surface": "李仲謙",
+      "normalized": "李仲謙",
+      "role": "mentioned_person"
+    },
+    {
+      "entity_id": "person-0014",
+      "surface": "包古江+山長",
+      "normalized": "包古江",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "包古江",
+          "entity_id": "person-0014"
+        },
+        {
+          "kind": "office",
+          "surface": "山長",
+          "entity_id": "office-0003"
+        }
+      ],
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "person-0015",
+      "surface": "羅漢臣",
+      "normalized": "羅漢臣",
+      "role": "mentioned_person"
+    }
+  ],
+  "places": [
+    {
+      "entity_id": "place-0010",
+      "surface": "郡學",
+      "normalized": "郡學",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0004",
+      "surface": "常州",
+      "normalized": "常州",
+      "role": "location",
+      "register_context": "journey"
+    },
+    {
+      "entity_id": "place-0011",
+      "surface": "姑蘇",
+      "normalized": "姑蘇",
+      "role": "location",
+      "register_context": "journey"
+    }
+  ],
+  "offices": [
+    {
+      "entity_id": "office-0002",
+      "surface": "教授",
+      "normalized": "教授",
+      "role": "title",
+      "mention_type": "office",
+      "certainty_reason": "馬教",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0003",
+      "surface": "山長",
+      "normalized": "山長",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0003",
+      "surface": "山長",
+      "normalized": "山長",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    }
+  ],
+  "institutions": [],
+  "documents": [],
+  "works": [],
+  "consumables": [
+    {
+      "entity_id": "consumable-0003",
+      "surface": "禮留小酌, 煮蟹蒸芋",
+      "normalized": "禮留小酌, 煮蟹蒸芋",
+      "role": "hospitality_item"
+    },
+    {
+      "entity_id": "consumable-0004",
+      "surface": "五品酒",
+      "normalized": "五品酒",
+      "role": "hospitality_item"
+    }
+  ],
+  "interactions": [
+    {
+      "seq": 1,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0008",
+      "companions": [],
+      "result": "met",
+      "location": "place-0010",
+      "notes": "蔡+兄"
+    },
+    {
+      "seq": 2,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0009",
+      "companions": [],
+      "result": "met",
+      "location": "place-0010",
+      "notes": "无咎"
+    },
+    {
+      "seq": 3,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0010",
+      "companions": [],
+      "result": "met",
+      "location": "place-0010",
+      "notes": "馬教"
+    },
+    {
+      "seq": 4,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0011",
+      "companions": [],
+      "result": "met",
+      "location": "place-0010",
+      "notes": null
+    },
+    {
+      "seq": 5,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0012",
+      "companions": [],
+      "result": "met",
+      "location": "place-0010",
+      "notes": null
+    },
+    {
+      "seq": 6,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0013",
+      "companions": [],
+      "result": "met",
+      "location": "place-0010",
+      "notes": null
+    },
+    {
+      "seq": 7,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0014",
+      "companions": [],
+      "result": "met",
+      "location": "place-0010",
+      "notes": null
+    },
+    {
+      "seq": 8,
+      "action": "visit",
+      "agent": "person-0001",
+      "target": "person-0015",
+      "companions": [],
+      "result": "met",
+      "location": "place-0010",
+      "notes": null
+    },
+    {
+      "seq": 9,
+      "action": "dined_with",
+      "agent": "person-0001",
+      "target": "person-0008",
+      "companions": [],
+      "result": "met",
+      "location": "place-0010",
+      "notes": "禮留小酌, 煮蟹蒸芋\n五品酒"
+    }
+  ],
+  "exchanges": [],
+  "artworks": [],
+  "journey": {
+    "from": "place-0004",
+    "to": "place-0011",
+    "via": [],
+    "mode": "boat",
+    "distance_raw": "상주-姑蘇"
+  },
+  "time_markers": [
+    {
+      "position": "night",
+      "raw": "二更"
+    }
+  ],
+  "emotional_markers": [],
+  "costs": [],
+  "topics": [
+    "이동",
+    "교유"
+  ],
+  "notes": [
+    {
+      "type": "editorial",
+      "text": "weather: 晴"
+    },
+    {
+      "type": "editorial",
+      "text": "二更: 当地时间晚上九点至十一点。(배 타는 시간 추정 가능)"
+    },
+    {
+      "type": "editorial",
+      "text": "解后: 见“邂逅”。불시에 마주침."
+    },
+    {
+      "type": "uncertainty",
+      "text": "review ambiguity noted"
+    },
+    {
+      "type": "uncertainty",
+      "text": "汉语词语，是对他人兄弟的敬称"
+    },
+    {
+      "type": "uncertainty",
+      "text": "불특정한 인물 (북쪽이 어딘지)"
+    }
+  ],
+  "status": {
+    "summary": "partial",
+    "entities": "done",
+    "review": "reviewed"
+  },
+  "provenance": {
+    "annotated_by": "codex",
+    "updated_at": "2026-03-28T22:46:59",
+    "reviewed_by": "seo_yuna",
+    "review_method": "translation_assisted"
+  }
+}
