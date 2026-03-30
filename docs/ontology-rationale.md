@@ -1,4 +1,4 @@
-# Ontology Design Rationale
+# Ontological Design Rationale
 
 ## 이 문서의 목적
 
