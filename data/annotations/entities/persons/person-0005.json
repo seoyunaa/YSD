@@ -1,0 +1,40 @@
+{
+  "id": "person-0005",
+  "entity_type": "person",
+  "label_original": "白无華",
+  "label_normalized": "白无華",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [
+    {
+      "surface": "无華",
+      "alias_type": "alias",
+      "ambiguous": false,
+      "notes": "이름 白无華, 白湛淵의 둘째아들"
+    }
+  ],
+  "notes": "이름 白无華, 白湛淵의 둘째아들",
+  "status": "active",
+  "relations": [
+    {
+      "target_id": "person-0003",
+      "relation_type": "father",
+      "source_entry_id": "entry-0020",
+      "notes": "이름 白无華, 白湛淵의 둘째아들"
+    },
+    {
+      "target_id": "person-0004",
+      "relation_type": "brother",
+      "source_entry_id": "entry-0020",
+      "notes": "same parent in review note"
+    }
+  ],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

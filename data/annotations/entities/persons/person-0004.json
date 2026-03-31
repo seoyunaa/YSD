@@ -1,0 +1,40 @@
+{
+  "id": "person-0004",
+  "entity_type": "person",
+  "label_original": "白无咎",
+  "label_normalized": "白无咎",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [
+    {
+      "surface": "无咎",
+      "alias_type": "alias",
+      "ambiguous": false,
+      "notes": "이름 白无咎, 白湛淵의 아들"
+    }
+  ],
+  "notes": "이름 白无咎, 白湛淵의 아들",
+  "status": "active",
+  "relations": [
+    {
+      "target_id": "person-0003",
+      "relation_type": "father",
+      "source_entry_id": "entry-0020",
+      "notes": "이름 白无咎, 白湛淵의 아들"
+    },
+    {
+      "target_id": "person-0005",
+      "relation_type": "brother",
+      "source_entry_id": "entry-0020",
+      "notes": "same parent in review note"
+    }
+  ],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

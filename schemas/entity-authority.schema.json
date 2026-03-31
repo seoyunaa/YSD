@@ -171,6 +171,7 @@
           "type": "object",
           "properties": {
             "id": { "type": ["integer", "null"] },
+            "uri": { "type": ["string", "null"] },
             "grade": {
               "type": "string",
               "enum": ["confirmed", "probable", "hold", "rejected", "unresolved"],
@@ -182,7 +183,8 @@
         "chgis": {
           "type": "object",
           "properties": {
-            "id": { "type": ["integer", "null"] },
+            "id": { "type": ["string", "integer", "null"] },
+            "uri": { "type": ["string", "null"] },
             "grade": { "type": "string", "enum": ["confirmed", "probable", "hold", "rejected", "unresolved"] },
             "notes": { "type": ["string", "null"] }
           }

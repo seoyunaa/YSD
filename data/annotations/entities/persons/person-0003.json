@@ -14,7 +14,20 @@
   ],
   "notes": null,
   "status": "active",
-  "relations": [],
+  "relations": [
+    {
+      "target_id": "person-0004",
+      "relation_type": "son",
+      "source_entry_id": "entry-0020",
+      "notes": "이름 白无咎, 白湛淵의 아들"
+    },
+    {
+      "target_id": "person-0005",
+      "relation_type": "son",
+      "source_entry_id": "entry-0020",
+      "notes": "이름 白无華, 白湛淵의 둘째아들"
+    }
+  ],
   "appointments": [
     {
       "office_id": "office-0001",

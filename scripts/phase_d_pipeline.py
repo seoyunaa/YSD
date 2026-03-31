@@ -28,6 +28,8 @@ GOLD_ENTRY_IDS = [f"entry-{index:04d}" for index in range(19, 29)]
 SELF_PERSON_ID = "person-0001"
 SELF_PERSON_LABEL = "郭畀"
 GENERATED_BY = "scripts/phase_d_pipeline.py"
+ANNOTATION_AUTHOR = "seo_yuna"
+CODE_WRITING_TOOL = "codex_gpt5.4"
 
 PLACE_ALIAS_MAP = {
     "항주": "杭州",
@@ -73,6 +75,17 @@ OFFICE_HINTS = (
     "維那",
     "令史",
     "廉吏",
+)
+PERSON_CANONICAL_OVERRIDES = {
+    "无咎": "白无咎",
+    "无華": "白无華",
+}
+COLLECTIVE_PERSON_LABELS = {"二白兄"}
+# Place names that can appear as person label prefixes (e.g. 金壇尹子源 → 尹子源)
+KNOWN_PLACE_PREFIXES = sorted(
+    {v for v in PLACE_ALIAS_MAP.values()} | {"大都", "潤州", "建康"},
+    key=len,
+    reverse=True,
 )
 GENERIC_PLACE_HEADINGS = {
     "항주 체류 전체",
@@ -146,6 +159,19 @@ def split_lines(text: str | None) -> list[str]:
     return [line.strip() for line in text.splitlines() if line.strip()]
 
 
+def is_generic_place_heading(label: str | None) -> bool:
+    raw = str(label or "").strip()
+    if not raw:
+        return False
+    normalized = canonical_key(raw)
+    if normalized in GENERIC_PLACE_HEADINGS:
+        return True
+    compact = re.sub(r"\s+", "", raw)
+    if compact.endswith("공간") or compact.endswith("전체"):
+        return True
+    return False
+
+
 def split_label_and_note(line: str) -> tuple[str, str | None]:
     line = line.strip().lstrip("-").strip()
     if ":" in line:
@@ -168,15 +194,134 @@ def strip_parenthetical(label: str) -> tuple[str, str | None]:
     return match.group(1).strip(), match.group(2).strip() or None
 
 
-def split_compound_plus(label: str) -> tuple[str, str] | None:
-    plus_index = label.find("+")
-    if plus_index < 0:
+def split_top_level(label: str, delimiter: str) -> list[str]:
+    parts: list[str] = []
+    current: list[str] = []
+    depth = 0
+    for char in label:
+        if char == "(":
+            depth += 1
+        elif char == ")" and depth > 0:
+            depth -= 1
+        if char == delimiter and depth == 0:
+            piece = "".join(current).strip()
+            if piece:
+                parts.append(piece)
+            current = []
+            continue
+        current.append(char)
+    tail = "".join(current).strip()
+    if tail:
+        parts.append(tail)
+    return parts
+
+
+def split_compound_plus_parts(label: str) -> list[str] | None:
+    parts = split_top_level(label, "+")
+    return parts if len(parts) >= 2 else None
+
+
+def split_person_slash_variants(label: str) -> list[str] | None:
+    if "/" not in label:
         return None
-    paren_index = label.find("(")
-    if paren_index >= 0 and plus_index > paren_index:
+    parts = split_top_level(label, "/")
+    return parts if len(parts) >= 2 else None
+
+
+def infer_person_name_from_note(*texts: str | None) -> str | None:
+    for text in texts:
+        if not text:
+            continue
+        match = re.search(r"이름\s*([一-龥]{2,6})", text)
+        if match:
+            return match.group(1)
+    return None
+
+
+def strip_place_prefix(label: str) -> str | None:
+    """Remove a known place prefix from a person label. Returns stripped name or None."""
+    for place_name in KNOWN_PLACE_PREFIXES:
+        if label.startswith(place_name) and len(label) > len(place_name):
+            remainder = label[len(place_name):]
+            # Only strip if remainder looks like a person name (≥2 CJK chars)
+            if len(re.findall(r"[\u4e00-\u9fff]", remainder)) >= 2:
+                return remainder
+    return None
+
+
+def normalize_person_label(label: str, note: str | None = None, gloss: str | None = None) -> str:
+    base, embedded = strip_parenthetical(label)
+    base = re.split(r"[，,]", base, maxsplit=1)[0].strip()
+    if base in PERSON_CANONICAL_OVERRIDES:
+        return PERSON_CANONICAL_OVERRIDES[base]
+    stripped = strip_place_prefix(base)
+    if stripped:
+        return stripped
+    inferred = infer_person_name_from_note(note, gloss, embedded)
+    if inferred:
+        return inferred
+    return base
+
+
+def is_collective_person_label(label: str) -> bool:
+    base, _note = strip_parenthetical(label)
+    return base in COLLECTIVE_PERSON_LABELS
+
+
+def person_specificity_score(label: str) -> int:
+    cjk_len = len(re.findall(r"[一-龥]", label))
+    score = cjk_len
+    if cjk_len >= 3:
+        score += 2
+    if cjk_len <= 2 and label.endswith(("兄", "公")):
+        score -= 3
+    if "□□" in label or "某" in label:
+        score -= 1
+    return score
+
+
+def resolve_person_alias_pair(
+    left: str, right: str, note: str | None = None, gloss: str | None = None
+) -> tuple[str, str]:
+    left_canonical = normalize_person_label(left, note, gloss)
+    right_canonical = normalize_person_label(right, note, gloss)
+    if person_specificity_score(left_canonical) >= person_specificity_score(right_canonical):
+        return left_canonical, strip_parenthetical(right)[0]
+    return right_canonical, strip_parenthetical(left)[0]
+
+
+def join_detail_notes(*parts: str | None) -> str | None:
+    values = [part.strip() for part in parts if part and part.strip()]
+    return "; ".join(values) if values else None
+
+
+def is_known_place_descriptor(label: str, registry: EntityRegistry | None = None) -> bool:
+    normalized = canonical_key(label)
+    if not normalized:
+        return False
+    if normalized in PLACE_ALIAS_MAP.values():
+        return True
+    if registry and registry.resolve("place", normalized):
+        return True
+    return False
+
+
+def extract_parent_label_from_note(text: str | None) -> str | None:
+    raw = str(text or "").strip()
+    if not raw:
         return None
-    left, right = label.split("+", 1)
-    return left.strip(), right.strip()
+    match = re.search(r"([一-龥]{2,6})의\s*(?:둘째)?아들", raw)
+    if match:
+        return match.group(1)
+    return None
+
+
+def split_collective_person_note(text: str | None) -> list[str]:
+    raw = str(text or "").strip()
+    if not raw:
+        return []
+    parts = re.split(r"\s*와\s*|\s*및\s*|/|,", raw)
+    return [part.strip() for part in parts if part and part.strip()]
 
 
 def infer_entity_type_from_id(entity_id: str) -> str:
@@ -184,6 +329,8 @@ def infer_entity_type_from_id(entity_id: str) -> str:
 
 
 def looks_like_office_label(label: str) -> bool:
+    if "宣差" in label:
+        return True
     return any(token in label for token in OFFICE_HINTS)
 
 
@@ -323,6 +470,36 @@ def validate_edge(edge: dict[str, Any]) -> None:
         raise ValueError(f"edge missing keys: {sorted(missing)}")
 
 
+def map_review_provenance_status(review_state: str | None) -> str:
+    normalized = (review_state or "").strip().lower()
+    if normalized in {"ok", "minor_fix"}:
+        return "validated"
+    if normalized == "rewrite_needed":
+        return "flagged"
+    return "pending"
+
+
+def build_annotation_provenance(review_entry: dict[str, Any], fallback_timestamp: str) -> dict[str, Any]:
+    updated_at = str(review_entry.get("updated_at", "")).strip() or fallback_timestamp
+    review_status = map_review_provenance_status(str(review_entry.get("status", "")))
+    reviewed_at = updated_at if review_status != "pending" else ""
+    return {
+        "annotation": {
+            "author": ANNOTATION_AUTHOR,
+        },
+        "code_writing": {
+            "tool": CODE_WRITING_TOOL,
+        },
+        "review": {
+            "author": ANNOTATION_AUTHOR,
+            "method": "human_review",
+            "status": review_status,
+        },
+        "updated_at": updated_at,
+        "reviewed_at": reviewed_at,
+    }
+
+
 def classify_item_type(label: str) -> str:
     if any(token in label for token in CONSUMABLE_HINTS):
         return "consumable"
@@ -369,6 +546,30 @@ def infer_transport_mode(text: str) -> str | None:
     if any(token in text for token in ("徒", "步", "걸어")):
         return "walk"
     return None
+
+
+def first_cjk_place_token(text: str) -> str | None:
+    for token in re.findall(r"[\u4e00-\u9fff]{2,8}", text or ""):
+        normalized = canonical_key(token)
+        if normalized and not is_generic_place_heading(normalized) and normalized not in NON_PLACE_MOVEMENT_HINTS:
+            return normalized
+    return None
+
+
+def normalize_place_fragment(fragment: str) -> str:
+    raw = str(fragment or "").strip()
+    if not raw:
+        return ""
+    raw = re.sub(r"https?://\S+", " ", raw)
+    raw = raw.replace("（", "(").replace("）", ")")
+    if "=" in raw:
+        left, right = [part.strip() for part in raw.split("=", 1)]
+        for candidate_part in (left, right):
+            candidate = first_cjk_place_token(candidate_part)
+            if candidate:
+                return candidate
+    candidate = first_cjk_place_token(raw)
+    return candidate or canonical_key(raw)
 
 
 def split_route(route_text: str) -> list[str]:
@@ -445,7 +646,7 @@ def extract_place_candidates(place_text: str) -> list[tuple[str, str | None]]:
         stripped = raw_line.strip()
         if not stripped:
             continue
-        if stripped in GENERIC_PLACE_HEADINGS:
+        if is_generic_place_heading(stripped):
             continue
         if " " in stripped and ":" not in stripped and not stripped.startswith("-"):
             continue
@@ -459,7 +660,7 @@ def extract_place_candidates(place_text: str) -> list[tuple[str, str | None]]:
             label, gloss = split_surface_and_gloss(label)
             note = note or gloss
             normalized = canonical_key(label)
-            if not normalized or normalized in GENERIC_PLACE_HEADINGS:
+            if not normalized or is_generic_place_heading(normalized):
                 continue
             if len(normalized) <= 1:
                 continue
@@ -472,6 +673,46 @@ def extract_place_candidates(place_text: str) -> list[tuple[str, str | None]]:
             seen.add(normalized)
             candidates.append((normalized, note))
 
+    return candidates
+
+
+def split_route_clean(route_text: str) -> list[str]:
+    if not route_text:
+        return []
+    cleaned = route_text.replace("(", "|").replace(")", "|")
+    cleaned = cleaned.replace("→", "|").replace("->", "|").replace("—", "|")
+    cleaned = cleaned.replace(" - ", "|").replace("-", "|")
+    results: list[str] = []
+    seen: set[str] = set()
+    for part in cleaned.split("|"):
+        candidate = normalize_place_fragment(part)
+        if not candidate or candidate in seen:
+            continue
+        seen.add(candidate)
+        results.append(candidate)
+    return results
+
+
+def extract_place_candidates_clean(place_text: str) -> list[tuple[str, str | None]]:
+    candidates: list[tuple[str, str | None]] = []
+    seen: set[str] = set()
+    for raw_line in split_lines(place_text):
+        stripped = raw_line.strip()
+        if not stripped or is_generic_place_heading(stripped):
+            continue
+        parts = [stripped] if any(marker in stripped for marker in (":", "=", "：")) else [part.strip() for part in stripped.split(",") if part.strip()] or [stripped]
+        for part in parts:
+            label, note = split_label_and_note(part)
+            label, gloss = split_surface_and_gloss(label)
+            if is_generic_place_heading(label):
+                continue
+            normalized = normalize_place_fragment(label)
+            if not normalized or is_generic_place_heading(normalized) or normalized in NON_PLACE_MOVEMENT_HINTS:
+                continue
+            if len(normalized) <= 1 or normalized in seen:
+                continue
+            seen.add(normalized)
+            candidates.append((normalized, note or gloss))
     return candidates
 
 
@@ -514,32 +755,55 @@ def build_review_registry(review_entries: dict[str, dict[str, Any]]) -> EntityRe
     for entry_id in GOLD_ENTRY_IDS:
         entry = review_entries[entry_id]
         for line in split_lines(entry.get("name_office_corrections", "")):
-            label, _note = split_label_and_note(line)
-            label, _gloss = split_surface_and_gloss(label)
+            label, note = split_label_and_note(line)
+            label, gloss = split_surface_and_gloss(label)
+            if is_collective_person_label(label):
+                continue
+            slash_variants = split_person_slash_variants(label)
+            if slash_variants:
+                for variant in slash_variants:
+                    registry.register("person", normalize_person_label(variant, note, gloss))
+                continue
             if "=" in label:
-                _, right = [part.strip() for part in label.split("=", 1)]
-                label = right
-            compound = split_compound_plus(label)
-            if compound:
-                left, right = compound
-                left, _left_note = strip_parenthetical(left)
-                right, _right_note = strip_parenthetical(right)
-                if looks_like_office_label(right):
-                    registry.register("person", left)
-                    registry.register("office", right)
+                left, right = [part.strip() for part in label.split("=", 1)]
+                canonical, _alias = resolve_person_alias_pair(left, right, note, gloss)
+                registry.register("person", canonical)
+                continue
+            compound_parts = split_compound_plus_parts(label)
+            if compound_parts:
+                base_parts = [strip_parenthetical(part)[0] for part in compound_parts]
+                office_indices = [index for index, part in enumerate(base_parts) if looks_like_office_label(part)]
+                if len(base_parts) == 2:
+                    if office_indices == [1]:
+                        registry.register("person", normalize_person_label(base_parts[0], note, gloss))
+                        registry.register("office", base_parts[1])
+                    else:
+                        registry.register("person", normalize_person_label(base_parts[1], note, gloss))
                 else:
-                    registry.register("person", right)
+                    if office_indices and office_indices[-1] == len(base_parts) - 1 and len(base_parts) >= 2:
+                        registry.register("person", normalize_person_label(base_parts[-2], note, gloss))
+                        registry.register("office", base_parts[-1])
+                        descriptor_parts = base_parts[:-2]
+                    elif 1 in office_indices:
+                        registry.register("person", normalize_person_label(base_parts[-1], note, gloss))
+                        registry.register("office", base_parts[1])
+                        descriptor_parts = [base_parts[0]]
+                    else:
+                        registry.register("person", normalize_person_label(base_parts[-1], note, gloss))
+                        descriptor_parts = base_parts[:-1]
+                    for descriptor_part in descriptor_parts:
+                        if is_known_place_descriptor(descriptor_part, registry):
+                            registry.register("place", descriptor_part)
             elif label:
-                label, _label_note = strip_parenthetical(label)
-                registry.register("person", label)
-        for normalized, _note in extract_place_candidates(str(entry.get("place_movement_corrections", ""))):
+                registry.register("person", normalize_person_label(label, note, gloss))
+        for normalized, _note in extract_place_candidates_clean(str(entry.get("place_movement_corrections", ""))):
             registry.register("place", normalized)
             if looks_like_institution(normalized):
                 registry.register("institution", normalized)
         for value in split_lines(entry.get("document_item", "")) + split_lines(entry.get("food_hospitality", "")):
             label, _note = split_label_and_note(value)
             registry.register(classify_item_type(label), label)
-        for route_label in split_route(str(entry.get("route", ""))):
+        for route_label in split_route_clean(str(entry.get("route", ""))):
             registry.register("place", route_label)
         for raw_line in split_lines(entry.get("place_movement_corrections", "")):
             normalized = canonical_key(raw_line.strip())
@@ -568,20 +832,63 @@ def convert_reviews_to_annotations() -> list[dict[str, Any]]:
         documents: list[dict[str, Any]] = []
         works: list[dict[str, Any]] = []
         consumables: list[dict[str, Any]] = []
+        seen_place_ids: set[str] = set()
+
+        def append_place_mention(
+            surface: str,
+            *,
+            certainty: str = "confirmed",
+            certainty_reason: str | None = None,
+            register_context: str | None = None,
+        ) -> None:
+            normalized = canonical_key(surface)
+            place_id = registry.register("place", normalized)
+            if place_id in seen_place_ids:
+                return
+            seen_place_ids.add(place_id)
+            places.append(
+                mention_payload(
+                    place_id,
+                    surface,
+                    normalized,
+                    "location",
+                    certainty=certainty,
+                    certainty_reason=certainty_reason,
+                    register_context=register_context,
+                )
+            )
 
         for line in split_lines(review_entry.get("name_office_corrections", "")):
             label, note = split_label_and_note(line)
             label, gloss = split_surface_and_gloss(label)
             certainty = "uncertain" if canonical_key(label) in ambiguity_map else "confirmed"
             certainty_reason = ambiguity_map.get(canonical_key(label)) or note or gloss
+            if is_collective_person_label(label):
+                continue
+            slash_variants = split_person_slash_variants(label)
+            if slash_variants:
+                for variant in slash_variants:
+                    variant_surface, variant_note = strip_parenthetical(variant)
+                    normalized = normalize_person_label(variant, note, gloss)
+                    persons.append(
+                        mention_payload(
+                            registry.register("person", normalized),
+                            variant_surface,
+                            normalized,
+                            "mentioned_person",
+                            certainty=certainty,
+                            certainty_reason=certainty_reason or variant_note,
+                        )
+                    )
+                continue
             if "=" in label:
                 left, right = [part.strip() for part in label.split("=", 1)]
-                label = right
+                canonical, alias_surface = resolve_person_alias_pair(left, right, note, gloss)
                 persons.append(
                     mention_payload(
-                        registry.register("person", label),
-                        left,
-                        label,
+                        registry.register("person", canonical),
+                        alias_surface,
+                        canonical,
                         "mentioned_person",
                         mention_type="alias",
                         certainty=certainty,
@@ -589,28 +896,30 @@ def convert_reviews_to_annotations() -> list[dict[str, Any]]:
                     )
                 )
                 continue
-            compound = split_compound_plus(label)
-            if compound:
-                left, right = compound
-                left_base, left_note = strip_parenthetical(left)
-                right_base, right_note = strip_parenthetical(right)
-                certainty_reason = certainty_reason or left_note or right_note
-                if looks_like_office_label(right):
-                    person_id = registry.register("person", left_base)
-                    office_id = registry.register("office", right_base)
+            compound_parts = split_compound_plus_parts(label)
+            if compound_parts:
+                base_parts = [strip_parenthetical(part)[0] for part in compound_parts]
+                part_notes = [strip_parenthetical(part)[1] for part in compound_parts]
+                certainty_reason = join_detail_notes(certainty_reason, *part_notes)
+                office_indices = [index for index, part in enumerate(base_parts) if looks_like_office_label(part)]
+                if len(base_parts) == 2 and office_indices == [1]:
+                    person_label = normalize_person_label(base_parts[0], note, gloss)
+                    office_label = base_parts[1]
+                    person_id = registry.register("person", person_label)
+                    office_id = registry.register("office", office_label)
                     persons.append(
                         mention_payload(
                             person_id,
                             label,
-                            left_base,
+                            person_label,
                             "mentioned_person",
                             mention_type="office",
                             certainty=certainty,
                             certainty_reason=certainty_reason,
                             compound_surface=True,
                             compound_components=[
-                                {"kind": "person", "surface": left_base, "entity_id": person_id},
-                                {"kind": "office", "surface": right_base, "entity_id": office_id},
+                                {"kind": "person", "surface": person_label, "entity_id": person_id},
+                                {"kind": "office", "surface": office_label, "entity_id": office_id},
                             ],
                             register_context="administrative",
                         )
@@ -618,8 +927,8 @@ def convert_reviews_to_annotations() -> list[dict[str, Any]]:
                     offices.append(
                         mention_payload(
                             office_id,
-                            right_base,
-                            right_base,
+                            office_label,
+                            office_label,
                             "title",
                             mention_type="office",
                             certainty=certainty,
@@ -628,25 +937,82 @@ def convert_reviews_to_annotations() -> list[dict[str, Any]]:
                         )
                     )
                 else:
-                    person_id = registry.register("person", right_base)
-                    persons.append(
-                        mention_payload(
-                            person_id,
-                            label,
-                            right_base,
-                            "mentioned_person",
-                            mention_type="descriptor",
-                            certainty=certainty,
-                            certainty_reason=certainty_reason,
+                    office_label: str | None = None
+                    descriptor_parts: list[str] = []
+                    if office_indices and office_indices[-1] == len(base_parts) - 1 and len(base_parts) >= 2:
+                        person_label = normalize_person_label(base_parts[-2], note, gloss)
+                        office_label = base_parts[-1]
+                        descriptor_parts = base_parts[:-2]
+                    elif 1 in office_indices:
+                        person_label = normalize_person_label(base_parts[-1], note, gloss)
+                        office_label = base_parts[1]
+                        descriptor_parts = [base_parts[0]]
+                    else:
+                        person_label = normalize_person_label(base_parts[-1], note, gloss)
+                        descriptor_parts = base_parts[:-1]
+
+                    if office_label:
+                        person_id = registry.register("person", person_label)
+                        office_id = registry.register("office", office_label)
+                        descriptor_reason = join_detail_notes(certainty_reason, *descriptor_parts)
+                        persons.append(
+                            mention_payload(
+                                person_id,
+                                label,
+                                person_label,
+                                "mentioned_person",
+                                mention_type="office",
+                                certainty=certainty,
+                                certainty_reason=descriptor_reason,
+                                compound_surface=True,
+                                compound_components=[
+                                    {"kind": "person", "surface": person_label, "entity_id": person_id},
+                                    {"kind": "office", "surface": office_label, "entity_id": office_id},
+                                ],
+                                register_context="administrative",
+                            )
                         )
-                    )
+                        offices.append(
+                            mention_payload(
+                                office_id,
+                                office_label,
+                                office_label,
+                                "title",
+                                mention_type="office",
+                                certainty=certainty,
+                                certainty_reason=descriptor_reason,
+                                register_context="administrative",
+                            )
+                        )
+                        for descriptor_part in descriptor_parts:
+                            if is_known_place_descriptor(descriptor_part, registry):
+                                append_place_mention(
+                                    descriptor_part,
+                                    certainty=certainty,
+                                    certainty_reason=descriptor_reason,
+                                    register_context="administrative",
+                                )
+                    else:
+                        person_id = registry.register("person", person_label)
+                        persons.append(
+                            mention_payload(
+                                person_id,
+                                label,
+                                person_label,
+                                "mentioned_person",
+                                mention_type="descriptor",
+                                certainty=certainty,
+                                certainty_reason=join_detail_notes(certainty_reason, *descriptor_parts),
+                            )
+                        )
             else:
-                label_base, label_note = strip_parenthetical(label)
+                label_surface, label_note = strip_parenthetical(label)
+                label_base = normalize_person_label(label_surface, note, gloss)
                 certainty_reason = certainty_reason or label_note
                 persons.append(
                     mention_payload(
                         registry.register("person", label_base),
-                        label,
+                        label_surface,
                         label_base,
                         "mentioned_person",
                         certainty=certainty,
@@ -654,25 +1020,16 @@ def convert_reviews_to_annotations() -> list[dict[str, Any]]:
                     )
                 )
 
-        seen_place_ids: set[str] = set()
-        for normalized, note in extract_place_candidates(str(review_entry.get("place_movement_corrections", ""))):
+        for normalized, note in extract_place_candidates_clean(str(review_entry.get("place_movement_corrections", ""))):
             certainty = "uncertain" if normalized in ambiguity_map else "confirmed"
             certainty_reason = ambiguity_map.get(normalized) or note
-            place_id = registry.register("place", normalized)
-            if place_id in seen_place_ids:
-                continue
-            seen_place_ids.add(place_id)
-            places.append(
-                mention_payload(
-                    place_id,
-                    normalized,
-                    normalized,
-                    "location",
-                    certainty=certainty,
-                    certainty_reason=certainty_reason,
-                    register_context="administrative",
-                )
+            append_place_mention(
+                normalized,
+                certainty=certainty,
+                certainty_reason=certainty_reason,
+                register_context="administrative",
             )
+            place_id = registry.resolve("place", normalized)
             if looks_like_institution(normalized):
                 institution_id = registry.register("institution", normalized)
                 institutions.append(
@@ -687,20 +1044,8 @@ def convert_reviews_to_annotations() -> list[dict[str, Any]]:
                     )
                 )
 
-        for route_label in split_route(str(review_entry.get("route", ""))):
-            place_id = registry.register("place", route_label)
-            if place_id in seen_place_ids:
-                continue
-            seen_place_ids.add(place_id)
-            places.append(
-                mention_payload(
-                    place_id,
-                    route_label,
-                    route_label,
-                    "location",
-                    register_context="journey",
-                )
-            )
+        for route_label in split_route_clean(str(review_entry.get("route", ""))):
+            append_place_mention(route_label, register_context="journey")
 
         for line in split_lines(review_entry.get("document_item", "")):
             label, note = split_label_and_note(line)
@@ -719,7 +1064,7 @@ def convert_reviews_to_annotations() -> list[dict[str, Any]]:
             entity_id = registry.register("consumable", label)
             consumables.append(mention_payload(entity_id, label, label, "hospitality_item", certainty_reason=note))
 
-        route_labels = split_route(str(review_entry.get("route", "")))
+        route_labels = split_route_clean(str(review_entry.get("route", "")))
         journey = None
         if len(route_labels) >= 2:
             route_ids = [registry.register("place", label) for label in route_labels]
@@ -815,12 +1160,7 @@ def convert_reviews_to_annotations() -> list[dict[str, Any]]:
                 "entities": "done" if persons or places or offices else "partial",
                 "review": "reviewed",
             },
-            "provenance": {
-                "annotated_by": "codex",
-                "updated_at": str(review_entry.get("updated_at", "")).strip() or generated_at,
-                "reviewed_by": "seo_yuna",
-                "review_method": "translation_assisted",
-            },
+            "provenance": build_annotation_provenance(review_entry, generated_at),
         }
         validate_annotation(annotation)
         annotations.append(annotation)
@@ -917,7 +1257,117 @@ def create_authority_files() -> dict[str, dict[str, dict[str, Any]]]:
         mentions_by_type["place"].append(mention_index[parent_id])
         first_seen.setdefault(parent_id, GOLD_ENTRY_IDS[0])
 
+    relations_by_person: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    relation_seen: set[tuple[str, str, str, str]] = set()
+
+    def resolve_person_in_annotation(annotation: dict[str, Any], label: str | None) -> str | None:
+        raw = str(label or "").strip()
+        if not raw:
+            return None
+        base, gloss = strip_parenthetical(raw)
+        candidates: list[str] = []
+        for candidate in (
+            normalize_person_label(base, None, gloss),
+            base,
+            canonical_key(base),
+        ):
+            if candidate and candidate not in candidates:
+                candidates.append(candidate)
+        for candidate in candidates:
+            for person in annotation.get("persons", []):
+                if person.get("normalized") == candidate or person.get("surface") == candidate:
+                    return person["entity_id"]
+            resolved = registry.resolve("person", candidate)
+            if resolved:
+                return resolved
+        return None
+
+    def add_person_relation(
+        source_id: str | None,
+        target_id: str | None,
+        relation_type: str,
+        entry_id: str,
+        notes: str | None = None,
+    ) -> None:
+        if not source_id or not target_id or source_id == target_id:
+            return
+        key = (source_id, target_id, relation_type, entry_id)
+        if key in relation_seen:
+            return
+        relation_seen.add(key)
+        relations_by_person[source_id].append(
+            {
+                "target_id": target_id,
+                "relation_type": relation_type,
+                "source_entry_id": entry_id,
+                "notes": notes,
+            }
+        )
+
+    for annotation in annotations:
+        entry_id = annotation["entry_id"]
+        children_by_parent: dict[str, list[str]] = defaultdict(list)
+
+        for person in annotation.get("persons", []):
+            note = str(person.get("certainty_reason") or "").strip()
+            parent_label = extract_parent_label_from_note(note)
+            if not parent_label:
+                continue
+            parent_id = resolve_person_in_annotation(annotation, parent_label)
+            child_id = person.get("entity_id")
+            if not parent_id or not child_id:
+                continue
+            add_person_relation(child_id, parent_id, "father", entry_id, note)
+            add_person_relation(parent_id, child_id, "son", entry_id, note)
+            children_by_parent[parent_id].append(child_id)
+
+        for sibling_ids in children_by_parent.values():
+            unique_ids = list(dict.fromkeys(sibling_ids))
+            for index, left_id in enumerate(unique_ids):
+                for right_id in unique_ids[index + 1 :]:
+                    add_person_relation(left_id, right_id, "brother", entry_id, "same parent in review note")
+                    add_person_relation(right_id, left_id, "brother", entry_id, "same parent in review note")
+
+        for note_row in annotation.get("translation_notes", []):
+            text = str(note_row.get("text") or "")
+            for raw_line in split_lines(text):
+                label, note = split_label_and_note(raw_line)
+                collective_label = strip_parenthetical(label)[0]
+                if collective_label not in COLLECTIVE_PERSON_LABELS:
+                    continue
+                member_ids = [resolve_person_in_annotation(annotation, part) for part in split_collective_person_note(note)]
+                member_ids = [member_id for member_id in member_ids if member_id]
+                unique_ids = list(dict.fromkeys(member_ids))
+                for index, left_id in enumerate(unique_ids):
+                    for right_id in unique_ids[index + 1 :]:
+                        add_person_relation(left_id, right_id, "brother", entry_id, note)
+                        add_person_relation(right_id, left_id, "brother", entry_id, note)
+
     authorities: dict[str, dict[str, dict[str, Any]]] = {"person": {}, "place": {}, "office": {}, "institution": {}}
+
+    def existing_authority_for(entity_type: str, entity_id: str) -> dict[str, Any] | None:
+        path = ENTITY_DIR / f"{entity_type}s" / f"{entity_id}.json"
+        if not path.exists():
+            return None
+        return load_json(path)
+
+    def preserve_curated_authority_fields(authority: dict[str, Any]) -> dict[str, Any]:
+        existing = existing_authority_for(authority["entity_type"], authority["id"])
+        if not existing:
+            return authority
+
+        if existing.get("external_ids"):
+            authority["external_ids"] = existing["external_ids"]
+
+        if authority["entity_type"] == "place":
+            existing_place_info = existing.get("place_info", {})
+            place_info = authority.setdefault("place_info", {})
+            for field in ("admin_level", "coordinates", "period_names"):
+                value = existing_place_info.get(field)
+                if value not in (None, [], {}):
+                    place_info[field] = value
+
+        return authority
 
     for entity_id, mention in sorted(mention_index.items()):
         entity_type = infer_entity_type_from_id(entity_id)
@@ -957,7 +1407,7 @@ def create_authority_files() -> dict[str, dict[str, dict[str, Any]]]:
                                 "notes": person.get("certainty_reason"),
                             }
                         )
-            authority["relations"] = []
+            authority["relations"] = relations_by_person.get(entity_id, [])
             authority["appointments"] = appointments
             authority["residences"] = []
             authority["external_ids"] = {"cbdb": {"id": None, "grade": "unresolved", "notes": "pilot placeholder"}}
@@ -980,6 +1430,7 @@ def create_authority_files() -> dict[str, dict[str, dict[str, Any]]]:
             }
             authority["external_ids"] = {"inindex": {"url": None, "grade": "unresolved", "notes": "pilot placeholder"}}
 
+        authority = preserve_curated_authority_fields(authority)
         validate_authority(authority)
         authorities[entity_type][entity_id] = authority
 
@@ -990,8 +1441,14 @@ def create_authority_files() -> dict[str, dict[str, dict[str, Any]]]:
         "institution": ENTITY_DIR / "institutions",
     }
     for entity_type, entity_map in authorities.items():
+        directory = path_map[entity_type]
+        directory.mkdir(parents=True, exist_ok=True)
+        expected_names = {f"{authority['id']}.json" for authority in entity_map.values()}
+        for stale_path in directory.glob(f"{entity_type}-*.json"):
+            if stale_path.name not in expected_names:
+                stale_path.unlink()
         for authority in entity_map.values():
-            write_json(path_map[entity_type] / f"{authority['id']}.json", authority)
+            write_json(directory / f"{authority['id']}.json", authority)
 
     return authorities
 

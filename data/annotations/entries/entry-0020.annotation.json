@@ -41,28 +41,21 @@
     },
     {
       "entity_id": "person-0004",
-      "surface": "无咎(이름 白无咎, 白湛淵의 아들)",
-      "normalized": "无咎",
+      "surface": "无咎",
+      "normalized": "白无咎",
       "role": "mentioned_person",
       "certainty_reason": "이름 白无咎, 白湛淵의 아들"
     },
     {
       "entity_id": "person-0005",
-      "surface": "无華(이름 白无華, 白湛淵의 둘째아들)",
-      "normalized": "无華",
+      "surface": "无華",
+      "normalized": "白无華",
       "role": "mentioned_person",
       "certainty_reason": "이름 白无華, 白湛淵의 둘째아들"
     },
     {
       "entity_id": "person-0006",
-      "surface": "二白兄",
-      "normalized": "二白兄",
-      "role": "mentioned_person",
-      "certainty_reason": "无咎와 无華"
-    },
-    {
-      "entity_id": "person-0007",
-      "surface": "寺僧(태평사의 승려)",
+      "surface": "寺僧",
       "normalized": "寺僧",
       "role": "mentioned_person",
       "certainty_reason": "태평사의 승려"
@@ -85,6 +78,13 @@
     },
     {
       "entity_id": "place-0005",
+      "surface": "入城",
+      "normalized": "入城",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0006",
       "surface": "元豐橋",
       "normalized": "元豐橋",
       "role": "location",
@@ -92,7 +92,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0006",
+      "entity_id": "place-0007",
       "surface": "太平寺",
       "normalized": "太平寺",
       "role": "location",
@@ -100,7 +100,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0007",
+      "entity_id": "place-0008",
       "surface": "江陰",
       "normalized": "江陰",
       "role": "location",
@@ -108,7 +108,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0008",
+      "entity_id": "place-0009",
       "surface": "无華書院",
       "normalized": "无華書院",
       "role": "location",
@@ -116,7 +116,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0009",
+      "entity_id": "place-0010",
       "surface": "呂城壩",
       "normalized": "呂城壩",
       "role": "location",
@@ -223,20 +223,10 @@
       "companions": [],
       "result": "not_met",
       "location": "place-0003",
-      "notes": "无咎와 无華"
-    },
-    {
-      "seq": 5,
-      "action": "visit",
-      "agent": "person-0001",
-      "target": "person-0007",
-      "companions": [],
-      "result": "not_met",
-      "location": "place-0003",
       "notes": "태평사의 승려"
     },
     {
-      "seq": 6,
+      "seq": 5,
       "action": "dined_with",
       "agent": "person-0001",
       "target": "person-0003",
@@ -249,13 +239,13 @@
   "exchanges": [],
   "artworks": [],
   "journey": {
-    "from": "place-0009",
-    "to": "place-0008",
+    "from": "place-0010",
+    "to": "place-0009",
     "via": [
       "place-0003",
       "place-0004",
-      "place-0005",
-      "place-0006"
+      "place-0006",
+      "place-0007"
     ],
     "mode": "boat",
     "distance_raw": "呂城壩 - 奔牛 - 常州(元豐橋 - 太平寺 - 无華書院)"
@@ -291,9 +281,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "validated"
+    },
     "updated_at": "2026-03-28T22:45:51",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "reviewed_at": "2026-03-28T22:45:51"
   }
 }
