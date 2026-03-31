@@ -19,7 +19,7 @@
   ],
   "persons": [
     {
-      "entity_id": "person-0016",
+      "entity_id": "person-0014",
       "surface": "龔子敬+山長",
       "normalized": "龔子敬",
       "role": "mentioned_person",
@@ -29,7 +29,7 @@
         {
           "kind": "person",
           "surface": "龔子敬",
-          "entity_id": "person-0016"
+          "entity_id": "person-0014"
         },
         {
           "kind": "office",
@@ -42,14 +42,14 @@
   ],
   "places": [
     {
-      "entity_id": "place-0012",
+      "entity_id": "place-0013",
       "surface": "平江",
       "normalized": "平江",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0011",
+      "entity_id": "place-0012",
       "surface": "姑蘇",
       "normalized": "姑蘇",
       "role": "location",
@@ -82,28 +82,28 @@
       "seq": 1,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0016",
+      "target": "person-0014",
       "companions": [],
       "result": "met",
-      "location": "place-0012",
+      "location": "place-0013",
       "notes": null
     },
     {
       "seq": 2,
       "action": "dined_with",
       "agent": "person-0001",
-      "target": "person-0016",
+      "target": "person-0014",
       "companions": [],
       "result": "met",
-      "location": "place-0012",
+      "location": "place-0013",
       "notes": "晚飯"
     }
   ],
   "exchanges": [],
   "artworks": [],
   "journey": {
-    "from": "place-0011",
-    "to": "place-0012",
+    "from": "place-0012",
+    "to": "place-0013",
     "via": [],
     "mode": null,
     "distance_raw": "고소-평강(平江)"
@@ -126,9 +126,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "validated"
+    },
     "updated_at": "2026-03-28T23:10:33",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "reviewed_at": "2026-03-28T23:10:33"
   }
 }

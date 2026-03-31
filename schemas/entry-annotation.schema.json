@@ -292,25 +292,56 @@
     },
     "provenance": {
       "type": "object",
-      "required": ["annotated_by", "updated_at"],
+      "additionalProperties": false,
+      "required": ["annotation", "code_writing", "review", "updated_at"],
       "properties": {
-        "annotated_by": {
-          "type": "string",
-          "description": "초벌 생성자. AI면 'codex' 등, 사람이면 'seo_yuna' 등"
+        "annotation": {
+          "type": "object",
+          "required": ["author"],
+          "additionalProperties": false,
+          "properties": {
+            "author": {
+              "type": "string",
+              "description": "Human author responsible for the annotation content."
+            }
+          }
+        },
+        "code_writing": {
+          "type": "object",
+          "required": ["tool"],
+          "additionalProperties": false,
+          "properties": {
+            "tool": {
+              "type": "string",
+              "description": "Tool used to write the code that structured this annotation file."
+            }
+          }
+        },
+        "review": {
+          "type": "object",
+          "required": ["author", "method", "status"],
+          "additionalProperties": false,
+          "properties": {
+            "author": {
+              "type": "string",
+              "description": "Human reviewer responsible for validating the annotation."
+            },
+            "method": {
+              "type": "string",
+              "enum": ["human_review"],
+              "description": "Review method used to validate the annotation content."
+            },
+            "status": {
+              "type": "string",
+              "enum": ["pending", "validated", "flagged"],
+              "description": "pending: review not completed / validated: human-reviewed and accepted / flagged: human-reviewed but still needs follow-up revision."
+            }
+          }
         },
         "updated_at": { "type": "string" },
-        "reviewed_by": {
-          "type": "string",
-          "description": "사람 검토자 식별자. AI 초벌을 검토 완료한 사람."
-        },
         "reviewed_at": {
           "type": "string",
-          "description": "검토 완료 일자 (ISO date)"
-        },
-        "review_method": {
-          "type": "string",
-          "enum": ["direct_read", "translation_assisted", "batch_correction"],
-          "description": "direct_read: 원문 직접 검토 / translation_assisted: AI 번역 참조 / batch_correction: 리포트 기반 배치 수정"
+          "description": "Human review completion timestamp (ISO datetime)."
         }
       }
     }

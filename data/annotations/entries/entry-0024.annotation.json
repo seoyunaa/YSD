@@ -6,7 +6,7 @@
   "translation_notes": [
     {
       "type": "editorial",
-      "text": "place_movement_corrections: 長安"
+      "text": "place_movement_corrections: 長安= 長安鎮 (https://chgis.hudci.org/tgaz/placename/hvd_138721 으로 추정)"
     },
     {
       "type": "editorial",
@@ -20,6 +20,7 @@
       "surface": "長安",
       "normalized": "長安",
       "role": "location",
+      "certainty_reason": "//chgis.hudci.org/tgaz/placename/hvd_138721 으로 추정)",
       "register_context": "administrative"
     }
   ],
@@ -65,9 +66,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
-    "updated_at": "2026-03-28T23:14:33",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "validated"
+    },
+    "updated_at": "2026-03-29T22:01:27",
+    "reviewed_at": "2026-03-29T22:01:27"
   }
 }

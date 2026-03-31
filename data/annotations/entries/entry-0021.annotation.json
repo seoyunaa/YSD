@@ -19,21 +19,21 @@
   ],
   "persons": [
     {
-      "entity_id": "person-0008",
-      "surface": "蔡德甫(蔡+兄)",
+      "entity_id": "person-0007",
+      "surface": "蔡德甫",
       "normalized": "蔡德甫",
       "role": "mentioned_person",
       "certainty_reason": "蔡+兄"
     },
     {
-      "entity_id": "person-0009",
-      "surface": "白无咎(无咎)",
+      "entity_id": "person-0004",
+      "surface": "白无咎",
       "normalized": "白无咎",
       "role": "mentioned_person",
       "certainty_reason": "无咎"
     },
     {
-      "entity_id": "person-0010",
+      "entity_id": "person-0008",
       "surface": "馬習齋+教授(馬教)",
       "normalized": "馬習齋",
       "role": "mentioned_person",
@@ -44,7 +44,7 @@
         {
           "kind": "person",
           "surface": "馬習齋",
-          "entity_id": "person-0010"
+          "entity_id": "person-0008"
         },
         {
           "kind": "office",
@@ -55,7 +55,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0011",
+      "entity_id": "person-0009",
       "surface": "龜山王+山長",
       "normalized": "龜山王",
       "role": "mentioned_person",
@@ -65,7 +65,7 @@
         {
           "kind": "person",
           "surface": "龜山王",
-          "entity_id": "person-0011"
+          "entity_id": "person-0009"
         },
         {
           "kind": "office",
@@ -76,19 +76,19 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0012",
+      "entity_id": "person-0010",
       "surface": "劉練江",
       "normalized": "劉練江",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0013",
+      "entity_id": "person-0011",
       "surface": "李仲謙",
       "normalized": "李仲謙",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0014",
+      "entity_id": "person-0012",
       "surface": "包古江+山長",
       "normalized": "包古江",
       "role": "mentioned_person",
@@ -98,7 +98,7 @@
         {
           "kind": "person",
           "surface": "包古江",
-          "entity_id": "person-0014"
+          "entity_id": "person-0012"
         },
         {
           "kind": "office",
@@ -109,7 +109,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0015",
+      "entity_id": "person-0013",
       "surface": "羅漢臣",
       "normalized": "羅漢臣",
       "role": "mentioned_person"
@@ -117,7 +117,7 @@
   ],
   "places": [
     {
-      "entity_id": "place-0010",
+      "entity_id": "place-0011",
       "surface": "郡學",
       "normalized": "郡學",
       "role": "location",
@@ -131,7 +131,7 @@
       "register_context": "journey"
     },
     {
-      "entity_id": "place-0011",
+      "entity_id": "place-0012",
       "surface": "姑蘇",
       "normalized": "姑蘇",
       "role": "location",
@@ -187,90 +187,90 @@
       "seq": 1,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0008",
+      "target": "person-0007",
       "companions": [],
       "result": "met",
-      "location": "place-0010",
+      "location": "place-0011",
       "notes": "蔡+兄"
     },
     {
       "seq": 2,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0009",
+      "target": "person-0004",
       "companions": [],
       "result": "met",
-      "location": "place-0010",
+      "location": "place-0011",
       "notes": "无咎"
     },
     {
       "seq": 3,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0010",
+      "target": "person-0008",
       "companions": [],
       "result": "met",
-      "location": "place-0010",
+      "location": "place-0011",
       "notes": "馬教"
     },
     {
       "seq": 4,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0011",
+      "target": "person-0009",
       "companions": [],
       "result": "met",
-      "location": "place-0010",
+      "location": "place-0011",
       "notes": null
     },
     {
       "seq": 5,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0012",
+      "target": "person-0010",
       "companions": [],
       "result": "met",
-      "location": "place-0010",
+      "location": "place-0011",
       "notes": null
     },
     {
       "seq": 6,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0013",
+      "target": "person-0011",
       "companions": [],
       "result": "met",
-      "location": "place-0010",
+      "location": "place-0011",
       "notes": null
     },
     {
       "seq": 7,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0014",
+      "target": "person-0012",
       "companions": [],
       "result": "met",
-      "location": "place-0010",
+      "location": "place-0011",
       "notes": null
     },
     {
       "seq": 8,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0015",
+      "target": "person-0013",
       "companions": [],
       "result": "met",
-      "location": "place-0010",
+      "location": "place-0011",
       "notes": null
     },
     {
       "seq": 9,
       "action": "dined_with",
       "agent": "person-0001",
-      "target": "person-0008",
+      "target": "person-0007",
       "companions": [],
       "result": "met",
-      "location": "place-0010",
+      "location": "place-0011",
       "notes": "禮留小酌, 煮蟹蒸芋\n五品酒"
     }
   ],
@@ -278,7 +278,7 @@
   "artworks": [],
   "journey": {
     "from": "place-0004",
-    "to": "place-0011",
+    "to": "place-0012",
     "via": [],
     "mode": "boat",
     "distance_raw": "상주-姑蘇"
@@ -327,9 +327,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "validated"
+    },
     "updated_at": "2026-03-28T22:46:59",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "reviewed_at": "2026-03-28T22:46:59"
   }
 }

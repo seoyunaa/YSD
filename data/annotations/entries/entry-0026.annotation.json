@@ -19,7 +19,7 @@
   ],
   "persons": [
     {
-      "entity_id": "person-0037",
+      "entity_id": "person-0033",
       "surface": "張雲心+州判",
       "normalized": "張雲心",
       "role": "mentioned_person",
@@ -29,7 +29,7 @@
         {
           "kind": "person",
           "surface": "張雲心",
-          "entity_id": "person-0037"
+          "entity_id": "person-0033"
         },
         {
           "kind": "office",
@@ -40,7 +40,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0038",
+      "entity_id": "person-0034",
       "surface": "湯北村+同知",
       "normalized": "湯北村",
       "role": "mentioned_person",
@@ -50,7 +50,7 @@
         {
           "kind": "person",
           "surface": "湯北村",
-          "entity_id": "person-0038"
+          "entity_id": "person-0034"
         },
         {
           "kind": "office",
@@ -61,7 +61,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0039",
+      "entity_id": "person-0035",
       "surface": "張景芳+學正",
       "normalized": "張景芳",
       "role": "mentioned_person",
@@ -71,7 +71,7 @@
         {
           "kind": "person",
           "surface": "張景芳",
-          "entity_id": "person-0039"
+          "entity_id": "person-0035"
         },
         {
           "kind": "office",
@@ -82,103 +82,103 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0040",
+      "entity_id": "person-0036",
       "surface": "吳若遺",
       "normalized": "吳若遺",
       "role": "mentioned_person",
       "certainty_reason": "실제로 만남"
     },
     {
-      "entity_id": "person-0041",
+      "entity_id": "person-0037",
       "surface": "羅康伯",
       "normalized": "羅康伯",
       "role": "mentioned_person",
       "certainty_reason": "吳若遺의 師孫"
     },
     {
-      "entity_id": "person-0042",
+      "entity_id": "person-0038",
       "surface": "鄭表白",
       "normalized": "鄭表白",
       "role": "mentioned_person",
       "certainty_reason": "柏窗 鄭君의 아들"
     },
     {
-      "entity_id": "person-0043",
+      "entity_id": "person-0039",
       "surface": "李息齋",
       "normalized": "李息齋",
       "role": "mentioned_person",
       "certainty_reason": "화가, 언급만 됨"
     },
     {
-      "entity_id": "person-0044",
+      "entity_id": "person-0040",
       "surface": "郝左丞",
       "normalized": "郝左丞",
       "role": "mentioned_person",
       "certainty_reason": "언급만 됨"
     },
     {
-      "entity_id": "person-0045",
+      "entity_id": "person-0041",
       "surface": "趙子昂",
       "normalized": "趙子昂",
       "role": "mentioned_person",
       "certainty_reason": "만나지 못함"
     },
     {
-      "entity_id": "person-0025",
+      "entity_id": "person-0022",
       "surface": "李伯玉",
       "normalized": "李伯玉",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0046",
+      "entity_id": "person-0042",
       "surface": "伏維那",
       "normalized": "伏維那",
       "role": "mentioned_person",
       "certainty_reason": "찾았으나 만나지 못함"
     },
     {
-      "entity_id": "person-0047",
+      "entity_id": "person-0043",
       "surface": "宗兄",
       "normalized": "宗兄",
       "role": "mentioned_person",
       "certainty_reason": "妙行寺의 승려"
     },
     {
-      "entity_id": "person-0035",
+      "entity_id": "person-0031",
       "surface": "唐仲文",
       "normalized": "唐仲文",
       "role": "mentioned_person",
       "certainty_reason": "낮에는 엇갈리고 저녁에 만남"
     },
     {
-      "entity_id": "person-0026",
+      "entity_id": "person-0023",
       "surface": "李叔義",
       "normalized": "李叔義",
       "role": "mentioned_person",
       "certainty_reason": "내가 나가 있는 동안 찾아옴"
     },
     {
-      "entity_id": "person-0023",
+      "entity_id": "person-0020",
       "surface": "趙伯可",
       "normalized": "趙伯可",
       "role": "mentioned_person",
       "certainty_reason": "찾아옴"
     },
     {
-      "entity_id": "person-0048",
+      "entity_id": "person-0044",
       "surface": "婺州孔君立",
-      "normalized": "婺州孔君立",
+      "normalized": "孔君立",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0049",
+      "entity_id": "person-0045",
       "surface": "孔提舉",
       "normalized": "孔提舉",
       "role": "mentioned_person",
       "certainty_reason": "언급만 됨"
     },
     {
-      "entity_id": "person-0050",
+      "entity_id": "person-0046",
       "surface": "王成之+都目",
       "normalized": "王成之",
       "role": "mentioned_person",
@@ -188,7 +188,7 @@
         {
           "kind": "person",
           "surface": "王成之",
-          "entity_id": "person-0050"
+          "entity_id": "person-0046"
         },
         {
           "kind": "office",
@@ -199,7 +199,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0051",
+      "entity_id": "person-0047",
       "surface": "王夀之",
       "normalized": "王夀之",
       "role": "mentioned_person"
@@ -212,6 +212,13 @@
       "normalized": "客杭",
       "role": "location",
       "certainty_reason": "항주에 머묾",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0031",
+      "surface": "杭州",
+      "normalized": "杭州",
+      "role": "location",
       "register_context": "administrative"
     },
     {
@@ -251,48 +258,62 @@
     },
     {
       "entity_id": "place-0038",
+      "surface": "항주성문/경계",
+      "normalized": "항주성문/경계",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0039",
       "surface": "北關門",
       "normalized": "北關門",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0039",
+      "entity_id": "place-0016",
+      "surface": "杭州城外",
+      "normalized": "杭州城外",
+      "role": "location",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "place-0040",
       "surface": "湖州市妙行寺",
       "normalized": "湖州市妙行寺",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0040",
+      "entity_id": "place-0041",
       "surface": "正殿",
       "normalized": "正殿",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0041",
+      "entity_id": "place-0042",
       "surface": "前殿",
       "normalized": "前殿",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0042",
+      "entity_id": "place-0043",
       "surface": "法堂",
       "normalized": "法堂",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0043",
+      "entity_id": "place-0044",
       "surface": "放生池",
       "normalized": "放生池",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0044",
+      "entity_id": "place-0045",
       "surface": "接待寺",
       "normalized": "接待寺",
       "role": "location",
@@ -300,7 +321,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0045",
+      "entity_id": "place-0046",
       "surface": "省中",
       "normalized": "省中",
       "role": "location",
@@ -308,7 +329,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0046",
+      "entity_id": "place-0047",
       "surface": "天目山",
       "normalized": "天目山",
       "role": "location",
@@ -316,14 +337,14 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0047",
+      "entity_id": "place-0048",
       "surface": "小舟還寓",
       "normalized": "小舟還寓",
       "role": "location",
       "register_context": "journey"
     },
     {
-      "entity_id": "place-0048",
+      "entity_id": "place-0049",
       "surface": "晚間再出",
       "normalized": "晚間再出",
       "role": "location",
@@ -465,7 +486,7 @@
       "seq": 1,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0037",
+      "target": "person-0033",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -475,7 +496,7 @@
       "seq": 2,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0038",
+      "target": "person-0034",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -485,7 +506,7 @@
       "seq": 3,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0039",
+      "target": "person-0035",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -495,7 +516,7 @@
       "seq": 4,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0040",
+      "target": "person-0036",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -505,7 +526,7 @@
       "seq": 5,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0041",
+      "target": "person-0037",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -515,7 +536,7 @@
       "seq": 6,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0042",
+      "target": "person-0038",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -525,7 +546,7 @@
       "seq": 7,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0043",
+      "target": "person-0039",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -535,7 +556,7 @@
       "seq": 8,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0044",
+      "target": "person-0040",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -545,7 +566,7 @@
       "seq": 9,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0045",
+      "target": "person-0041",
       "companions": [],
       "result": "not_met",
       "location": "place-0032",
@@ -555,7 +576,7 @@
       "seq": 10,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0025",
+      "target": "person-0022",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -565,7 +586,7 @@
       "seq": 11,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0046",
+      "target": "person-0042",
       "companions": [],
       "result": "not_met",
       "location": "place-0032",
@@ -575,7 +596,7 @@
       "seq": 12,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0047",
+      "target": "person-0043",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -585,7 +606,7 @@
       "seq": 13,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0035",
+      "target": "person-0031",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -595,7 +616,7 @@
       "seq": 14,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0026",
+      "target": "person-0023",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -605,7 +626,7 @@
       "seq": 15,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0023",
+      "target": "person-0020",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -615,7 +636,7 @@
       "seq": 16,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0048",
+      "target": "person-0044",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -625,7 +646,7 @@
       "seq": 17,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0049",
+      "target": "person-0045",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -635,7 +656,7 @@
       "seq": 18,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0050",
+      "target": "person-0046",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -645,7 +666,7 @@
       "seq": 19,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0051",
+      "target": "person-0047",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -655,7 +676,7 @@
       "seq": 20,
       "action": "dined_with",
       "agent": "person-0001",
-      "target": "person-0037",
+      "target": "person-0033",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -666,13 +687,13 @@
   "artworks": [],
   "journey": {
     "from": "place-0037",
-    "to": "place-0048",
+    "to": "place-0049",
     "via": [
       "place-0033",
       "place-0034",
-      "place-0038",
       "place-0039",
-      "place-0047"
+      "place-0040",
+      "place-0048"
     ],
     "mode": "boat",
     "distance_raw": "寓樓 → 井亭橋 → 玄同觀 → 北關門 → 湖州市妙行寺 → 小舟還寓 → 晚間再出"
@@ -714,9 +735,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "validated"
+    },
     "updated_at": "2026-03-29T00:24:21",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "reviewed_at": "2026-03-29T00:24:21"
   }
 }

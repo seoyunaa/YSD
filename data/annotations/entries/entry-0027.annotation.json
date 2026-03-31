@@ -6,7 +6,7 @@
   "translation_notes": [
     {
       "type": "editorial",
-      "text": "name_office_corrections: 李叔義=李兄\n王一初+都目\n王夀之\n王子芳\n任伯和\n金君玉: 該吏\n毛令史\n趙子昂+學士: 만나지 못함(조맹부)\n趙仲美: 趙子昂의 조카\n牟學甫\n宗夀卿\n徐君美\n袁義甫\n楊廷秀\n丹徒+宣差+狄仁卿\n田君美\n蔡宣使\n許芳 / 所應旂: 분절 추가 확인 필요"
+      "text": "name_office_corrections: 李叔義=李兄\n王一初+都目\n王夀之\n王子芳\n任伯和\n金君玉: 該吏\n毛+令史\n趙子昂+學士: 만나지 못함(조맹부)\n趙仲美: 趙子昂의 조카\n牟學甫\n宗夀卿\n徐君美\n袁義甫\n楊廷秀\n丹徒+宣差+狄仁卿\n田君美\n蔡+宣使\n許芳 / 所應旂: 분절 추가 확인 필요"
     },
     {
       "type": "editorial",
@@ -19,14 +19,14 @@
   ],
   "persons": [
     {
-      "entity_id": "person-0052",
-      "surface": "李叔義",
-      "normalized": "李兄",
+      "entity_id": "person-0023",
+      "surface": "李兄",
+      "normalized": "李叔義",
       "role": "mentioned_person",
       "mention_type": "alias"
     },
     {
-      "entity_id": "person-0029",
+      "entity_id": "person-0026",
       "surface": "王一初+都目",
       "normalized": "王一初",
       "role": "mentioned_person",
@@ -36,7 +36,7 @@
         {
           "kind": "person",
           "surface": "王一初",
-          "entity_id": "person-0029"
+          "entity_id": "person-0026"
         },
         {
           "kind": "office",
@@ -47,38 +47,53 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0051",
+      "entity_id": "person-0047",
       "surface": "王夀之",
       "normalized": "王夀之",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0053",
+      "entity_id": "person-0048",
       "surface": "王子芳",
       "normalized": "王子芳",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0054",
+      "entity_id": "person-0049",
       "surface": "任伯和",
       "normalized": "任伯和",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0055",
+      "entity_id": "person-0050",
       "surface": "金君玉",
       "normalized": "金君玉",
       "role": "mentioned_person",
       "certainty_reason": "該吏"
     },
     {
-      "entity_id": "person-0056",
-      "surface": "毛令史",
-      "normalized": "毛令史",
-      "role": "mentioned_person"
+      "entity_id": "person-0051",
+      "surface": "毛+令史",
+      "normalized": "毛",
+      "role": "mentioned_person",
+      "mention_type": "office",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "毛",
+          "entity_id": "person-0051"
+        },
+        {
+          "kind": "office",
+          "surface": "令史",
+          "entity_id": "office-0011"
+        }
+      ],
+      "register_context": "administrative"
     },
     {
-      "entity_id": "person-0045",
+      "entity_id": "person-0041",
       "surface": "趙子昂+學士",
       "normalized": "趙子昂",
       "role": "mentioned_person",
@@ -89,81 +104,113 @@
         {
           "kind": "person",
           "surface": "趙子昂",
-          "entity_id": "person-0045"
+          "entity_id": "person-0041"
         },
         {
           "kind": "office",
           "surface": "學士",
-          "entity_id": "office-0011"
+          "entity_id": "office-0012"
         }
       ],
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0057",
+      "entity_id": "person-0052",
       "surface": "趙仲美",
       "normalized": "趙仲美",
       "role": "mentioned_person",
       "certainty_reason": "趙子昂의 조카"
     },
     {
-      "entity_id": "person-0058",
+      "entity_id": "person-0053",
       "surface": "牟學甫",
       "normalized": "牟學甫",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0059",
+      "entity_id": "person-0054",
       "surface": "宗夀卿",
       "normalized": "宗夀卿",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0060",
+      "entity_id": "person-0055",
       "surface": "徐君美",
       "normalized": "徐君美",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0061",
+      "entity_id": "person-0056",
       "surface": "袁義甫",
       "normalized": "袁義甫",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0062",
+      "entity_id": "person-0057",
       "surface": "楊廷秀",
       "normalized": "楊廷秀",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0063",
+      "entity_id": "person-0058",
       "surface": "丹徒+宣差+狄仁卿",
-      "normalized": "宣差+狄仁卿",
+      "normalized": "狄仁卿",
       "role": "mentioned_person",
-      "mention_type": "descriptor"
+      "mention_type": "office",
+      "certainty_reason": "丹徒",
+      "compound_surface": true,
+      "compound_components": [
+        {
+          "kind": "person",
+          "surface": "狄仁卿",
+          "entity_id": "person-0058"
+        },
+        {
+          "kind": "office",
+          "surface": "宣差",
+          "entity_id": "office-0013"
+        }
+      ],
+      "register_context": "administrative"
     },
     {
-      "entity_id": "person-0064",
+      "entity_id": "person-0059",
       "surface": "田君美",
       "normalized": "田君美",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0065",
-      "surface": "蔡宣使",
-      "normalized": "蔡宣使",
-      "role": "mentioned_person"
+      "entity_id": "person-0060",
+      "surface": "蔡+宣使",
+      "normalized": "宣使",
+      "role": "mentioned_person",
+      "mention_type": "descriptor",
+      "certainty_reason": "蔡"
     },
     {
-      "entity_id": "person-0066",
-      "surface": "許芳 / 所應旂",
-      "normalized": "許芳 / 所應旂",
+      "entity_id": "person-0061",
+      "surface": "許芳",
+      "normalized": "許芳",
+      "role": "mentioned_person",
+      "certainty_reason": "분절 추가 확인 필요"
+    },
+    {
+      "entity_id": "person-0062",
+      "surface": "所應旂",
+      "normalized": "所應旂",
       "role": "mentioned_person",
       "certainty_reason": "분절 추가 확인 필요"
     }
   ],
   "places": [
+    {
+      "entity_id": "place-0050",
+      "surface": "丹徒",
+      "normalized": "丹徒",
+      "role": "location",
+      "certainty_reason": "丹徒",
+      "register_context": "administrative"
+    },
     {
       "entity_id": "place-0032",
       "surface": "客杭",
@@ -173,42 +220,42 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0049",
+      "entity_id": "place-0051",
       "surface": "省中照磨所",
       "normalized": "省中照磨所",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0050",
+      "entity_id": "place-0052",
       "surface": "儒學提舉司",
       "normalized": "儒學提舉司",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0051",
+      "entity_id": "place-0053",
       "surface": "市樓",
       "normalized": "市樓",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0052",
+      "entity_id": "place-0054",
       "surface": "湖上",
       "normalized": "湖上",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0053",
+      "entity_id": "place-0055",
       "surface": "兜率寺",
       "normalized": "兜率寺",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0054",
+      "entity_id": "place-0056",
       "surface": "湖上兜率寺",
       "normalized": "湖上兜率寺",
       "role": "location",
@@ -226,11 +273,28 @@
     },
     {
       "entity_id": "office-0011",
+      "surface": "令史",
+      "normalized": "令史",
+      "role": "title",
+      "mention_type": "office",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0012",
       "surface": "學士",
       "normalized": "學士",
       "role": "title",
       "mention_type": "office",
       "certainty_reason": "만나지 못함(조맹부)",
+      "register_context": "administrative"
+    },
+    {
+      "entity_id": "office-0013",
+      "surface": "宣差",
+      "normalized": "宣差",
+      "role": "title",
+      "mention_type": "office",
+      "certainty_reason": "丹徒",
       "register_context": "administrative"
     }
   ],
@@ -291,201 +355,211 @@
       "seq": 1,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0052",
+      "target": "person-0023",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 2,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0029",
+      "target": "person-0026",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 3,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0051",
+      "target": "person-0047",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 4,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0053",
+      "target": "person-0048",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 5,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0054",
+      "target": "person-0049",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 6,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0055",
+      "target": "person-0050",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": "該吏"
     },
     {
       "seq": 7,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0056",
+      "target": "person-0051",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 8,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0045",
+      "target": "person-0041",
       "companions": [],
       "result": "not_met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": "만나지 못함(조맹부)"
     },
     {
       "seq": 9,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0057",
+      "target": "person-0052",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": "趙子昂의 조카"
     },
     {
       "seq": 10,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0058",
+      "target": "person-0053",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 11,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0059",
+      "target": "person-0054",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 12,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0060",
+      "target": "person-0055",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 13,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0061",
+      "target": "person-0056",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 14,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0062",
+      "target": "person-0057",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 15,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0063",
+      "target": "person-0058",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
-      "notes": null
+      "location": "place-0050",
+      "notes": "丹徒"
     },
     {
       "seq": 16,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0064",
+      "target": "person-0059",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": null
     },
     {
       "seq": 17,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0065",
+      "target": "person-0060",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
-      "notes": null
+      "location": "place-0050",
+      "notes": "蔡"
     },
     {
       "seq": 18,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0066",
+      "target": "person-0061",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
       "notes": "분절 추가 확인 필요"
     },
     {
       "seq": 19,
-      "action": "dined_with",
+      "action": "visit",
       "agent": "person-0001",
-      "target": "person-0052",
+      "target": "person-0062",
       "companions": [],
       "result": "met",
-      "location": "place-0032",
+      "location": "place-0050",
+      "notes": "분절 추가 확인 필요"
+    },
+    {
+      "seq": 20,
+      "action": "dined_with",
+      "agent": "person-0001",
+      "target": "person-0023",
+      "companions": [],
+      "result": "met",
+      "location": "place-0050",
       "notes": "具茶"
     }
   ],
   "exchanges": [],
   "artworks": [],
   "journey": {
-    "from": "place-0049",
-    "to": "place-0054",
+    "from": "place-0051",
+    "to": "place-0056",
     "via": [
-      "place-0050",
-      "place-0051"
+      "place-0052",
+      "place-0053"
     ],
     "mode": null,
     "distance_raw": "省中照磨所 → 儒學提舉司 → 市樓 → 湖上兜率寺"
@@ -536,9 +610,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
-    "updated_at": "2026-03-29T01:00:27",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "flagged"
+    },
+    "updated_at": "2026-03-31T20:45:00",
+    "reviewed_at": "2026-03-31T20:45:00"
   }
 }

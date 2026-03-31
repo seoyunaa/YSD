@@ -19,13 +19,13 @@
   ],
   "persons": [
     {
-      "entity_id": "person-0026",
+      "entity_id": "person-0023",
       "surface": "李叔義",
       "normalized": "李叔義",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0019",
+      "entity_id": "person-0016",
       "surface": "張德輝+外郞(혹은 德輝)",
       "normalized": "張德輝",
       "role": "mentioned_person",
@@ -36,7 +36,7 @@
         {
           "kind": "person",
           "surface": "張德輝",
-          "entity_id": "person-0019"
+          "entity_id": "person-0016"
         },
         {
           "kind": "office",
@@ -47,26 +47,26 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0055",
+      "entity_id": "person-0050",
       "surface": "金君玉",
       "normalized": "金君玉",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0067",
+      "entity_id": "person-0019",
       "surface": "尹子源",
       "normalized": "尹子源",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0068",
-      "surface": "王一初",
-      "normalized": "王公",
+      "entity_id": "person-0026",
+      "surface": "王公",
+      "normalized": "王一初",
       "role": "mentioned_person",
       "mention_type": "alias"
     },
     {
-      "entity_id": "person-0069",
+      "entity_id": "person-0063",
       "surface": "范成之+主簿",
       "normalized": "范成之",
       "role": "mentioned_person",
@@ -76,18 +76,18 @@
         {
           "kind": "person",
           "surface": "范成之",
-          "entity_id": "person-0069"
+          "entity_id": "person-0063"
         },
         {
           "kind": "office",
           "surface": "主簿",
-          "entity_id": "office-0012"
+          "entity_id": "office-0014"
         }
       ],
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0070",
+      "entity_id": "person-0064",
       "surface": "丘中山+教授",
       "normalized": "丘中山",
       "role": "mentioned_person",
@@ -97,7 +97,7 @@
         {
           "kind": "person",
           "surface": "丘中山",
-          "entity_id": "person-0070"
+          "entity_id": "person-0064"
         },
         {
           "kind": "office",
@@ -118,21 +118,21 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0045",
+      "entity_id": "place-0046",
       "surface": "省中",
       "normalized": "省中",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0055",
+      "entity_id": "place-0057",
       "surface": "禮房",
       "normalized": "禮房",
       "role": "location",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0056",
+      "entity_id": "place-0058",
       "surface": "提舉司",
       "normalized": "提舉司",
       "role": "location",
@@ -150,7 +150,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "office-0012",
+      "entity_id": "office-0014",
       "surface": "主簿",
       "normalized": "主簿",
       "role": "title",
@@ -203,7 +203,7 @@
       "seq": 1,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0026",
+      "target": "person-0023",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -213,7 +213,7 @@
       "seq": 2,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0019",
+      "target": "person-0016",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -223,7 +223,7 @@
       "seq": 3,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0055",
+      "target": "person-0050",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -233,7 +233,7 @@
       "seq": 4,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0067",
+      "target": "person-0019",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -243,7 +243,7 @@
       "seq": 5,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0068",
+      "target": "person-0026",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -253,7 +253,7 @@
       "seq": 6,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0069",
+      "target": "person-0063",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -263,7 +263,7 @@
       "seq": 7,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0070",
+      "target": "person-0064",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -273,7 +273,7 @@
       "seq": 8,
       "action": "dined_with",
       "agent": "person-0001",
-      "target": "person-0026",
+      "target": "person-0023",
       "companions": [],
       "result": "met",
       "location": "place-0032",
@@ -283,10 +283,10 @@
   "exchanges": [],
   "artworks": [],
   "journey": {
-    "from": "place-0045",
-    "to": "place-0056",
+    "from": "place-0046",
+    "to": "place-0058",
     "via": [
-      "place-0055"
+      "place-0057"
     ],
     "mode": null,
     "distance_raw": "省中 → 禮房 → 提舉司 → 省中"
@@ -322,9 +322,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "validated"
+    },
     "updated_at": "2026-03-29T00:57:28",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "reviewed_at": "2026-03-29T00:57:28"
   }
 }

@@ -6,7 +6,7 @@
   "translation_notes": [
     {
       "type": "editorial",
-      "text": "name_office_corrections: 子敬=공자경(龔子敬), 8월28일 學道書院 山長이 됨.\n武臨淸+提舉: 항주의 인물, 공자경이 武臨淸에게 보내는 서신을 곽비에게 맡김.\n張德輝+外郞: 항주의 인물, 공자경이 張德輝에게 보내는 서신을 곽비에게 맡김.\n杭人+潘伯起: 杭人은 항주 사람이라는 뜻. 대도에서 만났던 사이."
+      "text": "name_office_corrections: 子敬=龔子敬, 8월28일 學道書院 山長이 됨.\n武臨淸+提舉: 항주의 인물, 공자경이 武臨淸에게 보내는 서신을 곽비에게 맡김.\n張德輝+外郞: 항주의 인물, 공자경이 張德輝에게 보내는 서신을 곽비에게 맡김.\n杭人+潘伯起: 杭人은 항주 사람이라는 뜻. 대도에서 만났던 사이."
     },
     {
       "type": "editorial",
@@ -19,14 +19,14 @@
   ],
   "persons": [
     {
-      "entity_id": "person-0016",
+      "entity_id": "person-0014",
       "surface": "子敬",
-      "normalized": "공자경(龔子敬), 8월28일 學道書院 山長이 됨.",
+      "normalized": "龔子敬",
       "role": "mentioned_person",
       "mention_type": "alias"
     },
     {
-      "entity_id": "person-0018",
+      "entity_id": "person-0015",
       "surface": "武臨淸+提舉",
       "normalized": "武臨淸",
       "role": "mentioned_person",
@@ -37,7 +37,7 @@
         {
           "kind": "person",
           "surface": "武臨淸",
-          "entity_id": "person-0018"
+          "entity_id": "person-0015"
         },
         {
           "kind": "office",
@@ -48,7 +48,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0019",
+      "entity_id": "person-0016",
       "surface": "張德輝+外郞",
       "normalized": "張德輝",
       "role": "mentioned_person",
@@ -59,7 +59,7 @@
         {
           "kind": "person",
           "surface": "張德輝",
-          "entity_id": "person-0019"
+          "entity_id": "person-0016"
         },
         {
           "kind": "office",
@@ -70,37 +70,30 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0020",
+      "entity_id": "person-0017",
       "surface": "杭人+潘伯起",
       "normalized": "潘伯起",
       "role": "mentioned_person",
       "mention_type": "descriptor",
-      "certainty_reason": "杭人은 항주 사람이라는 뜻. 대도에서 만났던 사이."
+      "certainty_reason": "杭人은 항주 사람이라는 뜻. 대도에서 만났던 사이.; 杭人"
     }
   ],
   "places": [
     {
-      "entity_id": "place-0012",
+      "entity_id": "place-0013",
       "surface": "平江",
       "normalized": "平江",
       "role": "location",
-      "certainty_reason": "현재 있는 곳",
+      "certainty_reason": "현재 있는 곳, 본문에는 적혀있지 않음",
       "register_context": "administrative"
     },
     {
-      "entity_id": "place-0013",
+      "entity_id": "place-0014",
       "surface": "大都",
       "normalized": "大都",
       "role": "location",
       "certainty_reason": "과거에 가본 적이 있음 (현재 시점은 아님)",
       "register_context": "administrative"
-    },
-    {
-      "entity_id": "place-0014",
-      "surface": "平江에서배를탐",
-      "normalized": "平江에서배를탐",
-      "role": "location",
-      "register_context": "journey"
     }
   ],
   "offices": [
@@ -146,62 +139,56 @@
       "seq": 1,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0016",
+      "target": "person-0014",
       "companions": [],
       "result": "met",
-      "location": "place-0012",
+      "location": "place-0013",
       "notes": null
     },
     {
       "seq": 2,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0018",
+      "target": "person-0015",
       "companions": [],
       "result": "met",
-      "location": "place-0012",
+      "location": "place-0013",
       "notes": "항주의 인물, 공자경이 武臨淸에게 보내는 서신을 곽비에게 맡김."
     },
     {
       "seq": 3,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0019",
+      "target": "person-0016",
       "companions": [],
       "result": "met",
-      "location": "place-0012",
+      "location": "place-0013",
       "notes": "항주의 인물, 공자경이 張德輝에게 보내는 서신을 곽비에게 맡김."
     },
     {
       "seq": 4,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0020",
+      "target": "person-0017",
       "companions": [],
       "result": "met",
-      "location": "place-0012",
-      "notes": "杭人은 항주 사람이라는 뜻. 대도에서 만났던 사이."
+      "location": "place-0013",
+      "notes": "杭人은 항주 사람이라는 뜻. 대도에서 만났던 사이.; 杭人"
     },
     {
       "seq": 5,
       "action": "dined_with",
       "agent": "person-0001",
-      "target": "person-0016",
+      "target": "person-0014",
       "companions": [],
       "result": "met",
-      "location": "place-0012",
+      "location": "place-0013",
       "notes": "酒酌"
     }
   ],
   "exchanges": [],
   "artworks": [],
-  "journey": {
-    "from": "place-0014",
-    "to": "place-0012",
-    "via": [],
-    "mode": "boat",
-    "distance_raw": "平江에서 배를 탐"
-  },
+  "journey": null,
   "time_markers": [],
   "emotional_markers": [],
   "costs": [],
@@ -223,9 +210,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
-    "updated_at": "2026-03-28T23:10:41",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "validated"
+    },
+    "updated_at": "2026-03-29T09:11:55",
+    "reviewed_at": "2026-03-29T09:11:55"
   }
 }

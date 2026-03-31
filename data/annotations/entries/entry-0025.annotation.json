@@ -6,7 +6,7 @@
   "translation_notes": [
     {
       "type": "editorial",
-      "text": "name_office_corrections: 潘伯起: 동행 및 숙소 안내\n沈待詔: 인물\n金壇尹子源: 금단 출신 윤자원\n趙伯可\n儲叔儀\n李伯玉\n李叔義\n張菊存: 공자경의 서신을 전함\n龔子敬: 언급만 됨\n張松㵎+府判\n武臨淸+提舉\n王一初+都目\n周有道+都目\n李敎授\n武公令\n□□教授: 이름 미상\n吳茂之\n唐仲文: 새로 廉吏에 보임, 만나지 못함\n吴若遺+提點"
+      "text": "name_office_corrections: 潘伯起: 동행 및 숙소 안내\n沈待詔: 인물\n金壇尹子源: 금단 출신 윤자원\n趙伯可\n儲叔儀\n李伯玉\n李叔義\n張菊存: 공자경의 서신을 전함\n龔子敬: 언급만 됨\n張松㵎+府判\n武臨淸+提舉\n王一初+都目\n周有道+都目\n李敎授\n武公(=武臨淸)\n□□教授: 이름 미상\n吳茂之\n唐仲文: 새로 廉吏에 보임, 만나지 못함\n吴若遺+提點"
     },
     {
       "type": "editorial",
@@ -19,66 +19,66 @@
   ],
   "persons": [
     {
-      "entity_id": "person-0020",
+      "entity_id": "person-0017",
       "surface": "潘伯起",
       "normalized": "潘伯起",
       "role": "mentioned_person",
       "certainty_reason": "동행 및 숙소 안내"
     },
     {
-      "entity_id": "person-0021",
+      "entity_id": "person-0018",
       "surface": "沈待詔",
       "normalized": "沈待詔",
       "role": "mentioned_person",
       "certainty_reason": "인물"
     },
     {
-      "entity_id": "person-0022",
+      "entity_id": "person-0019",
       "surface": "金壇尹子源",
-      "normalized": "金壇尹子源",
+      "normalized": "尹子源",
       "role": "mentioned_person",
       "certainty_reason": "금단 출신 윤자원"
     },
     {
-      "entity_id": "person-0023",
+      "entity_id": "person-0020",
       "surface": "趙伯可",
       "normalized": "趙伯可",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0024",
+      "entity_id": "person-0021",
       "surface": "儲叔儀",
       "normalized": "儲叔儀",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0025",
+      "entity_id": "person-0022",
       "surface": "李伯玉",
       "normalized": "李伯玉",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0026",
+      "entity_id": "person-0023",
       "surface": "李叔義",
       "normalized": "李叔義",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0027",
+      "entity_id": "person-0024",
       "surface": "張菊存",
       "normalized": "張菊存",
       "role": "mentioned_person",
       "certainty_reason": "공자경의 서신을 전함"
     },
     {
-      "entity_id": "person-0016",
+      "entity_id": "person-0014",
       "surface": "龔子敬",
       "normalized": "龔子敬",
       "role": "mentioned_person",
       "certainty_reason": "언급만 됨"
     },
     {
-      "entity_id": "person-0028",
+      "entity_id": "person-0025",
       "surface": "張松㵎+府判",
       "normalized": "張松㵎",
       "role": "mentioned_person",
@@ -88,7 +88,7 @@
         {
           "kind": "person",
           "surface": "張松㵎",
-          "entity_id": "person-0028"
+          "entity_id": "person-0025"
         },
         {
           "kind": "office",
@@ -99,7 +99,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0018",
+      "entity_id": "person-0015",
       "surface": "武臨淸+提舉",
       "normalized": "武臨淸",
       "role": "mentioned_person",
@@ -109,7 +109,7 @@
         {
           "kind": "person",
           "surface": "武臨淸",
-          "entity_id": "person-0018"
+          "entity_id": "person-0015"
         },
         {
           "kind": "office",
@@ -120,7 +120,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0029",
+      "entity_id": "person-0026",
       "surface": "王一初+都目",
       "normalized": "王一初",
       "role": "mentioned_person",
@@ -130,7 +130,7 @@
         {
           "kind": "person",
           "surface": "王一初",
-          "entity_id": "person-0029"
+          "entity_id": "person-0026"
         },
         {
           "kind": "office",
@@ -141,7 +141,7 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0030",
+      "entity_id": "person-0027",
       "surface": "周有道+都目",
       "normalized": "周有道",
       "role": "mentioned_person",
@@ -151,7 +151,7 @@
         {
           "kind": "person",
           "surface": "周有道",
-          "entity_id": "person-0030"
+          "entity_id": "person-0027"
         },
         {
           "kind": "office",
@@ -162,39 +162,40 @@
       "register_context": "administrative"
     },
     {
-      "entity_id": "person-0031",
+      "entity_id": "person-0028",
       "surface": "李敎授",
       "normalized": "李敎授",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0032",
-      "surface": "武公令",
-      "normalized": "武公令",
-      "role": "mentioned_person"
+      "entity_id": "person-0015",
+      "surface": "武公(",
+      "normalized": "武臨淸)",
+      "role": "mentioned_person",
+      "mention_type": "alias"
     },
     {
-      "entity_id": "person-0033",
+      "entity_id": "person-0029",
       "surface": "□□教授",
       "normalized": "□□教授",
       "role": "mentioned_person",
       "certainty_reason": "이름 미상"
     },
     {
-      "entity_id": "person-0034",
+      "entity_id": "person-0030",
       "surface": "吳茂之",
       "normalized": "吳茂之",
       "role": "mentioned_person"
     },
     {
-      "entity_id": "person-0035",
+      "entity_id": "person-0031",
       "surface": "唐仲文",
       "normalized": "唐仲文",
       "role": "mentioned_person",
       "certainty_reason": "새로 廉吏에 보임, 만나지 못함"
     },
     {
-      "entity_id": "person-0036",
+      "entity_id": "person-0032",
       "surface": "吴若遺+提點",
       "normalized": "吴若遺",
       "role": "mentioned_person",
@@ -204,7 +205,7 @@
         {
           "kind": "person",
           "surface": "吴若遺",
-          "entity_id": "person-0036"
+          "entity_id": "person-0032"
         },
         {
           "kind": "office",
@@ -410,7 +411,7 @@
       "seq": 1,
       "action": "travel_with",
       "agent": "person-0001",
-      "target": "person-0020",
+      "target": "person-0017",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -420,7 +421,7 @@
       "seq": 2,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0021",
+      "target": "person-0018",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -430,7 +431,7 @@
       "seq": 3,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0022",
+      "target": "person-0019",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -440,7 +441,7 @@
       "seq": 4,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0023",
+      "target": "person-0020",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -450,7 +451,7 @@
       "seq": 5,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0024",
+      "target": "person-0021",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -460,7 +461,7 @@
       "seq": 6,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0025",
+      "target": "person-0022",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -470,7 +471,7 @@
       "seq": 7,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0026",
+      "target": "person-0023",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -480,7 +481,7 @@
       "seq": 8,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0027",
+      "target": "person-0024",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -490,7 +491,7 @@
       "seq": 9,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0016",
+      "target": "person-0014",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -500,7 +501,7 @@
       "seq": 10,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0028",
+      "target": "person-0025",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -510,7 +511,7 @@
       "seq": 11,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0018",
+      "target": "person-0015",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -520,7 +521,7 @@
       "seq": 12,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0029",
+      "target": "person-0026",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -530,7 +531,7 @@
       "seq": 13,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0030",
+      "target": "person-0027",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -540,7 +541,7 @@
       "seq": 14,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0031",
+      "target": "person-0028",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -550,7 +551,7 @@
       "seq": 15,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0032",
+      "target": "person-0015",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -560,7 +561,7 @@
       "seq": 16,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0033",
+      "target": "person-0029",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -570,7 +571,7 @@
       "seq": 17,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0034",
+      "target": "person-0030",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -580,7 +581,7 @@
       "seq": 18,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0035",
+      "target": "person-0031",
       "companions": [],
       "result": "not_met",
       "location": "place-0016",
@@ -590,7 +591,7 @@
       "seq": 19,
       "action": "visit",
       "agent": "person-0001",
-      "target": "person-0036",
+      "target": "person-0032",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -600,7 +601,7 @@
       "seq": 20,
       "action": "dined_with",
       "agent": "person-0001",
-      "target": "person-0020",
+      "target": "person-0017",
       "companions": [],
       "result": "met",
       "location": "place-0016",
@@ -682,9 +683,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
-    "updated_at": "2026-03-29T00:17:03",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "validated"
+    },
+    "updated_at": "2026-03-31T20:49:54",
+    "reviewed_at": "2026-03-31T20:49:54"
   }
 }

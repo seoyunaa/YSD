@@ -28,14 +28,16 @@
       "surface": "呂城",
       "normalized": "呂城",
       "role": "location",
-      "register_context": "journey"
+      "certainty_reason": "여성",
+      "register_context": "administrative"
     },
     {
       "entity_id": "place-0002",
       "surface": "錢塘",
       "normalized": "錢塘",
       "role": "location",
-      "register_context": "journey"
+      "certainty_reason": "전당",
+      "register_context": "administrative"
     }
   ],
   "offices": [],
@@ -90,9 +92,18 @@
     "review": "reviewed"
   },
   "provenance": {
-    "annotated_by": "codex",
-    "updated_at": "2026-03-28T22:45:57",
-    "reviewed_by": "seo_yuna",
-    "review_method": "translation_assisted"
+    "annotation": {
+      "author": "seo_yuna"
+    },
+    "code_writing": {
+      "tool": "codex_gpt5.4"
+    },
+    "review": {
+      "author": "seo_yuna",
+      "method": "human_review",
+      "status": "validated"
+    },
+    "updated_at": "2026-03-30T22:16:51",
+    "reviewed_at": "2026-03-30T22:16:51"
   }
 }
