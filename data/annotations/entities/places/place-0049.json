@@ -1,14 +1,14 @@
 {
   "id": "place-0049",
   "entity_type": "place",
-  "label_original": "省中照磨所",
-  "label_normalized": "省中照磨所",
-  "first_seen_entry_id": "entry-0027",
+  "label_original": "晚間再出",
+  "label_normalized": "晚間再出",
+  "first_seen_entry_id": "entry-0026",
   "aliases": [],
   "notes": null,
   "status": "active",
   "place_info": {
-    "place_type": "office_building",
+    "place_type": "other",
     "admin_level": null,
     "parent_place_id": null,
     "coordinates": null,

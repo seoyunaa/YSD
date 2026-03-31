@@ -9,23 +9,17 @@
       "surface": "无咎",
       "alias_type": "alias",
       "ambiguous": false,
-      "notes": "이름 白无咎, 白湛淵의 아들"
+      "notes": "白湛淵의 아들"
     }
   ],
-  "notes": "이름 白无咎, 白湛淵의 아들",
+  "notes": "白湛淵의 아들",
   "status": "active",
   "relations": [
     {
       "target_id": "person-0003",
       "relation_type": "father",
       "source_entry_id": "entry-0020",
-      "notes": "이름 白无咎, 白湛淵의 아들"
-    },
-    {
-      "target_id": "person-0005",
-      "relation_type": "brother",
-      "source_entry_id": "entry-0020",
-      "notes": "same parent in review note"
+      "notes": "白湛淵의 아들"
     }
   ],
   "appointments": [],

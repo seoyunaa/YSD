@@ -1,0 +1,20 @@
+{
+  "id": "person-0048",
+  "entity_type": "person",
+  "label_original": "王夀之",
+  "label_normalized": "王夀之",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

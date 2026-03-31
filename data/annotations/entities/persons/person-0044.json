@@ -1,0 +1,20 @@
+{
+  "id": "person-0044",
+  "entity_type": "person",
+  "label_original": "宗兄",
+  "label_normalized": "宗兄",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": "妙行寺의 승려",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

@@ -5,20 +5,30 @@
   "label_normalized": "錢塘",
   "first_seen_entry_id": "entry-0019",
   "aliases": [],
-  "notes": null,
+  "notes": "전당",
   "status": "active",
   "place_info": {
     "place_type": "city",
-    "admin_level": null,
+    "admin_level": "xian",
     "parent_place_id": null,
-    "coordinates": null,
-    "period_names": []
+    "coordinates": {
+      "lat": 30.29412,
+      "lng": 120.16862,
+      "precision": "exact"
+    },
+    "period_names": [
+      {
+        "name": "錢塘縣",
+        "period": "元"
+      }
+    ]
   },
   "external_ids": {
     "chgis": {
-      "id": null,
-      "grade": "unresolved",
-      "notes": "pilot placeholder"
+      "id": "hvd_40079",
+      "uri": "https://chgis.hudci.org/tgaz/placename/hvd_40079",
+      "grade": "confirmed",
+      "notes": "Official CHGIS 1308 query returns Qiantang County."
     }
   }
 }

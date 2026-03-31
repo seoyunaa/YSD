@@ -1,0 +1,20 @@
+{
+  "id": "person-0043",
+  "entity_type": "person",
+  "label_original": "伏維那",
+  "label_normalized": "伏維那",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": "사찰 직책 [못만남]",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

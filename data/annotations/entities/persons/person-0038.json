@@ -1,0 +1,20 @@
+{
+  "id": "person-0038",
+  "entity_type": "person",
+  "label_original": "羅康伯",
+  "label_normalized": "羅康伯",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": "吳若遺의 師孫",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "place-0011",
+  "entity_type": "place",
+  "label_original": "郡學",
+  "label_normalized": "郡學",
+  "first_seen_entry_id": "entry-0021",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "place_info": {
+    "place_type": "other",
+    "admin_level": null,
+    "parent_place_id": null,
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "uri": null,
+      "grade": "hold",
+      "notes": "No direct CHGIS API hit for 姑蘇 in 1308. Likely a poetic or alternate name associated with Suzhou/Pingjiang, so left unresolved on purpose."
+    }
+  }
+}

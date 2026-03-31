@@ -1,0 +1,24 @@
+{
+  "id": "place-0037",
+  "entity_type": "place",
+  "label_original": "寓樓",
+  "label_normalized": "寓樓",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "place_info": {
+    "place_type": "other",
+    "admin_level": null,
+    "parent_place_id": "place-0031",
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

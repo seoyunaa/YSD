@@ -1,0 +1,20 @@
+{
+  "id": "person-0042",
+  "entity_type": "person",
+  "label_original": "趙子昂 [못만남]",
+  "label_normalized": "趙子昂 [못만남]",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": 17690,
+      "grade": "confirmed",
+      "notes": "Entry label is zi 子昂; CBDB record 17690 is Zhao Mengfu with alias 子昂 and matching Yuan office profile. Reviewed against official CBDB API on 2026-03-30."
+    }
+  }
+}

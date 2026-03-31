@@ -1,0 +1,20 @@
+{
+  "id": "person-0055",
+  "entity_type": "person",
+  "label_original": "牟學甫",
+  "label_normalized": "牟學甫",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

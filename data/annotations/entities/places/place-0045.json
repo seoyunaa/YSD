@@ -1,0 +1,24 @@
+{
+  "id": "place-0045",
+  "entity_type": "place",
+  "label_original": "接待寺",
+  "label_normalized": "接待寺",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": "이 절의 속칭",
+  "status": "active",
+  "place_info": {
+    "place_type": "temple",
+    "admin_level": null,
+    "parent_place_id": "place-0016",
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

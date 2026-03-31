@@ -1,0 +1,10 @@
+{
+  "id": "consumable-0008",
+  "entity_type": "consumable",
+  "label_original": "具酒小飲，余亦續酒",
+  "label_normalized": "具酒小飲，余亦續酒",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [],
+  "notes": null,
+  "status": "active"
+}

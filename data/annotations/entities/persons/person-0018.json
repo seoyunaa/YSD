@@ -1,50 +1,21 @@
 {
   "id": "person-0018",
   "entity_type": "person",
-  "label_original": "武臨淸",
-  "label_normalized": "武臨淸",
+  "label_original": "潘伯起",
+  "label_normalized": "潘伯起",
   "first_seen_entry_id": "entry-0023",
   "aliases": [
     {
-      "surface": "武臨淸+提舉",
-      "alias_type": "office",
+      "surface": "杭人+潘伯起",
+      "alias_type": "descriptor",
       "ambiguous": false,
-      "notes": "항주의 인물, 공자경이 武臨淸에게 보내는 서신을 곽비에게 맡김."
+      "notes": "대도에서 만났던 사이; 杭人"
     }
   ],
-  "notes": "항주의 인물, 공자경이 武臨淸에게 보내는 서신을 곽비에게 맡김.",
+  "notes": "대도에서 만났던 사이; 杭人",
   "status": "active",
   "relations": [],
-  "appointments": [
-    {
-      "office_id": "office-0001",
-      "institution_id": null,
-      "place_id": "place-0012",
-      "period_raw": "entry-0023",
-      "period_start": null,
-      "period_end": null,
-      "source_entry_ids": [
-        "entry-0023"
-      ],
-      "source_external": null,
-      "grade": "confirmed",
-      "notes": "항주의 인물, 공자경이 武臨淸에게 보내는 서신을 곽비에게 맡김."
-    },
-    {
-      "office_id": "office-0001",
-      "institution_id": "institution-0003",
-      "place_id": "place-0016",
-      "period_raw": "entry-0025",
-      "period_start": null,
-      "period_end": null,
-      "source_entry_ids": [
-        "entry-0025"
-      ],
-      "source_external": null,
-      "grade": "confirmed",
-      "notes": null
-    }
-  ],
+  "appointments": [],
   "residences": [],
   "external_ids": {
     "cbdb": {

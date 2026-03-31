@@ -1,0 +1,62 @@
+{
+  "id": "person-0027",
+  "entity_type": "person",
+  "label_original": "王一初",
+  "label_normalized": "王一初",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [
+    {
+      "surface": "王一初+都目",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": null
+    },
+    {
+      "surface": "王公",
+      "alias_type": "alias",
+      "ambiguous": false,
+      "notes": null
+    }
+  ],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [
+    {
+      "office_id": "office-0006",
+      "institution_id": "institution-0003",
+      "place_id": "place-0016",
+      "period_raw": "entry-0025",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0025"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": null
+    },
+    {
+      "office_id": "office-0006",
+      "institution_id": "institution-0009",
+      "place_id": "place-0050",
+      "period_raw": "entry-0027",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0027"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": null
+    }
+  ],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

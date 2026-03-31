@@ -1,24 +1,34 @@
 {
   "id": "place-0012",
   "entity_type": "place",
-  "label_original": "平江",
-  "label_normalized": "平江",
-  "first_seen_entry_id": "entry-0022",
+  "label_original": "姑蘇",
+  "label_normalized": "姑蘇",
+  "first_seen_entry_id": "entry-0021",
   "aliases": [],
   "notes": null,
   "status": "active",
   "place_info": {
-    "place_type": "city",
-    "admin_level": "zhou",
+    "place_type": "other",
+    "admin_level": "lu",
     "parent_place_id": null,
-    "coordinates": null,
-    "period_names": []
+    "coordinates": {
+      "lat": 31.31271,
+      "lng": 120.61862,
+      "precision": "exact"
+    },
+    "period_names": [
+      {
+        "name": "平江路",
+        "period": "元"
+      }
+    ]
   },
   "external_ids": {
     "chgis": {
-      "id": null,
-      "grade": "unresolved",
-      "notes": "pilot placeholder"
+      "id": "hvd_32429",
+      "uri": "https://chgis.hudci.org/tgaz/placename/hvd_32429",
+      "grade": "confirmed",
+      "notes": "Official CHGIS 1308 query returns Pingjiang Lu."
     }
   }
 }

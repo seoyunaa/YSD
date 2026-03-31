@@ -1,0 +1,20 @@
+{
+  "id": "person-0006",
+  "entity_type": "person",
+  "label_original": "[二白兄]",
+  "label_normalized": "[二白兄]",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [],
+  "notes": "白无咎와 白无華 형제",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

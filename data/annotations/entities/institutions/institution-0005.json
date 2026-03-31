@@ -1,0 +1,22 @@
+{
+  "id": "institution-0005",
+  "entity_type": "institution",
+  "label_original": "寓所",
+  "label_normalized": "寓所",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "institution_info": {
+    "institution_type": "government",
+    "place_id": "place-0025",
+    "parent_institution_id": null
+  },
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

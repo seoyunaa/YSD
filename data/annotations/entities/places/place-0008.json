@@ -1,14 +1,14 @@
 {
   "id": "place-0008",
   "entity_type": "place",
-  "label_original": "无華書院",
-  "label_normalized": "无華書院",
+  "label_original": "江陰",
+  "label_normalized": "江陰",
   "first_seen_entry_id": "entry-0020",
   "aliases": [],
-  "notes": "서원. 숙박도 함",
+  "notes": "곽비가 방문한 곳은 아님. 白湛淵의 소재",
   "status": "active",
   "place_info": {
-    "place_type": "academy",
+    "place_type": "other",
     "admin_level": null,
     "parent_place_id": null,
     "coordinates": null,

@@ -9,16 +9,26 @@
   "status": "active",
   "place_info": {
     "place_type": "city",
-    "admin_level": "zhou",
+    "admin_level": "lu",
     "parent_place_id": null,
-    "coordinates": null,
-    "period_names": []
+    "coordinates": {
+      "lat": 31.78278,
+      "lng": 119.9523,
+      "precision": "exact"
+    },
+    "period_names": [
+      {
+        "name": "常州路",
+        "period": "元"
+      }
+    ]
   },
   "external_ids": {
     "chgis": {
-      "id": null,
-      "grade": "unresolved",
-      "notes": "pilot placeholder"
+      "id": "hvd_32392",
+      "uri": "https://chgis.hudci.org/tgaz/placename/hvd_32392",
+      "grade": "confirmed",
+      "notes": "Official CHGIS 1308 query returns Changzhou Lu."
     }
   }
 }

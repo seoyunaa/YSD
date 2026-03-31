@@ -1,14 +1,14 @@
 {
   "id": "place-0056",
   "entity_type": "place",
-  "label_original": "提舉司",
-  "label_normalized": "提舉司",
-  "first_seen_entry_id": "entry-0028",
+  "label_original": "湖上兜率寺",
+  "label_normalized": "湖上兜率寺",
+  "first_seen_entry_id": "entry-0027",
   "aliases": [],
   "notes": null,
   "status": "active",
   "place_info": {
-    "place_type": "office_building",
+    "place_type": "temple",
     "admin_level": null,
     "parent_place_id": null,
     "coordinates": null,

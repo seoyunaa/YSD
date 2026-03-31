@@ -1,11 +1,11 @@
 {
   "id": "place-0005",
   "entity_type": "place",
-  "label_original": "元豐橋",
-  "label_normalized": "元豐橋",
+  "label_original": "入城",
+  "label_normalized": "入城",
   "first_seen_entry_id": "entry-0020",
   "aliases": [],
-  "notes": "常州성 내의 다리",
+  "notes": null,
   "status": "active",
   "place_info": {
     "place_type": "other",

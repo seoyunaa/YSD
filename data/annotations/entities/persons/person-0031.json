@@ -1,0 +1,20 @@
+{
+  "id": "person-0031",
+  "entity_type": "person",
+  "label_original": "吳茂之",
+  "label_normalized": "吳茂之",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "consumable-0006",
+  "entity_type": "consumable",
+  "label_original": "酒酌",
+  "label_normalized": "酒酌",
+  "first_seen_entry_id": "entry-0023",
+  "aliases": [],
+  "notes": null,
+  "status": "active"
+}

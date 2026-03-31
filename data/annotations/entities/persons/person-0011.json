@@ -1,0 +1,20 @@
+{
+  "id": "person-0011",
+  "entity_type": "person",
+  "label_original": "劉練江",
+  "label_normalized": "劉練江",
+  "first_seen_entry_id": "entry-0021",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

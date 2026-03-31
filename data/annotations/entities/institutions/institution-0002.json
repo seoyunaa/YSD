@@ -1,0 +1,22 @@
+{
+  "id": "institution-0002",
+  "entity_type": "institution",
+  "label_original": "无華書院",
+  "label_normalized": "无華書院",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [],
+  "notes": "서원. 숙박도 함",
+  "status": "active",
+  "institution_info": {
+    "institution_type": "academy",
+    "place_id": "place-0009",
+    "parent_institution_id": null
+  },
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "person-0036",
+  "entity_type": "person",
+  "label_original": "張景芳",
+  "label_normalized": "張景芳",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [
+    {
+      "surface": "張景芳+學正",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": null
+    }
+  ],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [
+    {
+      "office_id": "office-0010",
+      "institution_id": "institution-0006",
+      "place_id": "place-0032",
+      "period_raw": "entry-0026",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0026"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": null
+    }
+  ],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

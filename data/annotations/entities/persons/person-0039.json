@@ -1,0 +1,20 @@
+{
+  "id": "person-0039",
+  "entity_type": "person",
+  "label_original": "鄭表白",
+  "label_normalized": "鄭表白",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": "柏窗 鄭君의 아들",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

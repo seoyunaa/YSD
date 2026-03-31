@@ -1,0 +1,42 @@
+{
+  "id": "person-0052",
+  "entity_type": "person",
+  "label_original": "毛某",
+  "label_normalized": "毛某",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [
+    {
+      "surface": "毛某+令史",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": "이름 미상"
+    }
+  ],
+  "notes": "이름 미상",
+  "status": "active",
+  "relations": [],
+  "appointments": [
+    {
+      "office_id": "office-0011",
+      "institution_id": "institution-0009",
+      "place_id": "place-0050",
+      "period_raw": "entry-0027",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0027"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": "이름 미상"
+    }
+  ],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

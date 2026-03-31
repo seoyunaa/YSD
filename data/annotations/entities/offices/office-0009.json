@@ -1,0 +1,17 @@
+{
+  "id": "office-0009",
+  "entity_type": "office",
+  "label_original": "同知",
+  "label_normalized": "同知",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

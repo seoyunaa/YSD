@@ -1,0 +1,27 @@
+{
+  "id": "person-0024",
+  "entity_type": "person",
+  "label_original": "李叔義",
+  "label_normalized": "李叔義",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [
+    {
+      "surface": "李兄",
+      "alias_type": "alias",
+      "ambiguous": false,
+      "notes": null
+    }
+  ],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

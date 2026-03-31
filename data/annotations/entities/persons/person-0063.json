@@ -1,0 +1,20 @@
+{
+  "id": "person-0063",
+  "entity_type": "person",
+  "label_original": "許芳",
+  "label_normalized": "許芳",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [],
+  "notes": "분절 확인 필요",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

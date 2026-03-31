@@ -1,0 +1,42 @@
+{
+  "id": "person-0060",
+  "entity_type": "person",
+  "label_original": "狄仁卿",
+  "label_normalized": "狄仁卿",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [
+    {
+      "surface": "丹徒+宣差+狄仁卿",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": "丹徒"
+    }
+  ],
+  "notes": "丹徒",
+  "status": "active",
+  "relations": [],
+  "appointments": [
+    {
+      "office_id": "office-0013",
+      "institution_id": "institution-0009",
+      "place_id": "place-0050",
+      "period_raw": "entry-0027",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0027"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": "丹徒"
+    }
+  ],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

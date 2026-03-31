@@ -1,0 +1,27 @@
+{
+  "id": "person-0062",
+  "entity_type": "person",
+  "label_original": "宣使",
+  "label_normalized": "宣使",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [
+    {
+      "surface": "蔡某+宣使",
+      "alias_type": "descriptor",
+      "ambiguous": false,
+      "notes": "이름 미상; 蔡某"
+    }
+  ],
+  "notes": "이름 미상; 蔡某",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

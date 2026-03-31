@@ -1,0 +1,22 @@
+{
+  "id": "institution-0010",
+  "entity_type": "institution",
+  "label_original": "儒學提舉司",
+  "label_normalized": "儒學提舉司",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "institution_info": {
+    "institution_type": "government",
+    "place_id": "place-0052",
+    "parent_institution_id": null
+  },
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "place-0014",
+  "entity_type": "place",
+  "label_original": "大都",
+  "label_normalized": "大都",
+  "first_seen_entry_id": "entry-0023",
+  "aliases": [],
+  "notes": "과거에 가본 적이 있음 (현재 시점은 아님)",
+  "status": "active",
+  "place_info": {
+    "place_type": "other",
+    "admin_level": null,
+    "parent_place_id": null,
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

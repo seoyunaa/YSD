@@ -1,0 +1,10 @@
+{
+  "id": "consumable-0002",
+  "entity_type": "consumable",
+  "label_original": "酒晚飯",
+  "label_normalized": "酒晚飯",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [],
+  "notes": "술과 저녁 식사",
+  "status": "active"
+}

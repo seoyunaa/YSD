@@ -1,0 +1,10 @@
+{
+  "id": "work-0002",
+  "entity_type": "work",
+  "label_original": "新塔",
+  "label_normalized": "新塔",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [],
+  "notes": "태평사에 새로 지어진 탑",
+  "status": "active"
+}

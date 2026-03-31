@@ -1,36 +1,50 @@
 {
   "id": "person-0016",
   "entity_type": "person",
-  "label_original": "龔子敬",
-  "label_normalized": "龔子敬",
-  "first_seen_entry_id": "entry-0022",
+  "label_original": "武臨淸",
+  "label_normalized": "武臨淸",
+  "first_seen_entry_id": "entry-0023",
   "aliases": [
     {
-      "surface": "龔子敬+山長",
+      "surface": "武臨淸+提舉",
       "alias_type": "office",
       "ambiguous": false,
-      "notes": null
+      "notes": "항주 인물, 공자경이 보내는 서신을 곽비에게 맡김"
     },
     {
-      "surface": "子敬",
-      "alias_type": "zi",
+      "surface": "武公",
+      "alias_type": "alias",
       "ambiguous": false,
-      "notes": "entry-0023에서 사용. person-0017에서 통합."
+      "notes": null
     }
   ],
-  "notes": null,
+  "notes": "항주 인물, 공자경이 보내는 서신을 곽비에게 맡김",
   "status": "active",
   "relations": [],
   "appointments": [
     {
-      "office_id": "office-0003",
+      "office_id": "office-0001",
       "institution_id": null,
-      "place_id": "place-0012",
-      "period_raw": "entry-0022",
+      "place_id": "place-0013",
+      "period_raw": "entry-0023",
       "period_start": null,
       "period_end": null,
       "source_entry_ids": [
-        "entry-0022"
+        "entry-0023"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": "항주 인물, 공자경이 보내는 서신을 곽비에게 맡김"
+    },
+    {
+      "office_id": "office-0001",
+      "institution_id": "institution-0003",
+      "place_id": "place-0016",
+      "period_raw": "entry-0025",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0025"
       ],
       "source_external": null,
       "grade": "confirmed",
@@ -41,8 +55,8 @@
   "external_ids": {
     "cbdb": {
       "id": null,
-      "grade": "unresolved",
-      "notes": "pilot placeholder"
+      "grade": "rejected",
+      "notes": "Rejected candidate: 張德輝, id=107272, uri=https://cbdb.fas.harvard.edu/cbdbapi/person.php?id=107272&o=json. Exact-name CBDB hit exists, but the record dies in 1274, which conflicts with a living recipient in 1308 entries. Kept as a reviewed rejection so the same candidate is not reaccepted later by name-only matching."
     }
   }
 }

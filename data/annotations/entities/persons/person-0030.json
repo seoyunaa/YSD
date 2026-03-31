@@ -1,0 +1,42 @@
+{
+  "id": "person-0030",
+  "entity_type": "person",
+  "label_original": "□□",
+  "label_normalized": "□□",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [
+    {
+      "surface": "□□+教授",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": "이름 미상"
+    }
+  ],
+  "notes": "이름 미상",
+  "status": "active",
+  "relations": [],
+  "appointments": [
+    {
+      "office_id": "office-0002",
+      "institution_id": "institution-0003",
+      "place_id": "place-0016",
+      "period_raw": "entry-0025",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0025"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": "이름 미상"
+    }
+  ],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

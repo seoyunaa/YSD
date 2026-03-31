@@ -1,0 +1,24 @@
+{
+  "id": "place-0038",
+  "entity_type": "place",
+  "label_original": "항주성문/경계",
+  "label_normalized": "항주성문/경계",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "place_info": {
+    "place_type": "other",
+    "admin_level": null,
+    "parent_place_id": null,
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

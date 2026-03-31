@@ -1,0 +1,20 @@
+{
+  "id": "person-0032",
+  "entity_type": "person",
+  "label_original": "唐仲文",
+  "label_normalized": "唐仲文",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [],
+  "notes": "새로 廉吏에 보임 [못만남]",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

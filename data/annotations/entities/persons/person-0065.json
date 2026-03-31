@@ -1,0 +1,42 @@
+{
+  "id": "person-0065",
+  "entity_type": "person",
+  "label_original": "范成之",
+  "label_normalized": "范成之",
+  "first_seen_entry_id": "entry-0028",
+  "aliases": [
+    {
+      "surface": "范成之+主簿",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": null
+    }
+  ],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [
+    {
+      "office_id": "office-0014",
+      "institution_id": "institution-0012",
+      "place_id": "place-0032",
+      "period_raw": "entry-0028",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0028"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": null
+    }
+  ],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

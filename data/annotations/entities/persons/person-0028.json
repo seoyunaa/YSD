@@ -1,12 +1,12 @@
 {
   "id": "person-0028",
   "entity_type": "person",
-  "label_original": "張松㵎",
-  "label_normalized": "張松㵎",
+  "label_original": "周有道",
+  "label_normalized": "周有道",
   "first_seen_entry_id": "entry-0025",
   "aliases": [
     {
-      "surface": "張松㵎+府判",
+      "surface": "周有道+都目",
       "alias_type": "office",
       "ambiguous": false,
       "notes": null
@@ -17,7 +17,7 @@
   "relations": [],
   "appointments": [
     {
-      "office_id": "office-0005",
+      "office_id": "office-0006",
       "institution_id": "institution-0003",
       "place_id": "place-0016",
       "period_raw": "entry-0025",

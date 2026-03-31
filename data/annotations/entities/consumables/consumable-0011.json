@@ -1,0 +1,10 @@
+{
+  "id": "consumable-0011",
+  "entity_type": "consumable",
+  "label_original": "小飮",
+  "label_normalized": "小飮",
+  "first_seen_entry_id": "entry-0028",
+  "aliases": [],
+  "notes": null,
+  "status": "active"
+}

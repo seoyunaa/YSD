@@ -1,0 +1,10 @@
+{
+  "id": "consumable-0010",
+  "entity_type": "consumable",
+  "label_original": "具茶",
+  "label_normalized": "具茶",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [],
+  "notes": null,
+  "status": "active"
+}

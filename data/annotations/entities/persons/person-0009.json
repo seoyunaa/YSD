@@ -1,21 +1,36 @@
 {
   "id": "person-0009",
   "entity_type": "person",
-  "label_original": "白无咎",
-  "label_normalized": "白无咎",
+  "label_original": "馬習齋",
+  "label_normalized": "馬習齋",
   "first_seen_entry_id": "entry-0021",
   "aliases": [
     {
-      "surface": "白无咎(无咎)",
-      "alias_type": "alias",
+      "surface": "馬習齋+教授",
+      "alias_type": "office",
       "ambiguous": false,
-      "notes": "无咎"
+      "notes": "약칭 馬教"
     }
   ],
-  "notes": "无咎",
+  "notes": "약칭 馬教",
   "status": "active",
   "relations": [],
-  "appointments": [],
+  "appointments": [
+    {
+      "office_id": "office-0002",
+      "institution_id": null,
+      "place_id": "place-0011",
+      "period_raw": "entry-0021",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0021"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": "약칭 馬教"
+    }
+  ],
   "residences": [],
   "external_ids": {
     "cbdb": {

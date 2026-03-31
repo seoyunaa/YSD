@@ -1,0 +1,20 @@
+{
+  "id": "person-0025",
+  "entity_type": "person",
+  "label_original": "張菊存",
+  "label_normalized": "張菊存",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [],
+  "notes": "공자경의 서신을 전함",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

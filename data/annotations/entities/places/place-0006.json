@@ -1,14 +1,14 @@
 {
   "id": "place-0006",
   "entity_type": "place",
-  "label_original": "太平寺",
-  "label_normalized": "太平寺",
+  "label_original": "元豐橋",
+  "label_normalized": "元豐橋",
   "first_seen_entry_id": "entry-0020",
   "aliases": [],
-  "notes": "常州성 내의 사찰",
+  "notes": "常州성 내의 다리",
   "status": "active",
   "place_info": {
-    "place_type": "temple",
+    "place_type": "other",
     "admin_level": null,
     "parent_place_id": null,
     "coordinates": null,

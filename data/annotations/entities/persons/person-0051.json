@@ -1,0 +1,20 @@
+{
+  "id": "person-0051",
+  "entity_type": "person",
+  "label_original": "金君玉",
+  "label_normalized": "金君玉",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [],
+  "notes": "해당 아전(該吏)",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

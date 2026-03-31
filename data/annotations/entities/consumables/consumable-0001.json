@@ -1,0 +1,10 @@
+{
+  "id": "consumable-0001",
+  "entity_type": "consumable",
+  "label_original": "茶",
+  "label_normalized": "茶",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [],
+  "notes": "절의 차 접대",
+  "status": "active"
+}

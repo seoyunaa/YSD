@@ -1,0 +1,10 @@
+{
+  "id": "consumable-0009",
+  "entity_type": "consumable",
+  "label_original": "早飯",
+  "label_normalized": "早飯",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": null,
+  "status": "active"
+}

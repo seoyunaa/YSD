@@ -9,9 +9,9 @@
   "status": "active",
   "external_ids": {
     "inindex": {
-      "url": null,
       "grade": "unresolved",
-      "notes": "pilot placeholder"
+      "notes": "pilot placeholder",
+      "url": null
     }
   }
 }

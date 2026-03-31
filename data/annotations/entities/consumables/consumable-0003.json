@@ -1,0 +1,10 @@
+{
+  "id": "consumable-0003",
+  "entity_type": "consumable",
+  "label_original": "禮留小酌, 煮蟹蒸芋",
+  "label_normalized": "禮留小酌, 煮蟹蒸芋",
+  "first_seen_entry_id": "entry-0021",
+  "aliases": [],
+  "notes": null,
+  "status": "active"
+}

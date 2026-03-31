@@ -1,0 +1,42 @@
+{
+  "id": "person-0010",
+  "entity_type": "person",
+  "label_original": "龜山王",
+  "label_normalized": "龜山王",
+  "first_seen_entry_id": "entry-0021",
+  "aliases": [
+    {
+      "surface": "龜山王+山長",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": null
+    }
+  ],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [
+    {
+      "office_id": "office-0003",
+      "institution_id": null,
+      "place_id": "place-0011",
+      "period_raw": "entry-0021",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0021"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": null
+    }
+  ],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

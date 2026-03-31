@@ -3,22 +3,32 @@
   "entity_type": "place",
   "label_original": "杭州",
   "label_normalized": "杭州",
-  "first_seen_entry_id": "entry-0019",
+  "first_seen_entry_id": "entry-0026",
   "aliases": [],
   "notes": null,
   "status": "active",
   "place_info": {
     "place_type": "city",
-    "admin_level": "zhou",
+    "admin_level": "lu",
     "parent_place_id": null,
-    "coordinates": null,
-    "period_names": []
+    "coordinates": {
+      "lat": 30.29412,
+      "lng": 120.16862,
+      "precision": "exact"
+    },
+    "period_names": [
+      {
+        "name": "杭州路",
+        "period": "元"
+      }
+    ]
   },
   "external_ids": {
     "chgis": {
-      "id": null,
-      "grade": "unresolved",
-      "notes": "pilot placeholder"
+      "id": "hvd_32338",
+      "uri": "https://chgis.hudci.org/tgaz/placename/hvd_32338",
+      "grade": "confirmed",
+      "notes": "Official CHGIS 1308 query returns Hangzhou Lu."
     }
   }
 }

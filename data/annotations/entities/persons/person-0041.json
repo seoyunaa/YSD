@@ -1,0 +1,20 @@
+{
+  "id": "person-0041",
+  "entity_type": "person",
+  "label_original": "郝左丞 [못만남]",
+  "label_normalized": "郝左丞 [못만남]",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

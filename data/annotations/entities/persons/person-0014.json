@@ -1,0 +1,20 @@
+{
+  "id": "person-0014",
+  "entity_type": "person",
+  "label_original": "羅漢臣",
+  "label_normalized": "羅漢臣",
+  "first_seen_entry_id": "entry-0021",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

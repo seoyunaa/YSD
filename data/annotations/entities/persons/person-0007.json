@@ -1,0 +1,20 @@
+{
+  "id": "person-0007",
+  "entity_type": "person",
+  "label_original": "寺僧",
+  "label_normalized": "寺僧",
+  "first_seen_entry_id": "entry-0020",
+  "aliases": [],
+  "notes": "태평사(太平寺)의 승려, 특정 이름 없음",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

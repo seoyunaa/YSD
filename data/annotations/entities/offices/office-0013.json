@@ -1,0 +1,17 @@
+{
+  "id": "office-0013",
+  "entity_type": "office",
+  "label_original": "宣差",
+  "label_normalized": "宣差",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [],
+  "notes": "丹徒",
+  "status": "active",
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

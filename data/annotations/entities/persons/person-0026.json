@@ -1,14 +1,36 @@
 {
   "id": "person-0026",
   "entity_type": "person",
-  "label_original": "李叔義",
-  "label_normalized": "李叔義",
+  "label_original": "張松㵎",
+  "label_normalized": "張松㵎",
   "first_seen_entry_id": "entry-0025",
-  "aliases": [],
+  "aliases": [
+    {
+      "surface": "張松㵎+府判",
+      "alias_type": "office",
+      "ambiguous": false,
+      "notes": null
+    }
+  ],
   "notes": null,
   "status": "active",
   "relations": [],
-  "appointments": [],
+  "appointments": [
+    {
+      "office_id": "office-0005",
+      "institution_id": "institution-0003",
+      "place_id": "place-0016",
+      "period_raw": "entry-0025",
+      "period_start": null,
+      "period_end": null,
+      "source_entry_ids": [
+        "entry-0025"
+      ],
+      "source_external": null,
+      "grade": "confirmed",
+      "notes": null
+    }
+  ],
   "residences": [],
   "external_ids": {
     "cbdb": {

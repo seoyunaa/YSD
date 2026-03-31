@@ -1,0 +1,17 @@
+{
+  "id": "office-0006",
+  "entity_type": "office",
+  "label_original": "都目",
+  "label_normalized": "都目",
+  "first_seen_entry_id": "entry-0025",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

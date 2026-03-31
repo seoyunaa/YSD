@@ -1,0 +1,20 @@
+{
+  "id": "person-0040",
+  "entity_type": "person",
+  "label_original": "李息齋",
+  "label_normalized": "李息齋",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": "화가 [못만남]",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

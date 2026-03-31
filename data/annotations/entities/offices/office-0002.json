@@ -1,0 +1,17 @@
+{
+  "id": "office-0002",
+  "entity_type": "office",
+  "label_original": "教授",
+  "label_normalized": "教授",
+  "first_seen_entry_id": "entry-0021",
+  "aliases": [],
+  "notes": "약칭 馬教",
+  "status": "active",
+  "external_ids": {
+    "inindex": {
+      "url": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

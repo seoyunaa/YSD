@@ -1,0 +1,10 @@
+{
+  "id": "consumable-0007",
+  "entity_type": "consumable",
+  "label_original": "買飯",
+  "label_normalized": "買飯",
+  "first_seen_entry_id": "entry-0024",
+  "aliases": [],
+  "notes": "밥을 사먹다 (식당의 존재)",
+  "status": "active"
+}

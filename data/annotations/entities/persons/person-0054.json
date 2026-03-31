@@ -1,0 +1,20 @@
+{
+  "id": "person-0054",
+  "entity_type": "person",
+  "label_original": "趙仲美",
+  "label_normalized": "趙仲美",
+  "first_seen_entry_id": "entry-0027",
+  "aliases": [],
+  "notes": "趙子昂의 조카",
+  "status": "active",
+  "relations": [],
+  "appointments": [],
+  "residences": [],
+  "external_ids": {
+    "cbdb": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}

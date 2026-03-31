@@ -1,0 +1,24 @@
+{
+  "id": "place-0033",
+  "entity_type": "place",
+  "label_original": "井亭橋",
+  "label_normalized": "井亭橋",
+  "first_seen_entry_id": "entry-0026",
+  "aliases": [],
+  "notes": null,
+  "status": "active",
+  "place_info": {
+    "place_type": "other",
+    "admin_level": "zhou",
+    "parent_place_id": "place-0031",
+    "coordinates": null,
+    "period_names": []
+  },
+  "external_ids": {
+    "chgis": {
+      "id": null,
+      "grade": "unresolved",
+      "notes": "pilot placeholder"
+    }
+  }
+}
